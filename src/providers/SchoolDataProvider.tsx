@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useCallback, useMemo, ReactNode } from "react";
+import { createContext, useState, useEffect, useCallback, useMemo, ReactNode } from "react";
 import { DashboardService } from "../services/dashboard.service";
 import { initAuthListener } from "../utils/firebaseAuth";
 import {
@@ -15,8 +15,10 @@ import {
   Backup,
   Attendance,
   Grade,
+  NotificationItem,
+  TempAttendanceRecord,
+  TempGradeRecord,
 } from "../types";
-import { NotificationItem } from "../components/dashboard/Header";
 
 interface SchoolDataContextType {
   // DB Lists
@@ -69,10 +71,10 @@ interface SchoolDataContextType {
 
   // Guru helper items
   classStudents: Student[];
-  tempAttendances: { [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa', notes: string } };
-  setTempAttendances: React.Dispatch<React.SetStateAction<{ [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa', notes: string } }>>;
-  tempGrades: { [studentId: string]: { assignmentScore: number, utsScore: number, uasScore: number, notes: string } };
-  setTempGrades: React.Dispatch<React.SetStateAction<{ [studentId: string]: { assignmentScore: number, utsScore: number, uasScore: number, notes: string } }>>;
+  tempAttendances: TempAttendanceRecord;
+  setTempAttendances: React.Dispatch<React.SetStateAction<TempAttendanceRecord>>;
+  tempGrades: TempGradeRecord;
+  setTempGrades: React.Dispatch<React.SetStateAction<TempGradeRecord>>;
 
   // Actions
   fetchData: () => Promise<void>;
@@ -135,8 +137,8 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
 
   // Guru dashboard helpers
   const [classStudents, setClassStudents] = useState<Student[]>([]);
-  const [tempAttendances, setTempAttendances] = useState<{ [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa', notes: string } }>({});
-  const [tempGrades, setTempGrades] = useState<{ [studentId: string]: { assignmentScore: number, utsScore: number, uasScore: number, notes: string } }>({});
+  const [tempAttendances, setTempAttendances] = useState<TempAttendanceRecord>({});
+  const [tempGrades, setTempGrades] = useState<TempGradeRecord>({});
 
   // Online status effect
   useEffect(() => {
@@ -240,19 +242,25 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
       setBackups(data.backups);
       setAllAttendances(data.allAttendances);
       setAllGrades(data.allGrades);
-
-      if (data.classRooms.length > 0 && !selectedClassId) {
-        setSelectedClassId(data.classRooms[0].id);
-      }
-      if (data.subjects.length > 0 && !selectedSubjectId) {
-        setSelectedSubjectId(data.subjects[0].id);
-      }
     } catch {
       showToast("Gagal mengambil data sistem dari server.", "error");
     } finally {
       setLoading(false);
     }
-  }, [user, showToast, selectedClassId, selectedSubjectId]);
+  }, [user, showToast]);
+
+  // Set default selection values once loaded
+  useEffect(() => {
+    if (classRooms.length > 0 && !selectedClassId) {
+      setSelectedClassId(classRooms[0].id);
+    }
+  }, [classRooms, selectedClassId]);
+
+  useEffect(() => {
+    if (subjects.length > 0 && !selectedSubjectId) {
+      setSelectedSubjectId(subjects[0].id);
+    }
+  }, [subjects, selectedSubjectId]);
 
   // Initialize
   useEffect(() => {

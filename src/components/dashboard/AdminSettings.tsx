@@ -1,5 +1,4 @@
-import React from "react";
-import { FileSpreadsheet, CheckCircle, RotateCw } from "lucide-react";
+﻿import { FileSpreadsheet, CheckCircle, RotateCw } from "lucide-react";
 import { motion } from "motion/react";
 import { SchoolSettings } from "../../types";
 

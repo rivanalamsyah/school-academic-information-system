@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "motion/react";
 import { ShieldCheck, User, Lock, Eye, EyeOff, BookOpen, GraduationCap, School, X } from "lucide-react";
 import { User as UserType } from "../types";

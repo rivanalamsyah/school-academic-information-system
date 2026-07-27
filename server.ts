@@ -3,13 +3,27 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
-import { syncDatabaseToGoogleSheets, syncDatabaseBidirectional } from './src/utils/googleSheetsSync.ts';
+import { syncDatabaseBidirectional } from './src/utils/googleSheetsSync.ts';
 
 const currentFilename = typeof __filename !== 'undefined' ? __filename : fileURLToPath(import.meta.url);
 const currentDirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(currentFilename);
 
 const app = express();
 const PORT = 3000;
+
+// Security headers middleware (manually crafted to avoid unnecessary dependencies)
+app.use((_req, res, next) => {
+  res.setHeader("X-Frame-Options", "DENY");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("X-XSS-Protection", "1; mode=block");
+  // Permissive yet secure CSP for Vite development + Firebase
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://lh3.googleusercontent.com; connect-src 'self' ws: wss: https://*.googleapis.com https://*.firebaseio.com;"
+  );
+  next();
+});
 
 app.use(express.json({ limit: '2mb' })); // Limit JSON body size to prevent DoS
 app.use(express.urlencoded({ extended: false, limit: '2mb' }));
@@ -208,7 +222,7 @@ function generateSeederData() {
     const classId = `cls${(i % 6) + 1}`; // evenly distribute among class 1-6
     const nis = `10${String(2500 + i)}`;
     const nisn = `0054321${String(100 + i)}`;
-    const email = `${fName.toLowerCase()}.${lName.toLowerCase()}@student.sman1nusantara.sch.id`;
+    // email omitted from seed — not used in student object
     
     students.push({
       id: `s${i}`,
@@ -633,7 +647,7 @@ function addLog(username: string, role: string, action: string, req: express.Req
 // API Endpoint Handlers
 
 // Public Settings
-app.get('/api/public/settings', (req, res) => {
+app.get('/api/public/settings', (_req, res) => {
   const db = readDB();
   res.json(db.settings);
 });
@@ -648,7 +662,7 @@ app.put('/api/settings', (req, res) => {
 });
 
 // Public News
-app.get('/api/public/news', (req, res) => {
+app.get('/api/public/news', (_req, res) => {
   const db = readDB();
   res.json(db.news);
 });
@@ -704,7 +718,7 @@ app.delete('/api/news/:id', (req, res) => {
 });
 
 // Public Announcements
-app.get('/api/public/announcements', (req, res) => {
+app.get('/api/public/announcements', (_req, res) => {
   const db = readDB();
   res.json(db.announcements);
 });
@@ -749,7 +763,7 @@ app.delete('/api/announcements/:id', (req, res) => {
 });
 
 // Public Gallery
-app.get('/api/public/gallery', (req, res) => {
+app.get('/api/public/gallery', (_req, res) => {
   const db = readDB();
   res.json(db.gallery);
 });
@@ -811,7 +825,7 @@ app.get('/api/public/ppdb/status/:registrationNo', (req, res) => {
 });
 
 // Fetch PPDB for Admin
-app.get('/api/ppdb', (req, res) => {
+app.get('/api/ppdb', (_req, res) => {
   const db = readDB();
   res.json(db.ppdbRegistrations);
 });
@@ -831,7 +845,7 @@ app.put('/api/ppdb/:id', (req, res) => {
 });
 
 // Academic Years CRUD
-app.get('/api/academicyears', (req, res) => {
+app.get('/api/academicyears', (_req, res) => {
   const db = readDB();
   res.json(db.academicYears);
 });
@@ -872,7 +886,7 @@ app.put('/api/academicyears/:id', (req, res) => {
 });
 
 // Classroom CRUD
-app.get('/api/classrooms', (req, res) => {
+app.get('/api/classrooms', (_req, res) => {
   const db = readDB();
   res.json(db.classRooms);
 });
@@ -916,7 +930,7 @@ app.delete('/api/classrooms/:id', (req, res) => {
 });
 
 // Subjects CRUD
-app.get('/api/subjects', (req, res) => {
+app.get('/api/subjects', (_req, res) => {
   const db = readDB();
   res.json(db.subjects);
 });
@@ -960,7 +974,7 @@ app.delete('/api/subjects/:id', (req, res) => {
 });
 
 // Teachers CRUD
-app.get('/api/teachers', (req, res) => {
+app.get('/api/teachers', (_req, res) => {
   const db = readDB();
   res.json(db.teachers);
 });
@@ -1083,7 +1097,7 @@ app.post('/api/students/bulk', (req, res) => {
 
   writeDB(db);
   addLog("admin", "admin", `Mengimpor massal ${addedStudents.length} Siswa & Akun baru`, req);
-  res.json({ success: true, count: addedStudents.length });
+  return res.json({ success: true, count: addedStudents.length });
 });
 
 app.post('/api/teachers/bulk', (req, res) => {
@@ -1134,11 +1148,11 @@ app.post('/api/teachers/bulk', (req, res) => {
 
   writeDB(db);
   addLog("admin", "admin", `Mengimpor massal ${addedTeachers.length} Guru & Akun baru`, req);
-  res.json({ success: true, count: addedTeachers.length });
+  return res.json({ success: true, count: addedTeachers.length });
 });
 
 // Students CRUD
-app.get('/api/students', (req, res) => {
+app.get('/api/students', (_req, res) => {
   const db = readDB();
   res.json(db.students);
 });
@@ -1208,7 +1222,7 @@ app.delete('/api/students/:id', (req, res) => {
 });
 
 // Users CRUD
-app.get('/api/users', (req, res) => {
+app.get('/api/users', (_req, res) => {
   const db = readDB();
   res.json(db.users);
 });
@@ -1254,7 +1268,7 @@ app.delete('/api/users/:id', (req, res) => {
 });
 
 // Schedules CRUD
-app.get('/api/schedules', (req, res) => {
+app.get('/api/schedules', (_req, res) => {
   const db = readDB();
   res.json(db.schedules);
 });
@@ -1438,7 +1452,7 @@ app.post('/api/grades/bulk', (req, res) => {
 });
 
 // Public Documents
-app.get('/api/public/documents', (req, res) => {
+app.get('/api/public/documents', (_req, res) => {
   const db = readDB();
   res.json(db.documents);
 });
@@ -1470,7 +1484,7 @@ app.delete('/api/documents/:id', (req, res) => {
 });
 
 // Contact Messages Endpoints
-app.get('/api/messages', (req, res) => {
+app.get('/api/messages', (_req, res) => {
   const db = readDB();
   res.json(db.contactMessages);
 });
@@ -1508,13 +1522,13 @@ app.delete('/api/messages/:id', (req, res) => {
 });
 
 // Activity logs endpoint for admin
-app.get('/api/logs', (req, res) => {
+app.get('/api/logs', (_req, res) => {
   const db = readDB();
   res.json(db.activityLogs);
 });
 
 // Backup restore endpoint simulation
-app.get('/api/backups', (req, res) => {
+app.get('/api/backups', (_req, res) => {
   const db = readDB();
   res.json(db.backups);
 });
@@ -1583,14 +1597,14 @@ app.post('/api/google-sheets/sync', async (req, res) => {
     writeDB(db);
 
     addLog("admin", "admin", "Sinkronisasi database dengan Google Sheets berhasil", req);
-    res.json({
+    return res.json({
       success: true,
       spreadsheetId: result.spreadsheetId,
       url: result.url
     });
   } catch (err: any) {
     console.error("Error syncing to Google Sheets:", err);
-    res.status(500).json({ error: err.message || "Gagal melakukan sinkronisasi ke Google Sheets." });
+    return res.status(500).json({ error: err.message || "Gagal melakukan sinkronisasi ke Google Sheets." });
   }
 });
 
@@ -1635,7 +1649,7 @@ app.post('/api/auth/login', (req, res) => {
   addLog(user.username, user.role, "Login berhasil ke sistem", req);
 
   // Return success auth package
-  res.json({
+  return res.json({
     success: true,
     user: {
       id: user.id,
@@ -1729,7 +1743,7 @@ app.post('/api/calendar/sync', (req, res) => {
 // === DISCUSSION FORUM ENDPOINTS ===
 
 // Get all forum posts
-app.get('/api/forum', (req, res) => {
+app.get('/api/forum', (_req, res) => {
   try {
     const db = readDB();
     res.json(db.forumPosts || []);
@@ -1765,9 +1779,9 @@ app.post('/api/forum', (req, res) => {
     writeDB(db);
 
     addLog(author.name, author.role, `Membuat postingan forum: "${title}"`, req);
-    res.json({ success: true, post: newPost });
+    return res.json({ success: true, post: newPost });
   } catch (err) {
-    res.status(500).json({ error: "Gagal membuat postingan forum baru." });
+    return res.status(500).json({ error: "Gagal membuat postingan forum baru." });
   }
 });
 
@@ -1798,9 +1812,9 @@ app.post('/api/forum/:id/reply', (req, res) => {
     writeDB(db);
 
     addLog(author.name, author.role, `Membalas postingan forum ID ${postId}`, req);
-    res.json({ success: true, reply: newReply });
+    return res.json({ success: true, reply: newReply });
   } catch (err) {
-    res.status(500).json({ error: "Gagal menambahkan balasan forum." });
+    return res.status(500).json({ error: "Gagal menambahkan balasan forum." });
   }
 });
 
@@ -1831,9 +1845,9 @@ app.post('/api/forum/:id/upvote', (req, res) => {
     }
 
     writeDB(db);
-    res.json({ success: true, upvotes: post.upvotes });
+    return res.json({ success: true, upvotes: post.upvotes });
   } catch (err) {
-    res.status(500).json({ error: "Gagal memproses upvote postingan." });
+    return res.status(500).json({ error: "Gagal memproses upvote postingan." });
   }
 });
 
@@ -1862,9 +1876,9 @@ app.delete('/api/forum/:id', (req, res) => {
     writeDB(db);
 
     addLog(isAdmin ? "admin" : post.author.name, userRole || "user", `Menghapus postingan forum "${post.title}"`, req);
-    res.json({ success: true });
+    return res.json({ success: true });
   } catch (err) {
-    res.status(500).json({ error: "Gagal menghapus postingan forum." });
+    return res.status(500).json({ error: "Gagal menghapus postingan forum." });
   }
 });
 
@@ -1899,9 +1913,9 @@ app.delete('/api/forum/:id/reply/:replyId', (req, res) => {
     post.replies.splice(replyIndex, 1);
     writeDB(db);
 
-    res.json({ success: true });
+    return res.json({ success: true });
   } catch (err) {
-    res.status(500).json({ error: "Gagal menghapus balasan forum." });
+    return res.status(500).json({ error: "Gagal menghapus balasan forum." });
   }
 });
 
@@ -1917,7 +1931,7 @@ async function init() {
   } else {
     const distPath = path.join(currentDirname, 'dist');
     app.use(express.static(distPath));
-    app.get('*', (req, res) => {
+    app.get('*', (_req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }

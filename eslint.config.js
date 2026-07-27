@@ -37,11 +37,11 @@ export default tseslint.config(
       // Warn if non-component or non-hook is exported with fast-refresh
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 
-      // TypeScript: allow explicit 'any' in tests only; warn in src
-      "@typescript-eslint/no-explicit-any": "warn",
+      // TypeScript: ban explicit 'any' — use unknown or proper types instead
+      "@typescript-eslint/no-explicit-any": "error",
 
-      // TypeScript: unused variables should be errors to keep code clean
-      "@typescript-eslint/no-unused-vars": ["warn", {
+      // TypeScript: unused variables must be errors (keep code lean)
+      "@typescript-eslint/no-unused-vars": ["error", {
         argsIgnorePattern: "^_",
         varsIgnorePattern: "^_",
         caughtErrorsIgnorePattern: "^_",
@@ -61,6 +61,9 @@ export default tseslint.config(
 
       // Enforce === over == to prevent type coercion bugs
       "eqeqeq": ["error", "always", { null: "ignore" }],
+
+      // Prefer nullish coalescing over || for nullable values
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
     },
   },
 
@@ -76,8 +79,13 @@ export default tseslint.config(
     rules: {
       // Allow console in server files
       "no-console": "off",
-      // Server files can use 'any' more freely since they deal with raw DB objects
+      // Server files interact with raw DB/JSON — allow any where necessary
       "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": ["warn", {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      }],
     },
   }
 );
+

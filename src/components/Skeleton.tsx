@@ -1,5 +1,4 @@
-import React from "react";
-
+﻿
 interface SkeletonProps {
   variant?: "text" | "rect" | "circle";
   width?: string | number;

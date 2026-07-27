@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /dist/
 
 # Allow Google crawlers
 User-agent: Googlebot

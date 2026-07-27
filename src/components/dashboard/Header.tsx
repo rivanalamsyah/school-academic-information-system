@@ -1,17 +1,6 @@
-import React from "react";
 import { Menu, Bell, BellRing, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { User, AcademicYear } from "../../types";
-
-interface NotificationItem {
-  id: string;
-  title: string;
-  message: string;
-  type: "info" | "warning" | "error" | "success";
-  time: string;
-  read: boolean;
-  category: "tugas" | "ujian" | "umum";
-}
+import { User, AcademicYear, NotificationItem } from "../../types";
 
 interface HeaderProps {
   user: User;

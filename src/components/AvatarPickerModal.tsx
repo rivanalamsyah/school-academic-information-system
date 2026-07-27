@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+﻿import { useState, useRef, useEffect, useCallback } from "react";
 import { Camera, Upload, X, RefreshCw, Check, Image, AlertCircle } from "lucide-react";
 
 interface AvatarPickerModalProps {

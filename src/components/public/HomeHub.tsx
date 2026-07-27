@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "motion/react";
+﻿import { motion } from "motion/react";
 import { 
   Award, ArrowRight, ChevronRight, 
   CheckCircle2, Star, Shield, Leaf

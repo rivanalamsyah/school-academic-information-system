@@ -1,5 +1,4 @@
-import React from "react";
-import { Plus } from "lucide-react";
+﻿import { Plus } from "lucide-react";
 import { motion } from "motion/react";
 import { AcademicYear } from "../../types";
 

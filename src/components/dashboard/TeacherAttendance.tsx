@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "motion/react";
+﻿import { motion } from "motion/react";
 import { ClassRoom, Student } from "../../types";
 
 interface TeacherAttendanceProps {

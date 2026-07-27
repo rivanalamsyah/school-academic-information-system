@@ -1,5 +1,4 @@
-import React from "react";
-
+﻿
 export interface TableColumn<T> {
   header: string;
   accessor: (item: T) => React.ReactNode;

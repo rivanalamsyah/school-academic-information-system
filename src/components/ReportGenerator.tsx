@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, Fragment } from "react";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { 
@@ -1694,7 +1694,7 @@ export function ReportGenerator({
                         const kkm = subj?.kkm || 75;
                         const isPassed = grade.finalScore >= kkm;
                         return (
-                          <React.Fragment key={grade.id}>
+                          <Fragment key={grade.id}>
                             <tr className="hover:bg-slate-50/50">
                               <td className="py-3 px-3 text-center font-mono font-bold text-slate-400">{idx + 1}</td>
                               <td className="py-3 px-3">
@@ -1726,7 +1726,7 @@ export function ReportGenerator({
                                 {grade.notes || "Siswa berpartisipasi aktif dalam kegiatan diskusi kelas."}
                               </td>
                             </tr>
-                          </React.Fragment>
+                          </Fragment>
                         );
                       })
                     ) : (

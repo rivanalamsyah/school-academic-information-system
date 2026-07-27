@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+﻿import { useState, useMemo, useEffect } from "react";
 import { 
   MessageSquare, Send, ShieldCheck, RefreshCcw
 } from "lucide-react";

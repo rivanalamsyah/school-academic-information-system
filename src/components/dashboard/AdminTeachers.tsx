@@ -1,5 +1,4 @@
-import React from "react";
-import { Plus, Trash2, Edit2, Search, FileSpreadsheet } from "lucide-react";
+﻿import { Plus, Trash2, Edit2, Search, FileSpreadsheet } from "lucide-react";
 import { motion } from "motion/react";
 import { Teacher } from "../../types";
 

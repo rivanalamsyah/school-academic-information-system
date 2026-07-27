@@ -1,5 +1,4 @@
-import React from "react";
-import { Plus, Trash2, Edit2 } from "lucide-react";
+﻿import { Plus, Trash2, Edit2 } from "lucide-react";
 import { motion } from "motion/react";
 import { Subject } from "../../types";
 

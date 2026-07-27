@@ -4198,6 +4198,15 @@
   ],
   "activityLogs": [
     {
+      "id": "log_1785119994180",
+      "username": "superadmin",
+      "role": "super_admin",
+      "action": "Login berhasil ke sistem",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "timestamp": "2026-07-27 02:39:54"
+    },
+    {
       "id": "log1",
       "username": "superadmin",
       "role": "super_admin",

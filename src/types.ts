@@ -244,3 +244,20 @@ export interface ForumPost {
   replies: ForumReply[];
   createdAt: string;
 }
+
+export type AttendanceStatus = 'Hadir' | 'Sakit' | 'Izin' | 'Alpa';
+
+export interface NotificationItem {
+  id: string;
+  title: string;
+  message: string;
+  type: "info" | "warning" | "error" | "success";
+  time: string;
+  read: boolean;
+  category: "tugas" | "ujian" | "umum";
+}
+
+export type TempAttendanceRecord = Record<string, { status: AttendanceStatus; notes: string }>;
+
+export type TempGradeRecord = Record<string, { assignmentScore: number; utsScore: number; uasScore: number; notes: string }>;
+

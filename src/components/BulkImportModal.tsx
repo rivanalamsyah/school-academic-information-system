@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+﻿import { useState, useRef } from "react";
 import { X, Upload, FileSpreadsheet, Download, CheckCircle, AlertTriangle, Play, HelpCircle } from "lucide-react";
 
 interface ClassRoom {

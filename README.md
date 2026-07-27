@@ -467,4 +467,4 @@ Izin diberikan secara gratis kepada siapa saja yang mendapatkan salinan perangka
 
 ---
 
-*Dibuat dengan ❤️ oleh Rivan Alamsyah — Mendukung transformasi digital pendidikan Indonesia*
+*Dibuat dengan oleh Rivan Alamsyah — Mendukung transformasi digital pendidikan Indonesia*
