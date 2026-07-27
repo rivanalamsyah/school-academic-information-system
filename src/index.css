@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+/* Geometric Balance Theme Styles */
+.geo-grid {
+  background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #F8FAFC;
+}
+
+.stat-card {
+  border: 1px solid #E2E8F0;
+  background-color: #FFFFFF;
+  transition: none;
+}
+
+.sidebar-active {
+  border-right: 3px solid #2563EB;
+  background-color: #EFF6FF;
+  color: #1D4ED8;
+}
+
+/* Optimized CSS Print Media Styles for clean report & timetable printing */
+@media print {
+  body.print-mode-active {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #000000 !important;
+  }
+  
+  body.print-mode-active * {
+    visibility: hidden !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  body.print-mode-active .print-active-element,
+  body.print-mode-active .print-active-element * {
+    visibility: visible !important;
+    color: #000000 !important;
+  }
+  
+  body.print-mode-active .print-active-element {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    border: none !important;
+    background: #FFFFFF !important;
+    box-shadow: none !important;
+  }
+
+  .print-active-element {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.print-mode-active .print-active-element .no-print,
+  body.print-mode-active .print-active-element button,
+  body.print-mode-active .print-active-element select,
+  body.print-mode-active .print-active-element input {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

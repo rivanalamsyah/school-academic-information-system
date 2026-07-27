@@ -1,0 +1,4317 @@
+{
+  "settings": {
+    "name": "SMA Negeri 1 Nusantara",
+    "logo": "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=120&auto=format&fit=crop",
+    "favicon": "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=32&auto=format&fit=crop",
+    "phone": "(021) 555-0199",
+    "email": "info@sman1nusantara.sch.id",
+    "address": "Jl. Pendidikan No. 45, Kebayoran Baru, Jakarta Selatan, DKI Jakarta",
+    "vision": "Mewujudkan insan akademis yang unggul dalam IPTEK, kokoh dalam IMTAK, berkarakter luhur, dan berwawasan lingkungan global.",
+    "mission": [
+      "Menyelenggarakan pembelajaran berkualitas berbasis digital dan kebhinekaan.",
+      "Menumbuhkembangkan kebiasaan ibadah, akhlak mulia, dan integritas tinggi.",
+      "Memfasilitasi pengembangan minat, bakat, serta kreativitas siswa melalui ekstrakurikuler unggulan.",
+      "Menerapkan tata kelola sekolah yang transparan, akuntabel, dan ramah lingkungan."
+    ],
+    "principalName": "Dr. H. Ahmad Wijaya, M.Pd.",
+    "principalNip": "19750812 200112 1 002",
+    "principalGreeting": "Assalamualaikum Wr. Wb. Selamat datang di portal resmi SMA Negeri 1 Nusantara. Sebagai sekolah rujukan nasional, kami berkomitmen untuk melahirkan generasi cerdas, mandiri, dan berkarakter Pancasila. Melalui integrasi teknologi informasi dalam tata kelola akademik, kami berharap sistem ini dapat menjembatani komunikasi yang erat antara sekolah, guru, siswa, dan orang tua demi kesuksesan bersama.",
+    "principalImage": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    "facebook": "https://facebook.com/sman1nusantara",
+    "twitter": "https://twitter.com/sman1nusantara",
+    "instagram": "https://instagram.com/sman1nusantara",
+    "youtube": "https://youtube.com/sman1nusantaratv",
+    "seoTitle": "SMA Negeri 1 Nusantara - Cerdas, Mandiri, Berkarakter",
+    "seoDescription": "Portal resmi SMA Negeri 1 Nusantara Jakarta. Menyediakan informasi sekolah, pendaftaran siswa baru (PPDB), berita, galeri, dan fasilitas sekolah.",
+    "seoKeywords": "SMA Negeri 1 Nusantara, sekolah terbaik Jakarta, PPDB SMA, portal akademik sekolah"
+  },
+  "academicYears": [
+    {
+      "id": "ay1",
+      "year": "2025/2026",
+      "semester": "Ganjil",
+      "active": true
+    },
+    {
+      "id": "ay2",
+      "year": "2025/2026",
+      "semester": "Genap",
+      "active": false
+    }
+  ],
+  "subjects": [
+    {
+      "id": "subj1",
+      "code": "MAT-WAJIB",
+      "name": "Matematika (Wajib)",
+      "kkm": 75
+    },
+    {
+      "id": "subj2",
+      "code": "IND-WAJIB",
+      "name": "Bahasa Indonesia",
+      "kkm": 75
+    },
+    {
+      "id": "subj3",
+      "code": "ING-WAJIB",
+      "name": "Bahasa Inggris",
+      "kkm": 75
+    },
+    {
+      "id": "subj4",
+      "code": "FIS-IPA",
+      "name": "Fisika",
+      "kkm": 70
+    },
+    {
+      "id": "subj5",
+      "code": "KIM-IPA",
+      "name": "Kimia",
+      "kkm": 70
+    },
+    {
+      "id": "subj6",
+      "code": "BIO-IPA",
+      "name": "Biologi",
+      "kkm": 70
+    },
+    {
+      "id": "subj7",
+      "code": "SEJ-IPS",
+      "name": "Sejarah Indonesia",
+      "kkm": 75
+    },
+    {
+      "id": "subj8",
+      "code": "GEO-IPS",
+      "name": "Geografi",
+      "kkm": 70
+    },
+    {
+      "id": "subj9",
+      "code": "AGM-ISLAM",
+      "name": "Pendidikan Agama & Budi Pekerti",
+      "kkm": 78
+    },
+    {
+      "id": "subj10",
+      "code": "PJOK",
+      "name": "Pend. Jasmani, Olahraga & Kesehatan",
+      "kkm": 75
+    }
+  ],
+  "teachers": [
+    {
+      "id": "t1",
+      "nip": "19800101 200501 1 003",
+      "name": "Dra. Siti Rahmah, M.Si.",
+      "gender": "Perempuan",
+      "email": "siti.rahmah@sman1nusantara.sch.id",
+      "phone": "08123456701",
+      "status": "PNS",
+      "birthDate": "1980-01-01",
+      "address": "Kebayoran Lama, Jakarta Selatan",
+      "userId": "u_t1"
+    },
+    {
+      "id": "t2",
+      "nip": "19850415 201001 2 005",
+      "name": "Budi Santoso, S.Pd.",
+      "gender": "Laki-laki",
+      "email": "budi.santoso@sman1nusantara.sch.id",
+      "phone": "08123456702",
+      "status": "PNS",
+      "birthDate": "1985-04-15",
+      "address": "Cilandak, Jakarta Selatan",
+      "userId": "u_t2"
+    },
+    {
+      "id": "t3",
+      "nip": "19881120 201503 1 008",
+      "name": "Dewi Lestari, M.Pd.",
+      "gender": "Perempuan",
+      "email": "dewi.lestari@sman1nusantara.sch.id",
+      "phone": "08123456703",
+      "status": "PNS",
+      "birthDate": "1988-11-20",
+      "address": "Pasar Minggu, Jakarta Selatan",
+      "userId": "u_t3"
+    },
+    {
+      "id": "t4",
+      "nip": "19910905 201904 2 012",
+      "name": "Rian Hidayat, S.Pd.",
+      "gender": "Laki-laki",
+      "email": "rian.hidayat@sman1nusantara.sch.id",
+      "phone": "08123456704",
+      "status": "Yayasan",
+      "birthDate": "1991-09-05",
+      "address": "Jagakarsa, Jakarta Selatan",
+      "userId": "u_t4"
+    },
+    {
+      "id": "t5",
+      "nip": "19780312 200312 1 001",
+      "name": "Drs. Heri Irawan",
+      "gender": "Laki-laki",
+      "email": "heri.irawan@sman1nusantara.sch.id",
+      "phone": "08123456705",
+      "status": "PNS",
+      "birthDate": "1978-03-12",
+      "address": "Pondok Indah, Jakarta Selatan",
+      "userId": "u_t5"
+    },
+    {
+      "id": "t6",
+      "nip": "19931218 202201 2 015",
+      "name": "Anisa Fitriani, M.Pd.",
+      "gender": "Perempuan",
+      "email": "anisa.fitriani@sman1nusantara.sch.id",
+      "phone": "08123456706",
+      "status": "Honororer",
+      "birthDate": "1993-12-18",
+      "address": "Tebet, Jakarta Selatan",
+      "userId": "u_t6"
+    },
+    {
+      "id": "t7",
+      "nip": "19820525 200801 1 004",
+      "name": "Agus Salim, M.Pd.",
+      "gender": "Laki-laki",
+      "email": "agus.salim@sman1nusantara.sch.id",
+      "phone": "08123456707",
+      "status": "PNS",
+      "birthDate": "1982-05-25",
+      "address": "Mampang Prapatan, Jakarta Selatan",
+      "userId": "u_t7"
+    },
+    {
+      "id": "t8",
+      "nip": "19860710 201103 2 007",
+      "name": "Rina Wijayanti, S.Pd.",
+      "gender": "Perempuan",
+      "email": "rina.wijayanti@sman1nusantara.sch.id",
+      "phone": "08123456708",
+      "status": "PNS",
+      "birthDate": "1986-07-10",
+      "address": "Kuningan, Jakarta Selatan",
+      "userId": "u_t8"
+    },
+    {
+      "id": "t9",
+      "nip": "19901002 201804 1 010",
+      "name": "Fajar Nugroho, S.Si.",
+      "gender": "Laki-laki",
+      "email": "fajar.nugroho@sman1nusantara.sch.id",
+      "phone": "08123456709",
+      "status": "Yayasan",
+      "birthDate": "1990-10-02",
+      "address": "Setiabudi, Jakarta Selatan",
+      "userId": "u_t9"
+    },
+    {
+      "id": "t10",
+      "nip": "19940608 202301 2 019",
+      "name": "Sari Kusuma, S.Pd.",
+      "gender": "Perempuan",
+      "email": "sari.kusuma@sman1nusantara.sch.id",
+      "phone": "08123456710",
+      "status": "Honororer",
+      "birthDate": "1994-06-08",
+      "address": "Palmerah, Jakarta Barat",
+      "userId": "u_t10"
+    },
+    {
+      "id": "t11",
+      "nip": "19790830 200501 1 002",
+      "name": "Irwan Susanto, M.T.",
+      "gender": "Laki-laki",
+      "email": "irwan.susanto@sman1nusantara.sch.id",
+      "phone": "08123456711",
+      "status": "PNS",
+      "birthDate": "1979-08-30",
+      "address": "Tanah Abang, Jakarta Pusat",
+      "userId": "u_t11"
+    },
+    {
+      "id": "t12",
+      "nip": "19870211 201204 2 009",
+      "name": "Mega Utami, S.Pd.",
+      "gender": "Perempuan",
+      "email": "mega.utami@sman1nusantara.sch.id",
+      "phone": "08123456712",
+      "status": "PNS",
+      "birthDate": "1987-02-11",
+      "address": "Gambir, Jakarta Pusat",
+      "userId": "u_t12"
+    }
+  ],
+  "classRooms": [
+    {
+      "id": "cls1",
+      "name": "X MIPA 1",
+      "gradeLevel": "X",
+      "major": "IPA",
+      "homeroomTeacherId": "t1"
+    },
+    {
+      "id": "cls2",
+      "name": "X IPS 1",
+      "gradeLevel": "X",
+      "major": "IPS",
+      "homeroomTeacherId": "t2"
+    },
+    {
+      "id": "cls3",
+      "name": "XI MIPA 1",
+      "gradeLevel": "XI",
+      "major": "IPA",
+      "homeroomTeacherId": "t3"
+    },
+    {
+      "id": "cls4",
+      "name": "XI IPS 1",
+      "gradeLevel": "XI",
+      "major": "IPS",
+      "homeroomTeacherId": "t4"
+    },
+    {
+      "id": "cls5",
+      "name": "XII MIPA 1",
+      "gradeLevel": "XII",
+      "major": "IPA",
+      "homeroomTeacherId": "t5"
+    },
+    {
+      "id": "cls6",
+      "name": "XII IPS 1",
+      "gradeLevel": "XII",
+      "major": "IPS",
+      "homeroomTeacherId": "t6"
+    }
+  ],
+  "students": [
+    {
+      "id": "s1",
+      "nis": "102501",
+      "nisn": "0054321101",
+      "name": "Andi Wibowo",
+      "gender": "Laki-laki",
+      "classRoomId": "cls2",
+      "birthDate": "2009-02-11",
+      "address": "Jl. Nusantara Raya No. 4, Jakarta",
+      "status": "Aktif",
+      "parentName": "Pangaribuan M.B.A.",
+      "parentPhone": "08567890111",
+      "userId": "u_s1"
+    },
+    {
+      "id": "s2",
+      "nis": "102502",
+      "nisn": "0054321102",
+      "name": "Budi Pratama",
+      "gender": "Perempuan",
+      "classRoomId": "cls3",
+      "birthDate": "20010-03-12",
+      "address": "Jl. Nusantara Raya No. 8, Jakarta",
+      "status": "Aktif",
+      "parentName": "Pasaribu S.H.",
+      "parentPhone": "08567890112",
+      "userId": "u_s2"
+    },
+    {
+      "id": "s3",
+      "nis": "102503",
+      "nisn": "0054321103",
+      "name": "Citra Sari",
+      "gender": "Laki-laki",
+      "classRoomId": "cls4",
+      "birthDate": "2008-04-13",
+      "address": "Jl. Nusantara Raya No. 12, Jakarta",
+      "status": "Aktif",
+      "parentName": "Munthe M.B.A.",
+      "parentPhone": "08567890113",
+      "userId": "u_s3"
+    },
+    {
+      "id": "s4",
+      "nis": "102504",
+      "nisn": "0054321104",
+      "name": "Dedi Saputra",
+      "gender": "Perempuan",
+      "classRoomId": "cls5",
+      "birthDate": "2009-05-14",
+      "address": "Jl. Nusantara Raya No. 16, Jakarta",
+      "status": "Aktif",
+      "parentName": "Sumbayak S.H.",
+      "parentPhone": "08567890114",
+      "userId": "u_s4"
+    },
+    {
+      "id": "s5",
+      "nis": "102505",
+      "nisn": "0054321105",
+      "name": "Eka Kusuma",
+      "gender": "Laki-laki",
+      "classRoomId": "cls6",
+      "birthDate": "20010-06-15",
+      "address": "Jl. Nusantara Raya No. 20, Jakarta",
+      "status": "Aktif",
+      "parentName": "Pane M.B.A.",
+      "parentPhone": "08567890115",
+      "userId": "u_s5"
+    },
+    {
+      "id": "s6",
+      "nis": "102506",
+      "nisn": "0054321106",
+      "name": "Fani Hidayat",
+      "gender": "Perempuan",
+      "classRoomId": "cls1",
+      "birthDate": "2008-07-16",
+      "address": "Jl. Nusantara Raya No. 24, Jakarta",
+      "status": "Aktif",
+      "parentName": "Sitorus S.H.",
+      "parentPhone": "08567890116",
+      "userId": "u_s6"
+    },
+    {
+      "id": "s7",
+      "nis": "102507",
+      "nisn": "0054321107",
+      "name": "Gita Lestari",
+      "gender": "Laki-laki",
+      "classRoomId": "cls2",
+      "birthDate": "2009-08-17",
+      "address": "Jl. Nusantara Raya No. 28, Jakarta",
+      "status": "Aktif",
+      "parentName": "Harahap M.B.A.",
+      "parentPhone": "08567890117",
+      "userId": "u_s7"
+    },
+    {
+      "id": "s8",
+      "nis": "102508",
+      "nisn": "0054321108",
+      "name": "Hadi Nugroho",
+      "gender": "Perempuan",
+      "classRoomId": "cls3",
+      "birthDate": "20010-09-18",
+      "address": "Jl. Nusantara Raya No. 32, Jakarta",
+      "status": "Aktif",
+      "parentName": "Tanjung S.H.",
+      "parentPhone": "08567890118",
+      "userId": "u_s8"
+    },
+    {
+      "id": "s9",
+      "nis": "102509",
+      "nisn": "0054321109",
+      "name": "Indah Setyawan",
+      "gender": "Laki-laki",
+      "classRoomId": "cls4",
+      "birthDate": "2008-01-19",
+      "address": "Jl. Nusantara Raya No. 36, Jakarta",
+      "status": "Aktif",
+      "parentName": "Simanjuntak M.B.A.",
+      "parentPhone": "08567890119",
+      "userId": "u_s9"
+    },
+    {
+      "id": "s10",
+      "nis": "102510",
+      "nisn": "0054321110",
+      "name": "Joko Wijaya",
+      "gender": "Perempuan",
+      "classRoomId": "cls5",
+      "birthDate": "2009-02-20",
+      "address": "Jl. Nusantara Raya No. 40, Jakarta",
+      "status": "Aktif",
+      "parentName": "Pohan S.H.",
+      "parentPhone": "08567890120",
+      "userId": "u_s10"
+    },
+    {
+      "id": "s11",
+      "nis": "102511",
+      "nisn": "0054321111",
+      "name": "Kiki Subagyo",
+      "gender": "Laki-laki",
+      "classRoomId": "cls6",
+      "birthDate": "20010-03-21",
+      "address": "Jl. Nusantara Raya No. 44, Jakarta",
+      "status": "Aktif",
+      "parentName": "Nasution M.B.A.",
+      "parentPhone": "08567890121",
+      "userId": "u_s11"
+    },
+    {
+      "id": "s12",
+      "nis": "102512",
+      "nisn": "0054321112",
+      "name": "Lilis Astuti",
+      "gender": "Perempuan",
+      "classRoomId": "cls1",
+      "birthDate": "2008-04-22",
+      "address": "Jl. Nusantara Raya No. 48, Jakarta",
+      "status": "Aktif",
+      "parentName": "Ginting S.H.",
+      "parentPhone": "08567890122",
+      "userId": "u_s12"
+    },
+    {
+      "id": "s13",
+      "nis": "102513",
+      "nisn": "0054321113",
+      "name": "Mega Rahayu",
+      "gender": "Laki-laki",
+      "classRoomId": "cls2",
+      "birthDate": "2009-05-23",
+      "address": "Jl. Nusantara Raya No. 52, Jakarta",
+      "status": "Aktif",
+      "parentName": "Lubis M.B.A.",
+      "parentPhone": "08567890123",
+      "userId": "u_s13"
+    },
+    {
+      "id": "s14",
+      "nis": "102514",
+      "nisn": "0054321114",
+      "name": "Naufal Fadilah",
+      "gender": "Perempuan",
+      "classRoomId": "cls3",
+      "birthDate": "20010-06-24",
+      "address": "Jl. Nusantara Raya No. 56, Jakarta",
+      "status": "Aktif",
+      "parentName": "Siregar S.H.",
+      "parentPhone": "08567890124",
+      "userId": "u_s14"
+    },
+    {
+      "id": "s15",
+      "nis": "102515",
+      "nisn": "0054321115",
+      "name": "Olivia Ramadhan",
+      "gender": "Laki-laki",
+      "classRoomId": "cls4",
+      "birthDate": "2008-07-10",
+      "address": "Jl. Nusantara Raya No. 60, Jakarta",
+      "status": "Aktif",
+      "parentName": "Ramadhan M.B.A.",
+      "parentPhone": "08567890125",
+      "userId": "u_s15"
+    },
+    {
+      "id": "s16",
+      "nis": "102516",
+      "nisn": "0054321116",
+      "name": "Putra Siregar",
+      "gender": "Perempuan",
+      "classRoomId": "cls5",
+      "birthDate": "2009-08-11",
+      "address": "Jl. Nusantara Raya No. 64, Jakarta",
+      "status": "Aktif",
+      "parentName": "Fadilah S.H.",
+      "parentPhone": "08567890126",
+      "userId": "u_s16"
+    },
+    {
+      "id": "s17",
+      "nis": "102517",
+      "nisn": "0054321117",
+      "name": "Qori Lubis",
+      "gender": "Laki-laki",
+      "classRoomId": "cls6",
+      "birthDate": "20010-09-12",
+      "address": "Jl. Nusantara Raya No. 68, Jakarta",
+      "status": "Aktif",
+      "parentName": "Rahayu M.B.A.",
+      "parentPhone": "08567890127",
+      "userId": "u_s17"
+    },
+    {
+      "id": "s18",
+      "nis": "102518",
+      "nisn": "0054321118",
+      "name": "Rian Ginting",
+      "gender": "Perempuan",
+      "classRoomId": "cls1",
+      "birthDate": "2008-01-13",
+      "address": "Jl. Nusantara Raya No. 72, Jakarta",
+      "status": "Aktif",
+      "parentName": "Astuti S.H.",
+      "parentPhone": "08567890128",
+      "userId": "u_s18"
+    },
+    {
+      "id": "s19",
+      "nis": "102519",
+      "nisn": "0054321119",
+      "name": "Sari Nasution",
+      "gender": "Laki-laki",
+      "classRoomId": "cls2",
+      "birthDate": "2009-02-14",
+      "address": "Jl. Nusantara Raya No. 76, Jakarta",
+      "status": "Aktif",
+      "parentName": "Subagyo M.B.A.",
+      "parentPhone": "08567890129",
+      "userId": "u_s19"
+    },
+    {
+      "id": "s20",
+      "nis": "102520",
+      "nisn": "0054321120",
+      "name": "Tono Pohan",
+      "gender": "Perempuan",
+      "classRoomId": "cls3",
+      "birthDate": "20010-03-15",
+      "address": "Jl. Nusantara Raya No. 80, Jakarta",
+      "status": "Aktif",
+      "parentName": "Wijaya S.H.",
+      "parentPhone": "08567890130",
+      "userId": "u_s20"
+    },
+    {
+      "id": "s21",
+      "nis": "102521",
+      "nisn": "0054321121",
+      "name": "Umar Simanjuntak",
+      "gender": "Laki-laki",
+      "classRoomId": "cls4",
+      "birthDate": "2008-04-16",
+      "address": "Jl. Nusantara Raya No. 84, Jakarta",
+      "status": "Aktif",
+      "parentName": "Setyawan M.B.A.",
+      "parentPhone": "08567890131",
+      "userId": "u_s21"
+    },
+    {
+      "id": "s22",
+      "nis": "102522",
+      "nisn": "0054321122",
+      "name": "Vina Tanjung",
+      "gender": "Perempuan",
+      "classRoomId": "cls5",
+      "birthDate": "2009-05-17",
+      "address": "Jl. Nusantara Raya No. 88, Jakarta",
+      "status": "Aktif",
+      "parentName": "Nugroho S.H.",
+      "parentPhone": "08567890132",
+      "userId": "u_s22"
+    },
+    {
+      "id": "s23",
+      "nis": "102523",
+      "nisn": "0054321123",
+      "name": "Wawan Harahap",
+      "gender": "Laki-laki",
+      "classRoomId": "cls6",
+      "birthDate": "20010-06-18",
+      "address": "Jl. Nusantara Raya No. 92, Jakarta",
+      "status": "Aktif",
+      "parentName": "Lestari M.B.A.",
+      "parentPhone": "08567890133",
+      "userId": "u_s23"
+    },
+    {
+      "id": "s24",
+      "nis": "102524",
+      "nisn": "0054321124",
+      "name": "Xena Sitorus",
+      "gender": "Perempuan",
+      "classRoomId": "cls1",
+      "birthDate": "2008-07-19",
+      "address": "Jl. Nusantara Raya No. 96, Jakarta",
+      "status": "Aktif",
+      "parentName": "Hidayat S.H.",
+      "parentPhone": "08567890134",
+      "userId": "u_s24"
+    },
+    {
+      "id": "s25",
+      "nis": "102525",
+      "nisn": "0054321125",
+      "name": "Yayan Pane",
+      "gender": "Laki-laki",
+      "classRoomId": "cls2",
+      "birthDate": "2009-08-20",
+      "address": "Jl. Nusantara Raya No. 100, Jakarta",
+      "status": "Aktif",
+      "parentName": "Kusuma M.B.A.",
+      "parentPhone": "08567890135",
+      "userId": "u_s25"
+    },
+    {
+      "id": "s26",
+      "nis": "102526",
+      "nisn": "0054321126",
+      "name": "Zaki Sumbayak",
+      "gender": "Perempuan",
+      "classRoomId": "cls3",
+      "birthDate": "20010-09-21",
+      "address": "Jl. Nusantara Raya No. 104, Jakarta",
+      "status": "Aktif",
+      "parentName": "Saputra S.H.",
+      "parentPhone": "08567890136",
+      "userId": "u_s26"
+    },
+    {
+      "id": "s27",
+      "nis": "102527",
+      "nisn": "0054321127",
+      "name": "Arif Munthe",
+      "gender": "Laki-laki",
+      "classRoomId": "cls4",
+      "birthDate": "2008-01-22",
+      "address": "Jl. Nusantara Raya No. 108, Jakarta",
+      "status": "Aktif",
+      "parentName": "Sari M.B.A.",
+      "parentPhone": "08567890137",
+      "userId": "u_s27"
+    },
+    {
+      "id": "s28",
+      "nis": "102528",
+      "nisn": "0054321128",
+      "name": "Bella Pasaribu",
+      "gender": "Perempuan",
+      "classRoomId": "cls5",
+      "birthDate": "2009-02-23",
+      "address": "Jl. Nusantara Raya No. 112, Jakarta",
+      "status": "Aktif",
+      "parentName": "Pratama S.H.",
+      "parentPhone": "08567890138",
+      "userId": "u_s28"
+    },
+    {
+      "id": "s29",
+      "nis": "102529",
+      "nisn": "0054321129",
+      "name": "Candra Pangaribuan",
+      "gender": "Laki-laki",
+      "classRoomId": "cls6",
+      "birthDate": "20010-03-24",
+      "address": "Jl. Nusantara Raya No. 116, Jakarta",
+      "status": "Aktif",
+      "parentName": "Wibowo M.B.A.",
+      "parentPhone": "08567890139",
+      "userId": "u_s29"
+    },
+    {
+      "id": "s30",
+      "nis": "102530",
+      "nisn": "0054321130",
+      "name": "Dina Sinaga",
+      "gender": "Perempuan",
+      "classRoomId": "cls1",
+      "birthDate": "2008-04-10",
+      "address": "Jl. Nusantara Raya No. 120, Jakarta",
+      "status": "Aktif",
+      "parentName": "undefined S.H.",
+      "parentPhone": "08567890140",
+      "userId": "u_s30"
+    }
+  ],
+  "users": [
+    {
+      "id": "u_super",
+      "username": "superadmin",
+      "name": "Super Administrator",
+      "role": "super_admin",
+      "email": "superadmin@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150&auto=format&fit=crop",
+      "active": true
+    },
+    {
+      "id": "u_admin",
+      "username": "adminsekolah",
+      "name": "Admin SMAN 1 Nusantara",
+      "role": "admin",
+      "email": "admin@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
+      "active": true
+    },
+    {
+      "id": "u_t1",
+      "username": "19800101",
+      "name": "Dra. Siti Rahmah, M.Si.",
+      "role": "guru",
+      "email": "siti.rahmah@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t1"
+    },
+    {
+      "id": "u_t2",
+      "username": "19850415",
+      "name": "Budi Santoso, S.Pd.",
+      "role": "guru",
+      "email": "budi.santoso@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t2"
+    },
+    {
+      "id": "u_t3",
+      "username": "19881120",
+      "name": "Dewi Lestari, M.Pd.",
+      "role": "guru",
+      "email": "dewi.lestari@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t3"
+    },
+    {
+      "id": "u_t4",
+      "username": "19910905",
+      "name": "Rian Hidayat, S.Pd.",
+      "role": "guru",
+      "email": "rian.hidayat@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t4"
+    },
+    {
+      "id": "u_t5",
+      "username": "19780312",
+      "name": "Drs. Heri Irawan",
+      "role": "guru",
+      "email": "heri.irawan@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t5"
+    },
+    {
+      "id": "u_t6",
+      "username": "19931218",
+      "name": "Anisa Fitriani, M.Pd.",
+      "role": "guru",
+      "email": "anisa.fitriani@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t6"
+    },
+    {
+      "id": "u_t7",
+      "username": "19820525",
+      "name": "Agus Salim, M.Pd.",
+      "role": "guru",
+      "email": "agus.salim@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t7"
+    },
+    {
+      "id": "u_t8",
+      "username": "19860710",
+      "name": "Rina Wijayanti, S.Pd.",
+      "role": "guru",
+      "email": "rina.wijayanti@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t8"
+    },
+    {
+      "id": "u_t9",
+      "username": "19901002",
+      "name": "Fajar Nugroho, S.Si.",
+      "role": "guru",
+      "email": "fajar.nugroho@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t9"
+    },
+    {
+      "id": "u_t10",
+      "username": "19940608",
+      "name": "Sari Kusuma, S.Pd.",
+      "role": "guru",
+      "email": "sari.kusuma@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t10"
+    },
+    {
+      "id": "u_t11",
+      "username": "19790830",
+      "name": "Irwan Susanto, M.T.",
+      "role": "guru",
+      "email": "irwan.susanto@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t11"
+    },
+    {
+      "id": "u_t12",
+      "username": "19870211",
+      "name": "Mega Utami, S.Pd.",
+      "role": "guru",
+      "email": "mega.utami@sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "t12"
+    },
+    {
+      "id": "u_s1",
+      "username": "102501",
+      "name": "Andi Wibowo",
+      "role": "siswa",
+      "email": "102501@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s1"
+    },
+    {
+      "id": "u_s2",
+      "username": "102502",
+      "name": "Budi Pratama",
+      "role": "siswa",
+      "email": "102502@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s2"
+    },
+    {
+      "id": "u_s3",
+      "username": "102503",
+      "name": "Citra Sari",
+      "role": "siswa",
+      "email": "102503@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s3"
+    },
+    {
+      "id": "u_s4",
+      "username": "102504",
+      "name": "Dedi Saputra",
+      "role": "siswa",
+      "email": "102504@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s4"
+    },
+    {
+      "id": "u_s5",
+      "username": "102505",
+      "name": "Eka Kusuma",
+      "role": "siswa",
+      "email": "102505@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s5"
+    },
+    {
+      "id": "u_s6",
+      "username": "102506",
+      "name": "Fani Hidayat",
+      "role": "siswa",
+      "email": "102506@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s6"
+    },
+    {
+      "id": "u_s7",
+      "username": "102507",
+      "name": "Gita Lestari",
+      "role": "siswa",
+      "email": "102507@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s7"
+    },
+    {
+      "id": "u_s8",
+      "username": "102508",
+      "name": "Hadi Nugroho",
+      "role": "siswa",
+      "email": "102508@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s8"
+    },
+    {
+      "id": "u_s9",
+      "username": "102509",
+      "name": "Indah Setyawan",
+      "role": "siswa",
+      "email": "102509@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s9"
+    },
+    {
+      "id": "u_s10",
+      "username": "102510",
+      "name": "Joko Wijaya",
+      "role": "siswa",
+      "email": "102510@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s10"
+    },
+    {
+      "id": "u_s11",
+      "username": "102511",
+      "name": "Kiki Subagyo",
+      "role": "siswa",
+      "email": "102511@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s11"
+    },
+    {
+      "id": "u_s12",
+      "username": "102512",
+      "name": "Lilis Astuti",
+      "role": "siswa",
+      "email": "102512@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s12"
+    },
+    {
+      "id": "u_s13",
+      "username": "102513",
+      "name": "Mega Rahayu",
+      "role": "siswa",
+      "email": "102513@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s13"
+    },
+    {
+      "id": "u_s14",
+      "username": "102514",
+      "name": "Naufal Fadilah",
+      "role": "siswa",
+      "email": "102514@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s14"
+    },
+    {
+      "id": "u_s15",
+      "username": "102515",
+      "name": "Olivia Ramadhan",
+      "role": "siswa",
+      "email": "102515@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s15"
+    },
+    {
+      "id": "u_s16",
+      "username": "102516",
+      "name": "Putra Siregar",
+      "role": "siswa",
+      "email": "102516@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s16"
+    },
+    {
+      "id": "u_s17",
+      "username": "102517",
+      "name": "Qori Lubis",
+      "role": "siswa",
+      "email": "102517@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s17"
+    },
+    {
+      "id": "u_s18",
+      "username": "102518",
+      "name": "Rian Ginting",
+      "role": "siswa",
+      "email": "102518@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s18"
+    },
+    {
+      "id": "u_s19",
+      "username": "102519",
+      "name": "Sari Nasution",
+      "role": "siswa",
+      "email": "102519@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s19"
+    },
+    {
+      "id": "u_s20",
+      "username": "102520",
+      "name": "Tono Pohan",
+      "role": "siswa",
+      "email": "102520@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s20"
+    },
+    {
+      "id": "u_s21",
+      "username": "102521",
+      "name": "Umar Simanjuntak",
+      "role": "siswa",
+      "email": "102521@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s21"
+    },
+    {
+      "id": "u_s22",
+      "username": "102522",
+      "name": "Vina Tanjung",
+      "role": "siswa",
+      "email": "102522@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s22"
+    },
+    {
+      "id": "u_s23",
+      "username": "102523",
+      "name": "Wawan Harahap",
+      "role": "siswa",
+      "email": "102523@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s23"
+    },
+    {
+      "id": "u_s24",
+      "username": "102524",
+      "name": "Xena Sitorus",
+      "role": "siswa",
+      "email": "102524@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s24"
+    },
+    {
+      "id": "u_s25",
+      "username": "102525",
+      "name": "Yayan Pane",
+      "role": "siswa",
+      "email": "102525@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s25"
+    },
+    {
+      "id": "u_s26",
+      "username": "102526",
+      "name": "Zaki Sumbayak",
+      "role": "siswa",
+      "email": "102526@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s26"
+    },
+    {
+      "id": "u_s27",
+      "username": "102527",
+      "name": "Arif Munthe",
+      "role": "siswa",
+      "email": "102527@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s27"
+    },
+    {
+      "id": "u_s28",
+      "username": "102528",
+      "name": "Bella Pasaribu",
+      "role": "siswa",
+      "email": "102528@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s28"
+    },
+    {
+      "id": "u_s29",
+      "username": "102529",
+      "name": "Candra Pangaribuan",
+      "role": "siswa",
+      "email": "102529@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s29"
+    },
+    {
+      "id": "u_s30",
+      "username": "102530",
+      "name": "Dina Sinaga",
+      "role": "siswa",
+      "email": "102530@student.sman1nusantara.sch.id",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      "active": true,
+      "detailsId": "s30"
+    }
+  ],
+  "schedules": [
+    {
+      "id": "sch1",
+      "classRoomId": "cls1",
+      "subjectId": "subj1",
+      "teacherId": "t2",
+      "day": "Senin",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch2",
+      "classRoomId": "cls1",
+      "subjectId": "subj2",
+      "teacherId": "t3",
+      "day": "Senin",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch3",
+      "classRoomId": "cls1",
+      "subjectId": "subj9",
+      "teacherId": "t5",
+      "day": "Senin",
+      "startTime": "11:00",
+      "endTime": "12:30"
+    },
+    {
+      "id": "sch4",
+      "classRoomId": "cls2",
+      "subjectId": "subj7",
+      "teacherId": "t7",
+      "day": "Senin",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch5",
+      "classRoomId": "cls2",
+      "subjectId": "subj2",
+      "teacherId": "t3",
+      "day": "Senin",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch6",
+      "classRoomId": "cls2",
+      "subjectId": "subj10",
+      "teacherId": "t4",
+      "day": "Senin",
+      "startTime": "11:00",
+      "endTime": "12:30"
+    },
+    {
+      "id": "sch7",
+      "classRoomId": "cls1",
+      "subjectId": "subj4",
+      "teacherId": "t9",
+      "day": "Selasa",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch8",
+      "classRoomId": "cls1",
+      "subjectId": "subj3",
+      "teacherId": "t8",
+      "day": "Selasa",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch9",
+      "classRoomId": "cls1",
+      "subjectId": "subj10",
+      "teacherId": "t4",
+      "day": "Selasa",
+      "startTime": "11:00",
+      "endTime": "12:30"
+    },
+    {
+      "id": "sch10",
+      "classRoomId": "cls2",
+      "subjectId": "subj8",
+      "teacherId": "t12",
+      "day": "Selasa",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch11",
+      "classRoomId": "cls2",
+      "subjectId": "subj3",
+      "teacherId": "t8",
+      "day": "Selasa",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch12",
+      "classRoomId": "cls2",
+      "subjectId": "subj9",
+      "teacherId": "t5",
+      "day": "Selasa",
+      "startTime": "11:00",
+      "endTime": "12:30"
+    },
+    {
+      "id": "sch13",
+      "classRoomId": "cls3",
+      "subjectId": "subj1",
+      "teacherId": "t3",
+      "day": "Senin",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch14",
+      "classRoomId": "cls3",
+      "subjectId": "subj2",
+      "teacherId": "t6",
+      "day": "Senin",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch15",
+      "classRoomId": "cls3",
+      "subjectId": "subj3",
+      "teacherId": "t4",
+      "day": "Selasa",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch16",
+      "classRoomId": "cls3",
+      "subjectId": "subj4",
+      "teacherId": "t7",
+      "day": "Selasa",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch17",
+      "classRoomId": "cls3",
+      "subjectId": "subj5",
+      "teacherId": "t5",
+      "day": "Rabu",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch18",
+      "classRoomId": "cls3",
+      "subjectId": "subj6",
+      "teacherId": "t8",
+      "day": "Rabu",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch19",
+      "classRoomId": "cls3",
+      "subjectId": "subj7",
+      "teacherId": "t6",
+      "day": "Kamis",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch20",
+      "classRoomId": "cls3",
+      "subjectId": "subj8",
+      "teacherId": "t9",
+      "day": "Kamis",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch21",
+      "classRoomId": "cls3",
+      "subjectId": "subj9",
+      "teacherId": "t7",
+      "day": "Jumat",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch22",
+      "classRoomId": "cls3",
+      "subjectId": "subj10",
+      "teacherId": "t10",
+      "day": "Jumat",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch23",
+      "classRoomId": "cls4",
+      "subjectId": "subj1",
+      "teacherId": "t4",
+      "day": "Senin",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch24",
+      "classRoomId": "cls4",
+      "subjectId": "subj2",
+      "teacherId": "t7",
+      "day": "Senin",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch25",
+      "classRoomId": "cls4",
+      "subjectId": "subj3",
+      "teacherId": "t5",
+      "day": "Selasa",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch26",
+      "classRoomId": "cls4",
+      "subjectId": "subj4",
+      "teacherId": "t8",
+      "day": "Selasa",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch27",
+      "classRoomId": "cls4",
+      "subjectId": "subj5",
+      "teacherId": "t6",
+      "day": "Rabu",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch28",
+      "classRoomId": "cls4",
+      "subjectId": "subj6",
+      "teacherId": "t9",
+      "day": "Rabu",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch29",
+      "classRoomId": "cls4",
+      "subjectId": "subj7",
+      "teacherId": "t7",
+      "day": "Kamis",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch30",
+      "classRoomId": "cls4",
+      "subjectId": "subj8",
+      "teacherId": "t10",
+      "day": "Kamis",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch31",
+      "classRoomId": "cls4",
+      "subjectId": "subj9",
+      "teacherId": "t8",
+      "day": "Jumat",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch32",
+      "classRoomId": "cls4",
+      "subjectId": "subj10",
+      "teacherId": "t11",
+      "day": "Jumat",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch33",
+      "classRoomId": "cls5",
+      "subjectId": "subj1",
+      "teacherId": "t5",
+      "day": "Senin",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch34",
+      "classRoomId": "cls5",
+      "subjectId": "subj2",
+      "teacherId": "t8",
+      "day": "Senin",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch35",
+      "classRoomId": "cls5",
+      "subjectId": "subj3",
+      "teacherId": "t6",
+      "day": "Selasa",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch36",
+      "classRoomId": "cls5",
+      "subjectId": "subj4",
+      "teacherId": "t9",
+      "day": "Selasa",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch37",
+      "classRoomId": "cls5",
+      "subjectId": "subj5",
+      "teacherId": "t7",
+      "day": "Rabu",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch38",
+      "classRoomId": "cls5",
+      "subjectId": "subj6",
+      "teacherId": "t10",
+      "day": "Rabu",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch39",
+      "classRoomId": "cls5",
+      "subjectId": "subj7",
+      "teacherId": "t8",
+      "day": "Kamis",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch40",
+      "classRoomId": "cls5",
+      "subjectId": "subj8",
+      "teacherId": "t11",
+      "day": "Kamis",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch41",
+      "classRoomId": "cls5",
+      "subjectId": "subj9",
+      "teacherId": "t9",
+      "day": "Jumat",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch42",
+      "classRoomId": "cls5",
+      "subjectId": "subj10",
+      "teacherId": "t12",
+      "day": "Jumat",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch43",
+      "classRoomId": "cls6",
+      "subjectId": "subj1",
+      "teacherId": "t6",
+      "day": "Senin",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch44",
+      "classRoomId": "cls6",
+      "subjectId": "subj2",
+      "teacherId": "t9",
+      "day": "Senin",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch45",
+      "classRoomId": "cls6",
+      "subjectId": "subj3",
+      "teacherId": "t7",
+      "day": "Selasa",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch46",
+      "classRoomId": "cls6",
+      "subjectId": "subj4",
+      "teacherId": "t10",
+      "day": "Selasa",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch47",
+      "classRoomId": "cls6",
+      "subjectId": "subj5",
+      "teacherId": "t8",
+      "day": "Rabu",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch48",
+      "classRoomId": "cls6",
+      "subjectId": "subj6",
+      "teacherId": "t11",
+      "day": "Rabu",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch49",
+      "classRoomId": "cls6",
+      "subjectId": "subj7",
+      "teacherId": "t9",
+      "day": "Kamis",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch50",
+      "classRoomId": "cls6",
+      "subjectId": "subj8",
+      "teacherId": "t12",
+      "day": "Kamis",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    },
+    {
+      "id": "sch51",
+      "classRoomId": "cls6",
+      "subjectId": "subj9",
+      "teacherId": "t10",
+      "day": "Jumat",
+      "startTime": "07:30",
+      "endTime": "09:00"
+    },
+    {
+      "id": "sch52",
+      "classRoomId": "cls6",
+      "subjectId": "subj10",
+      "teacherId": "t1",
+      "day": "Jumat",
+      "startTime": "09:15",
+      "endTime": "10:45"
+    }
+  ],
+  "grades": [
+    {
+      "id": "g_s1_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s1",
+      "subjectId": "subj1",
+      "classRoomId": "cls2",
+      "assignmentScore": 70,
+      "utsScore": 65,
+      "uasScore": 72,
+      "finalScore": 69,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s1_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s1",
+      "subjectId": "subj2",
+      "classRoomId": "cls2",
+      "assignmentScore": 71,
+      "utsScore": 66.5,
+      "uasScore": 73.2,
+      "finalScore": 71,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s1_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s1",
+      "subjectId": "subj3",
+      "classRoomId": "cls2",
+      "assignmentScore": 72,
+      "utsScore": 68,
+      "uasScore": 74.4,
+      "finalScore": 72,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s2_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s2",
+      "subjectId": "subj1",
+      "classRoomId": "cls3",
+      "assignmentScore": 71,
+      "utsScore": 66.5,
+      "uasScore": 73.2,
+      "finalScore": 71,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s2_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s2",
+      "subjectId": "subj2",
+      "classRoomId": "cls3",
+      "assignmentScore": 72,
+      "utsScore": 68,
+      "uasScore": 74.4,
+      "finalScore": 72,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s2_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s2",
+      "subjectId": "subj3",
+      "classRoomId": "cls3",
+      "assignmentScore": 73,
+      "utsScore": 69.5,
+      "uasScore": 75.6,
+      "finalScore": 73,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s3_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s3",
+      "subjectId": "subj1",
+      "classRoomId": "cls4",
+      "assignmentScore": 72,
+      "utsScore": 68,
+      "uasScore": 74.4,
+      "finalScore": 72,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s3_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s3",
+      "subjectId": "subj2",
+      "classRoomId": "cls4",
+      "assignmentScore": 73,
+      "utsScore": 69.5,
+      "uasScore": 75.6,
+      "finalScore": 73,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s3_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s3",
+      "subjectId": "subj3",
+      "classRoomId": "cls4",
+      "assignmentScore": 74,
+      "utsScore": 71,
+      "uasScore": 76.8,
+      "finalScore": 74,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s4_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s4",
+      "subjectId": "subj1",
+      "classRoomId": "cls5",
+      "assignmentScore": 73,
+      "utsScore": 69.5,
+      "uasScore": 75.6,
+      "finalScore": 73,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s4_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s4",
+      "subjectId": "subj2",
+      "classRoomId": "cls5",
+      "assignmentScore": 74,
+      "utsScore": 71,
+      "uasScore": 76.8,
+      "finalScore": 74,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s4_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s4",
+      "subjectId": "subj3",
+      "classRoomId": "cls5",
+      "assignmentScore": 75,
+      "utsScore": 72.5,
+      "uasScore": 78,
+      "finalScore": 75,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s5_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s5",
+      "subjectId": "subj1",
+      "classRoomId": "cls6",
+      "assignmentScore": 74,
+      "utsScore": 71,
+      "uasScore": 76.8,
+      "finalScore": 74,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s5_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s5",
+      "subjectId": "subj2",
+      "classRoomId": "cls6",
+      "assignmentScore": 75,
+      "utsScore": 72.5,
+      "uasScore": 78,
+      "finalScore": 75,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s5_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s5",
+      "subjectId": "subj3",
+      "classRoomId": "cls6",
+      "assignmentScore": 76,
+      "utsScore": 74,
+      "uasScore": 79.2,
+      "finalScore": 77,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s6_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s6",
+      "subjectId": "subj1",
+      "classRoomId": "cls1",
+      "assignmentScore": 75,
+      "utsScore": 72.5,
+      "uasScore": 78,
+      "finalScore": 75,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s6_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s6",
+      "subjectId": "subj2",
+      "classRoomId": "cls1",
+      "assignmentScore": 76,
+      "utsScore": 74,
+      "uasScore": 79.2,
+      "finalScore": 77,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s6_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s6",
+      "subjectId": "subj3",
+      "classRoomId": "cls1",
+      "assignmentScore": 77,
+      "utsScore": 75.5,
+      "uasScore": 80.4,
+      "finalScore": 78,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s7_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s7",
+      "subjectId": "subj1",
+      "classRoomId": "cls2",
+      "assignmentScore": 76,
+      "utsScore": 74,
+      "uasScore": 79.2,
+      "finalScore": 77,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s7_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s7",
+      "subjectId": "subj2",
+      "classRoomId": "cls2",
+      "assignmentScore": 77,
+      "utsScore": 75.5,
+      "uasScore": 80.4,
+      "finalScore": 78,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s7_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s7",
+      "subjectId": "subj3",
+      "classRoomId": "cls2",
+      "assignmentScore": 78,
+      "utsScore": 77,
+      "uasScore": 81.6,
+      "finalScore": 79,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s8_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s8",
+      "subjectId": "subj1",
+      "classRoomId": "cls3",
+      "assignmentScore": 77,
+      "utsScore": 75.5,
+      "uasScore": 80.4,
+      "finalScore": 78,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s8_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s8",
+      "subjectId": "subj2",
+      "classRoomId": "cls3",
+      "assignmentScore": 78,
+      "utsScore": 77,
+      "uasScore": 81.6,
+      "finalScore": 79,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s8_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s8",
+      "subjectId": "subj3",
+      "classRoomId": "cls3",
+      "assignmentScore": 79,
+      "utsScore": 78.5,
+      "uasScore": 82.8,
+      "finalScore": 80,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s9_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s9",
+      "subjectId": "subj1",
+      "classRoomId": "cls4",
+      "assignmentScore": 78,
+      "utsScore": 77,
+      "uasScore": 81.6,
+      "finalScore": 79,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s9_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s9",
+      "subjectId": "subj2",
+      "classRoomId": "cls4",
+      "assignmentScore": 79,
+      "utsScore": 78.5,
+      "uasScore": 82.8,
+      "finalScore": 80,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s9_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s9",
+      "subjectId": "subj3",
+      "classRoomId": "cls4",
+      "assignmentScore": 80,
+      "utsScore": 80,
+      "uasScore": 84,
+      "finalScore": 82,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s10_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s10",
+      "subjectId": "subj1",
+      "classRoomId": "cls5",
+      "assignmentScore": 79,
+      "utsScore": 78.5,
+      "uasScore": 82.8,
+      "finalScore": 80,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s10_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s10",
+      "subjectId": "subj2",
+      "classRoomId": "cls5",
+      "assignmentScore": 80,
+      "utsScore": 80,
+      "uasScore": 84,
+      "finalScore": 82,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s10_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s10",
+      "subjectId": "subj3",
+      "classRoomId": "cls5",
+      "assignmentScore": 81,
+      "utsScore": 81.5,
+      "uasScore": 85.2,
+      "finalScore": 83,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s11_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s11",
+      "subjectId": "subj1",
+      "classRoomId": "cls6",
+      "assignmentScore": 80,
+      "utsScore": 80,
+      "uasScore": 84,
+      "finalScore": 82,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s11_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s11",
+      "subjectId": "subj2",
+      "classRoomId": "cls6",
+      "assignmentScore": 81,
+      "utsScore": 81.5,
+      "uasScore": 85.2,
+      "finalScore": 83,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s11_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s11",
+      "subjectId": "subj3",
+      "classRoomId": "cls6",
+      "assignmentScore": 82,
+      "utsScore": 83,
+      "uasScore": 86.4,
+      "finalScore": 84,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s12_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s12",
+      "subjectId": "subj1",
+      "classRoomId": "cls1",
+      "assignmentScore": 81,
+      "utsScore": 81.5,
+      "uasScore": 85.2,
+      "finalScore": 83,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s12_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s12",
+      "subjectId": "subj2",
+      "classRoomId": "cls1",
+      "assignmentScore": 82,
+      "utsScore": 83,
+      "uasScore": 86.4,
+      "finalScore": 84,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s12_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s12",
+      "subjectId": "subj3",
+      "classRoomId": "cls1",
+      "assignmentScore": 83,
+      "utsScore": 84.5,
+      "uasScore": 87.6,
+      "finalScore": 85,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s13_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s13",
+      "subjectId": "subj1",
+      "classRoomId": "cls2",
+      "assignmentScore": 82,
+      "utsScore": 83,
+      "uasScore": 86.4,
+      "finalScore": 84,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s13_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s13",
+      "subjectId": "subj2",
+      "classRoomId": "cls2",
+      "assignmentScore": 83,
+      "utsScore": 84.5,
+      "uasScore": 87.6,
+      "finalScore": 85,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s13_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s13",
+      "subjectId": "subj3",
+      "classRoomId": "cls2",
+      "assignmentScore": 84,
+      "utsScore": 86,
+      "uasScore": 88.8,
+      "finalScore": 87,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s14_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s14",
+      "subjectId": "subj1",
+      "classRoomId": "cls3",
+      "assignmentScore": 83,
+      "utsScore": 84.5,
+      "uasScore": 87.6,
+      "finalScore": 85,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s14_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s14",
+      "subjectId": "subj2",
+      "classRoomId": "cls3",
+      "assignmentScore": 84,
+      "utsScore": 86,
+      "uasScore": 88.8,
+      "finalScore": 87,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s14_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s14",
+      "subjectId": "subj3",
+      "classRoomId": "cls3",
+      "assignmentScore": 70,
+      "utsScore": 65,
+      "uasScore": 72,
+      "finalScore": 69,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s15_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s15",
+      "subjectId": "subj1",
+      "classRoomId": "cls4",
+      "assignmentScore": 84,
+      "utsScore": 86,
+      "uasScore": 88.8,
+      "finalScore": 87,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s15_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s15",
+      "subjectId": "subj2",
+      "classRoomId": "cls4",
+      "assignmentScore": 70,
+      "utsScore": 65,
+      "uasScore": 72,
+      "finalScore": 69,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s15_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s15",
+      "subjectId": "subj3",
+      "classRoomId": "cls4",
+      "assignmentScore": 71,
+      "utsScore": 66.5,
+      "uasScore": 73.2,
+      "finalScore": 71,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s16_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s16",
+      "subjectId": "subj1",
+      "classRoomId": "cls5",
+      "assignmentScore": 70,
+      "utsScore": 65,
+      "uasScore": 72,
+      "finalScore": 69,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s16_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s16",
+      "subjectId": "subj2",
+      "classRoomId": "cls5",
+      "assignmentScore": 71,
+      "utsScore": 66.5,
+      "uasScore": 73.2,
+      "finalScore": 71,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s16_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s16",
+      "subjectId": "subj3",
+      "classRoomId": "cls5",
+      "assignmentScore": 72,
+      "utsScore": 68,
+      "uasScore": 74.4,
+      "finalScore": 72,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s17_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s17",
+      "subjectId": "subj1",
+      "classRoomId": "cls6",
+      "assignmentScore": 71,
+      "utsScore": 66.5,
+      "uasScore": 73.2,
+      "finalScore": 71,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s17_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s17",
+      "subjectId": "subj2",
+      "classRoomId": "cls6",
+      "assignmentScore": 72,
+      "utsScore": 68,
+      "uasScore": 74.4,
+      "finalScore": 72,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s17_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s17",
+      "subjectId": "subj3",
+      "classRoomId": "cls6",
+      "assignmentScore": 73,
+      "utsScore": 69.5,
+      "uasScore": 75.6,
+      "finalScore": 73,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s18_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s18",
+      "subjectId": "subj1",
+      "classRoomId": "cls1",
+      "assignmentScore": 72,
+      "utsScore": 68,
+      "uasScore": 74.4,
+      "finalScore": 72,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s18_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s18",
+      "subjectId": "subj2",
+      "classRoomId": "cls1",
+      "assignmentScore": 73,
+      "utsScore": 69.5,
+      "uasScore": 75.6,
+      "finalScore": 73,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s18_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s18",
+      "subjectId": "subj3",
+      "classRoomId": "cls1",
+      "assignmentScore": 74,
+      "utsScore": 71,
+      "uasScore": 76.8,
+      "finalScore": 74,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s19_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s19",
+      "subjectId": "subj1",
+      "classRoomId": "cls2",
+      "assignmentScore": 73,
+      "utsScore": 69.5,
+      "uasScore": 75.6,
+      "finalScore": 73,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s19_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s19",
+      "subjectId": "subj2",
+      "classRoomId": "cls2",
+      "assignmentScore": 74,
+      "utsScore": 71,
+      "uasScore": 76.8,
+      "finalScore": 74,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s19_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s19",
+      "subjectId": "subj3",
+      "classRoomId": "cls2",
+      "assignmentScore": 75,
+      "utsScore": 72.5,
+      "uasScore": 78,
+      "finalScore": 75,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s20_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s20",
+      "subjectId": "subj1",
+      "classRoomId": "cls3",
+      "assignmentScore": 74,
+      "utsScore": 71,
+      "uasScore": 76.8,
+      "finalScore": 74,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s20_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s20",
+      "subjectId": "subj2",
+      "classRoomId": "cls3",
+      "assignmentScore": 75,
+      "utsScore": 72.5,
+      "uasScore": 78,
+      "finalScore": 75,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s20_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s20",
+      "subjectId": "subj3",
+      "classRoomId": "cls3",
+      "assignmentScore": 76,
+      "utsScore": 74,
+      "uasScore": 79.2,
+      "finalScore": 77,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s21_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s21",
+      "subjectId": "subj1",
+      "classRoomId": "cls4",
+      "assignmentScore": 75,
+      "utsScore": 72.5,
+      "uasScore": 78,
+      "finalScore": 75,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s21_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s21",
+      "subjectId": "subj2",
+      "classRoomId": "cls4",
+      "assignmentScore": 76,
+      "utsScore": 74,
+      "uasScore": 79.2,
+      "finalScore": 77,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s21_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s21",
+      "subjectId": "subj3",
+      "classRoomId": "cls4",
+      "assignmentScore": 77,
+      "utsScore": 75.5,
+      "uasScore": 80.4,
+      "finalScore": 78,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s22_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s22",
+      "subjectId": "subj1",
+      "classRoomId": "cls5",
+      "assignmentScore": 76,
+      "utsScore": 74,
+      "uasScore": 79.2,
+      "finalScore": 77,
+      "gradeLetter": "C",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s22_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s22",
+      "subjectId": "subj2",
+      "classRoomId": "cls5",
+      "assignmentScore": 77,
+      "utsScore": 75.5,
+      "uasScore": 80.4,
+      "finalScore": 78,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s22_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s22",
+      "subjectId": "subj3",
+      "classRoomId": "cls5",
+      "assignmentScore": 78,
+      "utsScore": 77,
+      "uasScore": 81.6,
+      "finalScore": 79,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s23_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s23",
+      "subjectId": "subj1",
+      "classRoomId": "cls6",
+      "assignmentScore": 77,
+      "utsScore": 75.5,
+      "uasScore": 80.4,
+      "finalScore": 78,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s23_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s23",
+      "subjectId": "subj2",
+      "classRoomId": "cls6",
+      "assignmentScore": 78,
+      "utsScore": 77,
+      "uasScore": 81.6,
+      "finalScore": 79,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s23_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s23",
+      "subjectId": "subj3",
+      "classRoomId": "cls6",
+      "assignmentScore": 79,
+      "utsScore": 78.5,
+      "uasScore": 82.8,
+      "finalScore": 80,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s24_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s24",
+      "subjectId": "subj1",
+      "classRoomId": "cls1",
+      "assignmentScore": 78,
+      "utsScore": 77,
+      "uasScore": 81.6,
+      "finalScore": 79,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s24_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s24",
+      "subjectId": "subj2",
+      "classRoomId": "cls1",
+      "assignmentScore": 79,
+      "utsScore": 78.5,
+      "uasScore": 82.8,
+      "finalScore": 80,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s24_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s24",
+      "subjectId": "subj3",
+      "classRoomId": "cls1",
+      "assignmentScore": 80,
+      "utsScore": 80,
+      "uasScore": 84,
+      "finalScore": 82,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s25_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s25",
+      "subjectId": "subj1",
+      "classRoomId": "cls2",
+      "assignmentScore": 79,
+      "utsScore": 78.5,
+      "uasScore": 82.8,
+      "finalScore": 80,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s25_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s25",
+      "subjectId": "subj2",
+      "classRoomId": "cls2",
+      "assignmentScore": 80,
+      "utsScore": 80,
+      "uasScore": 84,
+      "finalScore": 82,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s25_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s25",
+      "subjectId": "subj3",
+      "classRoomId": "cls2",
+      "assignmentScore": 81,
+      "utsScore": 81.5,
+      "uasScore": 85.2,
+      "finalScore": 83,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s26_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s26",
+      "subjectId": "subj1",
+      "classRoomId": "cls3",
+      "assignmentScore": 80,
+      "utsScore": 80,
+      "uasScore": 84,
+      "finalScore": 82,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s26_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s26",
+      "subjectId": "subj2",
+      "classRoomId": "cls3",
+      "assignmentScore": 81,
+      "utsScore": 81.5,
+      "uasScore": 85.2,
+      "finalScore": 83,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s26_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s26",
+      "subjectId": "subj3",
+      "classRoomId": "cls3",
+      "assignmentScore": 82,
+      "utsScore": 83,
+      "uasScore": 86.4,
+      "finalScore": 84,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s27_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s27",
+      "subjectId": "subj1",
+      "classRoomId": "cls4",
+      "assignmentScore": 81,
+      "utsScore": 81.5,
+      "uasScore": 85.2,
+      "finalScore": 83,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s27_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s27",
+      "subjectId": "subj2",
+      "classRoomId": "cls4",
+      "assignmentScore": 82,
+      "utsScore": 83,
+      "uasScore": 86.4,
+      "finalScore": 84,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s27_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s27",
+      "subjectId": "subj3",
+      "classRoomId": "cls4",
+      "assignmentScore": 83,
+      "utsScore": 84.5,
+      "uasScore": 87.6,
+      "finalScore": 85,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s28_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s28",
+      "subjectId": "subj1",
+      "classRoomId": "cls5",
+      "assignmentScore": 82,
+      "utsScore": 83,
+      "uasScore": 86.4,
+      "finalScore": 84,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s28_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s28",
+      "subjectId": "subj2",
+      "classRoomId": "cls5",
+      "assignmentScore": 83,
+      "utsScore": 84.5,
+      "uasScore": 87.6,
+      "finalScore": 85,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s28_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s28",
+      "subjectId": "subj3",
+      "classRoomId": "cls5",
+      "assignmentScore": 84,
+      "utsScore": 86,
+      "uasScore": 88.8,
+      "finalScore": 87,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s29_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s29",
+      "subjectId": "subj1",
+      "classRoomId": "cls6",
+      "assignmentScore": 83,
+      "utsScore": 84.5,
+      "uasScore": 87.6,
+      "finalScore": 85,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s29_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s29",
+      "subjectId": "subj2",
+      "classRoomId": "cls6",
+      "assignmentScore": 84,
+      "utsScore": 86,
+      "uasScore": 88.8,
+      "finalScore": 87,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s29_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s29",
+      "subjectId": "subj3",
+      "classRoomId": "cls6",
+      "assignmentScore": 70,
+      "utsScore": 65,
+      "uasScore": 72,
+      "finalScore": 69,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s30_subj1",
+      "academicYearId": "ay1",
+      "studentId": "s30",
+      "subjectId": "subj1",
+      "classRoomId": "cls1",
+      "assignmentScore": 84,
+      "utsScore": 86,
+      "uasScore": 88.8,
+      "finalScore": 87,
+      "gradeLetter": "B",
+      "notes": "Sangat Baik, tingkatkan prestasi."
+    },
+    {
+      "id": "g_s30_subj2",
+      "academicYearId": "ay1",
+      "studentId": "s30",
+      "subjectId": "subj2",
+      "classRoomId": "cls1",
+      "assignmentScore": 70,
+      "utsScore": 65,
+      "uasScore": 72,
+      "finalScore": 69,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    },
+    {
+      "id": "g_s30_subj3",
+      "academicYearId": "ay1",
+      "studentId": "s30",
+      "subjectId": "subj3",
+      "classRoomId": "cls1",
+      "assignmentScore": 71,
+      "utsScore": 66.5,
+      "uasScore": 73.2,
+      "finalScore": 71,
+      "gradeLetter": "C",
+      "notes": "Perlu bimbingan dan latihan mandiri."
+    }
+  ],
+  "attendances": [
+    {
+      "id": "att_s1_2026-07-13",
+      "classRoomId": "cls2",
+      "date": "2026-07-13",
+      "studentId": "s1",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s2_2026-07-13",
+      "classRoomId": "cls3",
+      "date": "2026-07-13",
+      "studentId": "s2",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s3_2026-07-13",
+      "classRoomId": "cls4",
+      "date": "2026-07-13",
+      "studentId": "s3",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s4_2026-07-13",
+      "classRoomId": "cls5",
+      "date": "2026-07-13",
+      "studentId": "s4",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s5_2026-07-13",
+      "classRoomId": "cls6",
+      "date": "2026-07-13",
+      "studentId": "s5",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s6_2026-07-13",
+      "classRoomId": "cls1",
+      "date": "2026-07-13",
+      "studentId": "s6",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s7_2026-07-13",
+      "classRoomId": "cls2",
+      "date": "2026-07-13",
+      "studentId": "s7",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s8_2026-07-13",
+      "classRoomId": "cls3",
+      "date": "2026-07-13",
+      "studentId": "s8",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s9_2026-07-13",
+      "classRoomId": "cls4",
+      "date": "2026-07-13",
+      "studentId": "s9",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s10_2026-07-13",
+      "classRoomId": "cls5",
+      "date": "2026-07-13",
+      "studentId": "s10",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s11_2026-07-13",
+      "classRoomId": "cls6",
+      "date": "2026-07-13",
+      "studentId": "s11",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s12_2026-07-13",
+      "classRoomId": "cls1",
+      "date": "2026-07-13",
+      "studentId": "s12",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s13_2026-07-13",
+      "classRoomId": "cls2",
+      "date": "2026-07-13",
+      "studentId": "s13",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s14_2026-07-13",
+      "classRoomId": "cls3",
+      "date": "2026-07-13",
+      "studentId": "s14",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s15_2026-07-13",
+      "classRoomId": "cls4",
+      "date": "2026-07-13",
+      "studentId": "s15",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s16_2026-07-13",
+      "classRoomId": "cls5",
+      "date": "2026-07-13",
+      "studentId": "s16",
+      "status": "Sakit",
+      "notes": "Demam"
+    },
+    {
+      "id": "att_s17_2026-07-13",
+      "classRoomId": "cls6",
+      "date": "2026-07-13",
+      "studentId": "s17",
+      "status": "Izin",
+      "notes": "Acara keluarga"
+    },
+    {
+      "id": "att_s18_2026-07-13",
+      "classRoomId": "cls1",
+      "date": "2026-07-13",
+      "studentId": "s18",
+      "status": "Alpa",
+      "notes": "Tanpa keterangan"
+    },
+    {
+      "id": "att_s19_2026-07-13",
+      "classRoomId": "cls2",
+      "date": "2026-07-13",
+      "studentId": "s19",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s20_2026-07-13",
+      "classRoomId": "cls3",
+      "date": "2026-07-13",
+      "studentId": "s20",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s21_2026-07-13",
+      "classRoomId": "cls4",
+      "date": "2026-07-13",
+      "studentId": "s21",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s22_2026-07-13",
+      "classRoomId": "cls5",
+      "date": "2026-07-13",
+      "studentId": "s22",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s23_2026-07-13",
+      "classRoomId": "cls6",
+      "date": "2026-07-13",
+      "studentId": "s23",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s24_2026-07-13",
+      "classRoomId": "cls1",
+      "date": "2026-07-13",
+      "studentId": "s24",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s25_2026-07-13",
+      "classRoomId": "cls2",
+      "date": "2026-07-13",
+      "studentId": "s25",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s26_2026-07-13",
+      "classRoomId": "cls3",
+      "date": "2026-07-13",
+      "studentId": "s26",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s27_2026-07-13",
+      "classRoomId": "cls4",
+      "date": "2026-07-13",
+      "studentId": "s27",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s28_2026-07-13",
+      "classRoomId": "cls5",
+      "date": "2026-07-13",
+      "studentId": "s28",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s29_2026-07-13",
+      "classRoomId": "cls6",
+      "date": "2026-07-13",
+      "studentId": "s29",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s30_2026-07-13",
+      "classRoomId": "cls1",
+      "date": "2026-07-13",
+      "studentId": "s30",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s1_2026-07-14",
+      "classRoomId": "cls2",
+      "date": "2026-07-14",
+      "studentId": "s1",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s2_2026-07-14",
+      "classRoomId": "cls3",
+      "date": "2026-07-14",
+      "studentId": "s2",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s3_2026-07-14",
+      "classRoomId": "cls4",
+      "date": "2026-07-14",
+      "studentId": "s3",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s4_2026-07-14",
+      "classRoomId": "cls5",
+      "date": "2026-07-14",
+      "studentId": "s4",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s5_2026-07-14",
+      "classRoomId": "cls6",
+      "date": "2026-07-14",
+      "studentId": "s5",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s6_2026-07-14",
+      "classRoomId": "cls1",
+      "date": "2026-07-14",
+      "studentId": "s6",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s7_2026-07-14",
+      "classRoomId": "cls2",
+      "date": "2026-07-14",
+      "studentId": "s7",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s8_2026-07-14",
+      "classRoomId": "cls3",
+      "date": "2026-07-14",
+      "studentId": "s8",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s9_2026-07-14",
+      "classRoomId": "cls4",
+      "date": "2026-07-14",
+      "studentId": "s9",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s10_2026-07-14",
+      "classRoomId": "cls5",
+      "date": "2026-07-14",
+      "studentId": "s10",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s11_2026-07-14",
+      "classRoomId": "cls6",
+      "date": "2026-07-14",
+      "studentId": "s11",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s12_2026-07-14",
+      "classRoomId": "cls1",
+      "date": "2026-07-14",
+      "studentId": "s12",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s13_2026-07-14",
+      "classRoomId": "cls2",
+      "date": "2026-07-14",
+      "studentId": "s13",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s14_2026-07-14",
+      "classRoomId": "cls3",
+      "date": "2026-07-14",
+      "studentId": "s14",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s15_2026-07-14",
+      "classRoomId": "cls4",
+      "date": "2026-07-14",
+      "studentId": "s15",
+      "status": "Sakit",
+      "notes": "Demam"
+    },
+    {
+      "id": "att_s16_2026-07-14",
+      "classRoomId": "cls5",
+      "date": "2026-07-14",
+      "studentId": "s16",
+      "status": "Izin",
+      "notes": "Acara keluarga"
+    },
+    {
+      "id": "att_s17_2026-07-14",
+      "classRoomId": "cls6",
+      "date": "2026-07-14",
+      "studentId": "s17",
+      "status": "Alpa",
+      "notes": "Tanpa keterangan"
+    },
+    {
+      "id": "att_s18_2026-07-14",
+      "classRoomId": "cls1",
+      "date": "2026-07-14",
+      "studentId": "s18",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s19_2026-07-14",
+      "classRoomId": "cls2",
+      "date": "2026-07-14",
+      "studentId": "s19",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s20_2026-07-14",
+      "classRoomId": "cls3",
+      "date": "2026-07-14",
+      "studentId": "s20",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s21_2026-07-14",
+      "classRoomId": "cls4",
+      "date": "2026-07-14",
+      "studentId": "s21",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s22_2026-07-14",
+      "classRoomId": "cls5",
+      "date": "2026-07-14",
+      "studentId": "s22",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s23_2026-07-14",
+      "classRoomId": "cls6",
+      "date": "2026-07-14",
+      "studentId": "s23",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s24_2026-07-14",
+      "classRoomId": "cls1",
+      "date": "2026-07-14",
+      "studentId": "s24",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s25_2026-07-14",
+      "classRoomId": "cls2",
+      "date": "2026-07-14",
+      "studentId": "s25",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s26_2026-07-14",
+      "classRoomId": "cls3",
+      "date": "2026-07-14",
+      "studentId": "s26",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s27_2026-07-14",
+      "classRoomId": "cls4",
+      "date": "2026-07-14",
+      "studentId": "s27",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s28_2026-07-14",
+      "classRoomId": "cls5",
+      "date": "2026-07-14",
+      "studentId": "s28",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s29_2026-07-14",
+      "classRoomId": "cls6",
+      "date": "2026-07-14",
+      "studentId": "s29",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s30_2026-07-14",
+      "classRoomId": "cls1",
+      "date": "2026-07-14",
+      "studentId": "s30",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s1_2026-07-15",
+      "classRoomId": "cls2",
+      "date": "2026-07-15",
+      "studentId": "s1",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s2_2026-07-15",
+      "classRoomId": "cls3",
+      "date": "2026-07-15",
+      "studentId": "s2",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s3_2026-07-15",
+      "classRoomId": "cls4",
+      "date": "2026-07-15",
+      "studentId": "s3",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s4_2026-07-15",
+      "classRoomId": "cls5",
+      "date": "2026-07-15",
+      "studentId": "s4",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s5_2026-07-15",
+      "classRoomId": "cls6",
+      "date": "2026-07-15",
+      "studentId": "s5",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s6_2026-07-15",
+      "classRoomId": "cls1",
+      "date": "2026-07-15",
+      "studentId": "s6",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s7_2026-07-15",
+      "classRoomId": "cls2",
+      "date": "2026-07-15",
+      "studentId": "s7",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s8_2026-07-15",
+      "classRoomId": "cls3",
+      "date": "2026-07-15",
+      "studentId": "s8",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s9_2026-07-15",
+      "classRoomId": "cls4",
+      "date": "2026-07-15",
+      "studentId": "s9",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s10_2026-07-15",
+      "classRoomId": "cls5",
+      "date": "2026-07-15",
+      "studentId": "s10",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s11_2026-07-15",
+      "classRoomId": "cls6",
+      "date": "2026-07-15",
+      "studentId": "s11",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s12_2026-07-15",
+      "classRoomId": "cls1",
+      "date": "2026-07-15",
+      "studentId": "s12",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s13_2026-07-15",
+      "classRoomId": "cls2",
+      "date": "2026-07-15",
+      "studentId": "s13",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s14_2026-07-15",
+      "classRoomId": "cls3",
+      "date": "2026-07-15",
+      "studentId": "s14",
+      "status": "Sakit",
+      "notes": "Demam"
+    },
+    {
+      "id": "att_s15_2026-07-15",
+      "classRoomId": "cls4",
+      "date": "2026-07-15",
+      "studentId": "s15",
+      "status": "Izin",
+      "notes": "Acara keluarga"
+    },
+    {
+      "id": "att_s16_2026-07-15",
+      "classRoomId": "cls5",
+      "date": "2026-07-15",
+      "studentId": "s16",
+      "status": "Alpa",
+      "notes": "Tanpa keterangan"
+    },
+    {
+      "id": "att_s17_2026-07-15",
+      "classRoomId": "cls6",
+      "date": "2026-07-15",
+      "studentId": "s17",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s18_2026-07-15",
+      "classRoomId": "cls1",
+      "date": "2026-07-15",
+      "studentId": "s18",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s19_2026-07-15",
+      "classRoomId": "cls2",
+      "date": "2026-07-15",
+      "studentId": "s19",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s20_2026-07-15",
+      "classRoomId": "cls3",
+      "date": "2026-07-15",
+      "studentId": "s20",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s21_2026-07-15",
+      "classRoomId": "cls4",
+      "date": "2026-07-15",
+      "studentId": "s21",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s22_2026-07-15",
+      "classRoomId": "cls5",
+      "date": "2026-07-15",
+      "studentId": "s22",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s23_2026-07-15",
+      "classRoomId": "cls6",
+      "date": "2026-07-15",
+      "studentId": "s23",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s24_2026-07-15",
+      "classRoomId": "cls1",
+      "date": "2026-07-15",
+      "studentId": "s24",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s25_2026-07-15",
+      "classRoomId": "cls2",
+      "date": "2026-07-15",
+      "studentId": "s25",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s26_2026-07-15",
+      "classRoomId": "cls3",
+      "date": "2026-07-15",
+      "studentId": "s26",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s27_2026-07-15",
+      "classRoomId": "cls4",
+      "date": "2026-07-15",
+      "studentId": "s27",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s28_2026-07-15",
+      "classRoomId": "cls5",
+      "date": "2026-07-15",
+      "studentId": "s28",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s29_2026-07-15",
+      "classRoomId": "cls6",
+      "date": "2026-07-15",
+      "studentId": "s29",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s30_2026-07-15",
+      "classRoomId": "cls1",
+      "date": "2026-07-15",
+      "studentId": "s30",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s1_2026-07-16",
+      "classRoomId": "cls2",
+      "date": "2026-07-16",
+      "studentId": "s1",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s2_2026-07-16",
+      "classRoomId": "cls3",
+      "date": "2026-07-16",
+      "studentId": "s2",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s3_2026-07-16",
+      "classRoomId": "cls4",
+      "date": "2026-07-16",
+      "studentId": "s3",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s4_2026-07-16",
+      "classRoomId": "cls5",
+      "date": "2026-07-16",
+      "studentId": "s4",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s5_2026-07-16",
+      "classRoomId": "cls6",
+      "date": "2026-07-16",
+      "studentId": "s5",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s6_2026-07-16",
+      "classRoomId": "cls1",
+      "date": "2026-07-16",
+      "studentId": "s6",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s7_2026-07-16",
+      "classRoomId": "cls2",
+      "date": "2026-07-16",
+      "studentId": "s7",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s8_2026-07-16",
+      "classRoomId": "cls3",
+      "date": "2026-07-16",
+      "studentId": "s8",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s9_2026-07-16",
+      "classRoomId": "cls4",
+      "date": "2026-07-16",
+      "studentId": "s9",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s10_2026-07-16",
+      "classRoomId": "cls5",
+      "date": "2026-07-16",
+      "studentId": "s10",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s11_2026-07-16",
+      "classRoomId": "cls6",
+      "date": "2026-07-16",
+      "studentId": "s11",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s12_2026-07-16",
+      "classRoomId": "cls1",
+      "date": "2026-07-16",
+      "studentId": "s12",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s13_2026-07-16",
+      "classRoomId": "cls2",
+      "date": "2026-07-16",
+      "studentId": "s13",
+      "status": "Sakit",
+      "notes": "Demam"
+    },
+    {
+      "id": "att_s14_2026-07-16",
+      "classRoomId": "cls3",
+      "date": "2026-07-16",
+      "studentId": "s14",
+      "status": "Izin",
+      "notes": "Acara keluarga"
+    },
+    {
+      "id": "att_s15_2026-07-16",
+      "classRoomId": "cls4",
+      "date": "2026-07-16",
+      "studentId": "s15",
+      "status": "Alpa",
+      "notes": "Tanpa keterangan"
+    },
+    {
+      "id": "att_s16_2026-07-16",
+      "classRoomId": "cls5",
+      "date": "2026-07-16",
+      "studentId": "s16",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s17_2026-07-16",
+      "classRoomId": "cls6",
+      "date": "2026-07-16",
+      "studentId": "s17",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s18_2026-07-16",
+      "classRoomId": "cls1",
+      "date": "2026-07-16",
+      "studentId": "s18",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s19_2026-07-16",
+      "classRoomId": "cls2",
+      "date": "2026-07-16",
+      "studentId": "s19",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s20_2026-07-16",
+      "classRoomId": "cls3",
+      "date": "2026-07-16",
+      "studentId": "s20",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s21_2026-07-16",
+      "classRoomId": "cls4",
+      "date": "2026-07-16",
+      "studentId": "s21",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s22_2026-07-16",
+      "classRoomId": "cls5",
+      "date": "2026-07-16",
+      "studentId": "s22",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s23_2026-07-16",
+      "classRoomId": "cls6",
+      "date": "2026-07-16",
+      "studentId": "s23",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s24_2026-07-16",
+      "classRoomId": "cls1",
+      "date": "2026-07-16",
+      "studentId": "s24",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s25_2026-07-16",
+      "classRoomId": "cls2",
+      "date": "2026-07-16",
+      "studentId": "s25",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s26_2026-07-16",
+      "classRoomId": "cls3",
+      "date": "2026-07-16",
+      "studentId": "s26",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s27_2026-07-16",
+      "classRoomId": "cls4",
+      "date": "2026-07-16",
+      "studentId": "s27",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s28_2026-07-16",
+      "classRoomId": "cls5",
+      "date": "2026-07-16",
+      "studentId": "s28",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s29_2026-07-16",
+      "classRoomId": "cls6",
+      "date": "2026-07-16",
+      "studentId": "s29",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s30_2026-07-16",
+      "classRoomId": "cls1",
+      "date": "2026-07-16",
+      "studentId": "s30",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s1_2026-07-17",
+      "classRoomId": "cls2",
+      "date": "2026-07-17",
+      "studentId": "s1",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s2_2026-07-17",
+      "classRoomId": "cls3",
+      "date": "2026-07-17",
+      "studentId": "s2",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s3_2026-07-17",
+      "classRoomId": "cls4",
+      "date": "2026-07-17",
+      "studentId": "s3",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s4_2026-07-17",
+      "classRoomId": "cls5",
+      "date": "2026-07-17",
+      "studentId": "s4",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s5_2026-07-17",
+      "classRoomId": "cls6",
+      "date": "2026-07-17",
+      "studentId": "s5",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s6_2026-07-17",
+      "classRoomId": "cls1",
+      "date": "2026-07-17",
+      "studentId": "s6",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s7_2026-07-17",
+      "classRoomId": "cls2",
+      "date": "2026-07-17",
+      "studentId": "s7",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s8_2026-07-17",
+      "classRoomId": "cls3",
+      "date": "2026-07-17",
+      "studentId": "s8",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s9_2026-07-17",
+      "classRoomId": "cls4",
+      "date": "2026-07-17",
+      "studentId": "s9",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s10_2026-07-17",
+      "classRoomId": "cls5",
+      "date": "2026-07-17",
+      "studentId": "s10",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s11_2026-07-17",
+      "classRoomId": "cls6",
+      "date": "2026-07-17",
+      "studentId": "s11",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s12_2026-07-17",
+      "classRoomId": "cls1",
+      "date": "2026-07-17",
+      "studentId": "s12",
+      "status": "Sakit",
+      "notes": "Demam"
+    },
+    {
+      "id": "att_s13_2026-07-17",
+      "classRoomId": "cls2",
+      "date": "2026-07-17",
+      "studentId": "s13",
+      "status": "Izin",
+      "notes": "Acara keluarga"
+    },
+    {
+      "id": "att_s14_2026-07-17",
+      "classRoomId": "cls3",
+      "date": "2026-07-17",
+      "studentId": "s14",
+      "status": "Alpa",
+      "notes": "Tanpa keterangan"
+    },
+    {
+      "id": "att_s15_2026-07-17",
+      "classRoomId": "cls4",
+      "date": "2026-07-17",
+      "studentId": "s15",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s16_2026-07-17",
+      "classRoomId": "cls5",
+      "date": "2026-07-17",
+      "studentId": "s16",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s17_2026-07-17",
+      "classRoomId": "cls6",
+      "date": "2026-07-17",
+      "studentId": "s17",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s18_2026-07-17",
+      "classRoomId": "cls1",
+      "date": "2026-07-17",
+      "studentId": "s18",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s19_2026-07-17",
+      "classRoomId": "cls2",
+      "date": "2026-07-17",
+      "studentId": "s19",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s20_2026-07-17",
+      "classRoomId": "cls3",
+      "date": "2026-07-17",
+      "studentId": "s20",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s21_2026-07-17",
+      "classRoomId": "cls4",
+      "date": "2026-07-17",
+      "studentId": "s21",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s22_2026-07-17",
+      "classRoomId": "cls5",
+      "date": "2026-07-17",
+      "studentId": "s22",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s23_2026-07-17",
+      "classRoomId": "cls6",
+      "date": "2026-07-17",
+      "studentId": "s23",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s24_2026-07-17",
+      "classRoomId": "cls1",
+      "date": "2026-07-17",
+      "studentId": "s24",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s25_2026-07-17",
+      "classRoomId": "cls2",
+      "date": "2026-07-17",
+      "studentId": "s25",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s26_2026-07-17",
+      "classRoomId": "cls3",
+      "date": "2026-07-17",
+      "studentId": "s26",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s27_2026-07-17",
+      "classRoomId": "cls4",
+      "date": "2026-07-17",
+      "studentId": "s27",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s28_2026-07-17",
+      "classRoomId": "cls5",
+      "date": "2026-07-17",
+      "studentId": "s28",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s29_2026-07-17",
+      "classRoomId": "cls6",
+      "date": "2026-07-17",
+      "studentId": "s29",
+      "status": "Hadir",
+      "notes": ""
+    },
+    {
+      "id": "att_s30_2026-07-17",
+      "classRoomId": "cls1",
+      "date": "2026-07-17",
+      "studentId": "s30",
+      "status": "Hadir",
+      "notes": ""
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann1",
+      "title": "Ujian Tengah Semester (UTS) Ganjil T.A 2025/2026",
+      "content": "Diberitahukan kepada seluruh siswa/siswi SMAN 1 Nusantara bahwa Pelaksanaan UTS Ganjil akan diselenggarakan mulai tanggal 22 September 2025 s.d 29 September 2025. Jadwal ujian lengkap dapat diunduh di papan dokumen sekolah. Pastikan kartu ujian telah dicetak dan tertib administrasi keuangan.",
+      "type": "important",
+      "date": "2026-07-15",
+      "author": "Humas Sekolah",
+      "targetRole": "all"
+    },
+    {
+      "id": "ann2",
+      "title": "Rapat Koordinasi Guru dan Staf Akademik",
+      "content": "Undangan kepada seluruh jajaran pendidik dan tenaga kependidikan untuk menghadiri rapat pleno persiapan kurikulum merdeka semester genap. Rapat diselenggarakan pada hari Sabtu, 25 Juli 2026 pukul 09.00 WIB s.d Selesai bertempat di Aula Pertemuan Utama.",
+      "type": "info",
+      "date": "2026-07-17",
+      "author": "Kepala Sekolah",
+      "targetRole": "guru"
+    },
+    {
+      "id": "ann3",
+      "title": "Lomba Bulan Bahasa & Seni Kreatif 2026",
+      "content": "Menyambut Bulan Bahasa, OSIS SMA Negeri 1 Nusantara mengadakan kompetisi seni antar kelas, meliputi: Cipta & Baca Puisi, Musikalisasi Puisi, Debat Bahasa Indonesia, dan Stand Up Comedy. Pendaftaran ditutup pada 10 Oktober 2026. Hubungi panitia OSIS untuk info pendaftaran.",
+      "type": "warning",
+      "date": "2026-07-18",
+      "author": "Pembina OSIS",
+      "targetRole": "siswa"
+    }
+  ],
+  "news": [
+    {
+      "id": "news1",
+      "title": "Siswa SMAN 1 Nusantara Sabet Emas Olimpiade Sains Nasional 2025",
+      "summary": "Kabar membanggakan datang dari bidang Fisika dan Astronomi. Dua siswa SMAN 1 Nusantara berhasil menyabet medali emas di ajang OSN tingkat nasional.",
+      "content": "Prestasi gemilang kembali ditorehkan oleh siswa-siswi terbaik SMA Negeri 1 Nusantara di tingkat nasional. Dalam ajang Olimpiade Sains Nasional (OSN) 2025 yang diselenggarakan di Bandung, kontingen sekolah berhasil menyumbangkan 2 Medali Emas untuk kategori Fisika dan Astronomi.\n\nSiswa tersebut adalah Muhammad Rian (Kelas XII MIPA 1) di cabang Fisika dan Citra Lestari (Kelas XI MIPA 1) di cabang Astronomi. Kepala Sekolah Dr. H. Ahmad Wijaya menyatakan kebanggaannya, 'Ini adalah bukti kerja keras siswa, dedikasi guru pembina, serta dukungan penuh dari seluruh wali murid. Semoga pencapaian ini memotivasi adik kelas untuk terus berprestasi.'",
+      "category": "Prestasi",
+      "date": "2026-07-14",
+      "author": "Humas SMAN 1",
+      "image": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=800&auto=format&fit=crop",
+      "slug": "siswa-sman1-sabet-emas-osn-2025"
+    },
+    {
+      "id": "news2",
+      "title": "Peluncuran Laboratorium Bahasa dan Multimedia Digital Baru",
+      "summary": "Sekolah meresmikan Laboratorium Bahasa modern yang dilengkapi sistem interaktif berbasis AI dan headphone berteknologi noise-canceling untuk meningkatkan kompetensi bahasa asing.",
+      "content": "Guna meningkatkan kualitas Kegiatan Belajar Mengajar (KBM) terutama di bidang kompetensi bahasa internasional, SMA Negeri 1 Nusantara secara resmi meluncurkan fasilitas Laboratorium Bahasa & Multimedia Digital teranyar.\n\nFasilitas ini menampung 40 unit komputer berspesifikasi tinggi, dilengkapi dengan headset noise-canceling, dan sistem kontrol multimedia terpusat yang dipegang oleh guru. Melalui fasilitas baru ini, diharapkan siswa dapat berlatih percakapan, mendengarkan, serta presentasi interaktif secara maksimal, mendukung target sekolah sebagai salah satu institusi berwawasan global.",
+      "category": "Fasilitas",
+      "date": "2026-07-16",
+      "author": "Sarpras Sekolah",
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
+      "slug": "peluncuran-lab-bahasa-multimedia-digital"
+    },
+    {
+      "id": "news3",
+      "title": "Penerimaan Peserta Didik Baru (PPDB) Jalur Zonasi Dimulai",
+      "summary": "PPDB SMA Negeri 1 Nusantara tahun pelajaran 2025/2026 resmi dibuka untuk jalur zonasi, afirmasi, dan prestasi. Simak tata cara dan kuotanya di sini.",
+      "content": "Penerimaan Peserta Didik Baru (PPDB) SMA Negeri 1 Nusantara tahun pelajaran 2025/2026 telah dibuka. Proses seleksi tahun ini menggunakan skema kuota Zonasi (50%), Afirmasi (15%), Perpindahan Tugas Orang Tua (5%), dan Jalur Prestasi Akademik/Non-Akademik (30%).\n\nPendaftaran dilakukan secara daring melalui website resmi kami. Sekolah juga menyediakan pos pelayanan bantuan (helpdesk) di aula bagi calon wali murid yang mengalami kendala administrasi pendaftaran online. Proses verifikasi dokumen akan berlangsung ketat untuk memastikan keadilan bagi semua pihak.",
+      "category": "PPDB",
+      "date": "2026-07-18",
+      "author": "Panitia PPDB",
+      "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+      "slug": "ppdb-jalur-zonasi-dimulai"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "title": "Upacara Bendera Peringatan Hari Pendidikan Nasional",
+      "description": "Seluruh jajaran guru dan siswa khidmat mengikuti jalannya upacara Hardiknas di lapangan utama.",
+      "category": "KBM",
+      "image": "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=600&auto=format&fit=crop",
+      "date": "2026-05-02"
+    },
+    {
+      "id": "g2",
+      "title": "Latihan Rutin Tim Basket Sekolah",
+      "description": "Ekstrakurikuler basket putra mempersiapkan fisik untuk turnamen DBL Jakarta Barat.",
+      "category": "Ekstrakurikuler",
+      "image": "https://images.unsplash.com/photo-1519766304817-4f37bda74a27?q=80&w=600&auto=format&fit=crop",
+      "date": "2026-07-10"
+    },
+    {
+      "id": "g3",
+      "title": "Ruang Perpustakaan Taman Bacaan",
+      "description": "Fasilitas perpustakaan yang tenang, nyaman, dan ramah anak dilengkapi ribuan katalog buku cetak & digital.",
+      "category": "Fasilitas",
+      "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600&auto=format&fit=crop",
+      "date": "2026-06-15"
+    },
+    {
+      "id": "g4",
+      "title": "Penyerahan Trophy Juara 1 Paduan Suara",
+      "description": "Tim Paduan Suara SMAN 1 Nusantara merayakan kemenangan kompetisi antar pelajar provinsi.",
+      "category": "Prestasi",
+      "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop",
+      "date": "2026-07-05"
+    },
+    {
+      "id": "g5",
+      "title": "Praktikum Kimia Organik Siswa Kelas XI",
+      "description": "Siswa mengamati reaksi pengendapan zat warna di Laboratorium Kimia didampingi guru.",
+      "category": "KBM",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
+      "date": "2026-07-12"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc1",
+      "name": "Kalender Akademik T.A 2025-2026.pdf",
+      "type": "PDF",
+      "size": "1.4 MB",
+      "fileUrl": "#",
+      "uploadedAt": "2026-07-10"
+    },
+    {
+      "id": "doc2",
+      "name": "Jadwal Lengkap UTS Ganjil 2025.pdf",
+      "type": "PDF",
+      "size": "840 KB",
+      "fileUrl": "#",
+      "uploadedAt": "2026-07-15"
+    },
+    {
+      "id": "doc3",
+      "name": "Formulir Surat Pernyataan PPDB.docx",
+      "type": "DOCX",
+      "size": "220 KB",
+      "fileUrl": "#",
+      "uploadedAt": "2026-07-17"
+    }
+  ],
+  "contactMessages": [
+    {
+      "id": "m1",
+      "name": "Hendra Wijaya",
+      "email": "hendra.w@gmail.com",
+      "subject": "Pertanyaan Kuota Jalur Prestasi",
+      "message": "Selamat siang Bapak/Ibu Panitia PPDB, saya ingin menanyakan mengenai verifikasi berkas sertifikat kejuaraan pencak silat tingkat nasional. Apakah poin piagam tersebut otomatis divalidasi oleh sistem atau harus datang ke sekolah membawa piagam asli? Terima kasih.",
+      "date": "2026-07-17 14:35:00",
+      "status": "unread"
+    },
+    {
+      "id": "m2",
+      "name": "Ratna Sari",
+      "email": "ratna.sari@yahoo.com",
+      "subject": "Sewa Aula Sekolah untuk Acara",
+      "message": "Mohon informasi mengenai prosedur pengajuan peminjaman aula sekolah untuk kegiatan sosial masyarakat kelurahan. Berapa biaya kebersihan dan perizinan yang harus disiapkan? Terima kasih atas tanggapannya.",
+      "date": "2026-07-16 09:12:00",
+      "status": "read"
+    }
+  ],
+  "ppdbRegistrations": [
+    {
+      "id": "p1",
+      "registrationNo": "PPDB2026001",
+      "fullName": "Zahra Amalia",
+      "gender": "Perempuan",
+      "birthPlace": "Jakarta",
+      "birthDate": "2010-05-12",
+      "address": "Jl. Tebet Barat No. 12, Jakarta Selatan",
+      "prevSchool": "SMP Negeri 115 Jakarta",
+      "parentName": "Hendra Amalia",
+      "parentPhone": "08139876543",
+      "email": "zahra.amalia@gmail.com",
+      "status": "pending",
+      "date": "2026-07-18"
+    },
+    {
+      "id": "p2",
+      "registrationNo": "PPDB2026002",
+      "fullName": "Rafi Kurniawan",
+      "gender": "Laki-laki",
+      "birthPlace": "Bandung",
+      "birthDate": "2010-09-22",
+      "address": "Jl. Pancoran Barat No. 3, Jakarta Selatan",
+      "prevSchool": "SMP Negeri 73 Jakarta",
+      "parentName": "Kurniawan",
+      "parentPhone": "08129876544",
+      "email": "rafi.kurniawan@gmail.com",
+      "status": "approved",
+      "date": "2026-07-17"
+    },
+    {
+      "id": "p3",
+      "registrationNo": "PPDB2026003",
+      "fullName": "Farhan Mahendra",
+      "gender": "Laki-laki",
+      "birthPlace": "Depok",
+      "birthDate": "2010-02-05",
+      "address": "Jl. Jagakarsa No. 44, Jakarta Selatan",
+      "prevSchool": "SMP Swasta Al-Azhar 2",
+      "parentName": "Bambang Mahendra",
+      "parentPhone": "08159876545",
+      "email": "farhan.mahe@gmail.com",
+      "status": "rejected",
+      "date": "2026-07-16"
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "log1",
+      "username": "superadmin",
+      "role": "super_admin",
+      "action": "Login ke sistem",
+      "ipAddress": "192.168.1.1",
+      "userAgent": "Mozilla/5.0 Chrome/121.0.0",
+      "timestamp": "2026-07-18 23:30:11"
+    },
+    {
+      "id": "log2",
+      "username": "adminsekolah",
+      "role": "admin",
+      "action": "Menambahkan berita baru: PPDB Zonasi",
+      "ipAddress": "192.168.1.25",
+      "userAgent": "Mozilla/5.0 Safari/605.1",
+      "timestamp": "2026-07-18 22:15:45"
+    },
+    {
+      "id": "log3",
+      "username": "19800101",
+      "role": "guru",
+      "action": "Melakukan input absensi Kelas X MIPA 1",
+      "ipAddress": "192.168.1.52",
+      "userAgent": "Mozilla/5.0 Chrome/121.0.0",
+      "timestamp": "2026-07-18 10:05:22"
+    }
+  ],
+  "backups": [
+    {
+      "id": "b1",
+      "filename": "backup_sias_20260710_010000.sql",
+      "size": "4.8 MB",
+      "timestamp": "2026-07-10 01:00:00"
+    },
+    {
+      "id": "b2",
+      "filename": "backup_sias_20260717_010000.sql",
+      "size": "4.9 MB",
+      "timestamp": "2026-07-17 01:00:00"
+    }
+  ],
+  "forumPosts": [
+    {
+      "id": "post1",
+      "title": "Bagaimana cara cepat memahami rumus Turunan Trigonometri?",
+      "content": "Halo teman-teman dan bapak/ibu guru. Saya sedang mengulang materi Matematika Peminatan kelas XI tentang turunan fungsi trigonometri. Apakah ada tips atau cara mudah mengingat rumus sin/cos/tan beserta turunannya? Terima kasih!",
+      "author": {
+        "id": "u_s1",
+        "name": "Andi Wibowo",
+        "role": "siswa",
+        "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop"
+      },
+      "category": "Matematika",
+      "resources": [
+        {
+          "name": "Ringkasan Rumus Trigonometri (Blog)",
+          "url": "https://www.rumus-matematika.com/trigonometri"
+        }
+      ],
+      "upvotes": [
+        "u_s2",
+        "u_t2"
+      ],
+      "replies": [
+        {
+          "id": "rep1",
+          "content": "Halo Andi! Tips mudahnya adalah mengingat dasar sin dan cos terlebih dahulu. Turunan sin adalah cos, dan turunan cos adalah -sin (ingat huruf C menghasilkan tanda minus). Untuk tan, turunannya sec^2. Cobalah buat mind-map kecil di meja belajar agar sering terbaca.",
+          "author": {
+            "id": "u_t2",
+            "name": "Budi Santoso, S.Pd.",
+            "role": "guru",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
+          },
+          "createdAt": "2026-07-20T10:15:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-20T08:30:00.000Z"
+    },
+    {
+      "id": "post2",
+      "title": "Rekomendasi Website Belajar Listening Bahasa Inggris Gratis",
+      "content": "Bagi teman-teman yang ingin meningkatkan skor listening Bahasa Inggris, saya sangat merekomendasikan website ESL Cyber Listening Lab. Di sana banyak kuis dari tingkat dasar hingga mahir yang sangat interaktif.",
+      "author": {
+        "id": "u_t8",
+        "name": "Rina Wijayanti, S.Pd.",
+        "role": "guru",
+        "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+      },
+      "category": "Bahasa Inggris",
+      "resources": [
+        {
+          "name": "ESL Lab Listening Guide",
+          "url": "https://www.esl-lab.com"
+        }
+      ],
+      "upvotes": [
+        "u_s1",
+        "u_s3",
+        "u_s4"
+      ],
+      "replies": [
+        {
+          "id": "rep2",
+          "content": "Wah, terima kasih banyak Ibu Rina! Sangat bermanfaat untuk persiapan ujian listening kami minggu depan.",
+          "author": {
+            "id": "u_s3",
+            "name": "Citra Sari",
+            "role": "siswa",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop"
+          },
+          "createdAt": "2026-07-21T02:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-19T09:00:00.000Z"
+    }
+  ]
+}

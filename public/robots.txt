@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /dist/
+
+# Allow Google crawlers
+User-agent: Googlebot
+Allow: /
+
+# Sitemap location
+Sitemap: https://sman1nusantara.sch.id/sitemap.xml

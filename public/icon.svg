@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+  <!-- Background Card -->
+  <rect width="512" height="512" rx="128" fill="#1e293b"/>
+  <!-- Central Shield -->
+  <path d="M256 64 L416 112 C416 300, 310 400, 256 448 C202 400, 96 300, 96 112 Z" fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="16" stroke-linejoin="round" shadow="0 10px 15px rgba(0,0,0,0.3)"/>
+  
+  <!-- Book Icon Overlay -->
+  <!-- Left Page -->
+  <path d="M160 210 C200 210, 235 230, 256 250 L256 350 C235 330, 200 310, 160 310 Z" fill="#ffffff" stroke="#f1f5f9" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Right Page -->
+  <path d="M352 210 C312 210, 277 230, 256 250 L256 350 C277 330, 312 310, 352 310 Z" fill="#ffffff" stroke="#f1f5f9" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Book spine / divider -->
+  <line x1="256" y1="250" x2="256" y2="355" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Ribbon lines for text representation in Book -->
+  <line x1="180" y1="240" x2="225" y2="240" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <line x1="180" y1="260" x2="225" y2="260" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <line x1="180" y1="280" x2="215" y2="280" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  
+  <line x1="287" y1="240" x2="332" y2="240" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <line x1="287" y1="260" x2="332" y2="260" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <line x1="287" y1="280" x2="322" y2="280" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Golden Star on top -->
+  <path d="M256 130 L263 150 L285 150 L267 162 L274 182 L256 170 L238 182 L245 162 L227 150 L249 150 Z" fill="url(#goldGrad)"/>
+</svg>

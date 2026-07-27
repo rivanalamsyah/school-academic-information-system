@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Informasi Akademik Sekolah",
+  "description": "Sistem Informasi Akademik Sekolah (SIAS) lengkap dengan Website Publik, Portal PPDB, Dashboard Admin, Guru, Siswa, Manajemen Kelas, Penjadwalan, Absensi, Input Nilai, dan Laporan.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
