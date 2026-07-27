@@ -63,6 +63,10 @@ interface SchoolDataContextType {
   bulkImportType: "student" | "teacher";
   setBulkImportType: (type: "student" | "teacher") => void;
 
+  // Confirm dialog state (replaces window.confirm)
+  confirmDialog: { open: boolean; type: string; id: string; label?: string };
+  setConfirmDialog: React.Dispatch<React.SetStateAction<{ open: boolean; type: string; id: string; label?: string }>>;
+
   // Notification pool
   notifications: NotificationItem[];
   setNotifications: React.Dispatch<React.SetStateAction<NotificationItem[]>>;
@@ -131,9 +135,20 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
   const [isBulkImportOpen, setIsBulkImportOpen] = useState(false);
   const [bulkImportType, setBulkImportType] = useState<"student" | "teacher">("student");
 
+  // Confirm dialog state — replaces window.confirm() throughout the app
+  const [confirmDialog, setConfirmDialog] = useState<{ open: boolean; type: string; id: string; label?: string }>({ open: false, type: "", id: "", label: undefined });
+
   // Notifications pool
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const [notifDropdownOpen, setNotifDropdownOpen] = useState(false);
+
+  // Persist notification read state to localStorage whenever it changes
+  useEffect(() => {
+    if (!user?.id || notifications.length === 0) return;
+    const storageKey = `sias_notif_read_${user.id}`;
+    const readIds = notifications.filter(n => n.read).map(n => n.id);
+    localStorage.setItem(storageKey, JSON.stringify(readIds));
+  }, [notifications, user?.id]);
 
   // Guru dashboard helpers
   const [classStudents, setClassStudents] = useState<Student[]>([]);
@@ -161,6 +176,9 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
   // Load notifications
   useEffect(() => {
     let initialNotifs: NotificationItem[] = [];
+    const storageKey = `sias_notif_read_${user.id}`;
+    const readIds: string[] = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
     if (user.role === "siswa") {
       initialNotifs = [
         {
@@ -169,7 +187,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
           message: "Kartu peserta Ujian Tengah Semester Anda telah dicetak dan siap diunduh di menu Rapor.",
           type: "success",
           time: "10 menit yang lalu",
-          read: false,
+          read: readIds.includes("notif-1"),
           category: "umum",
         },
         {
@@ -178,7 +196,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
           message: "Draf lembar soal ujian kimia kelas XI IPA telah diunggah dan membutuhkan persetujuan Anda.",
           type: "warning",
           time: "3 jam yang lalu",
-          read: false,
+          read: readIds.includes("notif-2"),
           category: "ujian",
         },
         {
@@ -187,7 +205,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
           message: "Rapat koordinasi dewan guru dijadwalkan sore ini pukul 14:00 WIB di Ruang Rapat Utama.",
           type: "info",
           time: "6 jam yang lalu",
-          read: true,
+          read: readIds.includes("notif-3"),
           category: "umum",
         },
       ];
@@ -199,7 +217,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
           message: "Kalender akademik dan tahun pelajaran baru membutuhkan aktivasi kurikulum final.",
           type: "warning",
           time: "30 menit yang lalu",
-          read: false,
+          read: readIds.includes("notif-1"),
           category: "umum",
         },
         {
@@ -208,7 +226,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
           message: "Terdapat 6 berkas registrasi calon siswa baru yang belum diverifikasi di dasbor PPDB.",
           type: "info",
           time: "2 jam yang lalu",
-          read: false,
+          read: readIds.includes("notif-2"),
           category: "tugas",
         },
         {
@@ -217,7 +235,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
           message: "Pencadangan basis data sistem akademik mingguan telah berhasil disimpan di server utama.",
           type: "success",
           time: "4 jam yang lalu",
-          read: true,
+          read: readIds.includes("notif-3"),
           category: "umum",
         },
       ];
@@ -282,14 +300,14 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
       const filtered = students.filter((s) => s.classRoomId === selectedClassId);
       setClassStudents(filtered);
 
-      const attMap: Record<string, { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa', notes: string }> = {};
+      const attMap: Record<string, { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa' | '', notes: string }> = {};
       const grMap: Record<string, { assignmentScore: number, utsScore: number, uasScore: number, notes: string }> = {};
       filtered.forEach((s) => {
         const keyDate = selectedDate;
         const record = allAttendances.find(
           (a) => a.studentId === s.id && a.date === keyDate && a.classRoomId === selectedClassId
         );
-        attMap[s.id] = { status: record?.status || "Hadir", notes: record?.notes || "" };
+        attMap[s.id] = { status: record?.status || "", notes: record?.notes || "" };
 
         const activeAY = academicYears.find((ay) => ay.active);
         const score = allGrades.find(
@@ -387,9 +405,8 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
     }
   }, [user, showToast, fetchData]);
 
-  // Generic CRUD Delete
+  // Generic CRUD Delete — no longer uses window.confirm(); caller must show ConfirmDialog
   const handleDeleteItem = useCallback(async (type: string, id: string) => {
-    if (!window.confirm("Apakah Anda yakin ingin menghapus data ini?")) return;
     try {
       await DashboardService.deleteItem(type, id, user);
       showToast("Data berhasil dihapus dari sistem.", "success");
@@ -401,9 +418,18 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
 
   // Save Attendance
   const handleSaveAttendance = useCallback(async () => {
-    const records = Object.keys(tempAttendances).map((studentId) => ({
+    const studentIds = Object.keys(tempAttendances);
+    
+    // Check if any student has not been marked
+    const unselectedStudentIds = studentIds.filter(id => tempAttendances[id].status === "");
+    if (unselectedStudentIds.length > 0) {
+      showToast("Harap tentukan status kehadiran untuk semua siswa terlebih dahulu.", "warning");
+      return;
+    }
+
+    const records = studentIds.map((studentId) => ({
       studentId,
-      status: tempAttendances[studentId].status,
+      status: tempAttendances[studentId].status as 'Hadir' | 'Sakit' | 'Izin' | 'Alpa',
       notes: tempAttendances[studentId].notes,
     }));
 
@@ -489,6 +515,8 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
       setIsBulkImportOpen,
       bulkImportType,
       setBulkImportType,
+      confirmDialog,
+      setConfirmDialog,
       notifications,
       setNotifications,
       notifDropdownOpen,
@@ -534,6 +562,7 @@ export function SchoolDataProvider({ user, showToast, children }: SchoolDataProv
       formType,
       isBulkImportOpen,
       bulkImportType,
+      confirmDialog,
       notifications,
       notifDropdownOpen,
       classStudents,

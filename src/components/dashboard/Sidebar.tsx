@@ -5,6 +5,8 @@ import {
   Printer, UserCheck, Activity, Database, Award, LogOut, Camera, X
 } from "lucide-react";
 import { User, SchoolSettings } from "../../types";
+import { ROLE_MENUS } from "../../utils/permissions";
+import { getMenuLabel } from "../../utils/menuLabels";
 
 interface SidebarProps {
   user: User;
@@ -80,29 +82,8 @@ export function Sidebar({
     }
   };
 
-  const getMenuLabel = (menu: string) => {
-    switch (menu) {
-      case "home": return user.role === "siswa" ? "Profil Saya" : "Dashboard Utama";
-      case "calendar": return "Kalender Akademik";
-      case "messages": return "Notifikasi Orang Tua";
-      case "checkin": return user.role === "siswa" ? "Absensi GPS" : "Absensi GPS Mandiri";
-      case "settings": return "Identitas Sekolah";
-      case "academicyear": return "Tahun Ajaran";
-      case "classroom": return "Manajemen Kelas";
-      case "subject": return "Mata Pelajaran";
-      case "teacher": return "Data Guru";
-      case "student": return "Data Siswa";
-      case "schedule": return "Jadwal Pelajaran";
-      case "reports": return "Cetak Rapor Siswa";
-      case "ppdb": return "PPDB Admissions";
-      case "logs": return "Audit Logs";
-      case "backups": return "Database Backup";
-      case "forum": return "Forum Diskusi";
-      case "attendance": return "Absensi Kelas";
-      case "grades": return user.role === "siswa" ? "Rapor Nilai" : "Input Nilai";
-      default: return menu;
-    }
-  };
+  // getMenuLabel now imported from utils/menuLabels (DRY)
+
 
   const handleMenuClick = (menu: string) => {
     setActiveMenu(menu);
@@ -112,17 +93,9 @@ export function Sidebar({
     }
   };
 
-  const getMenusForRole = () => {
-    if (user.role === "super_admin" || user.role === "admin") {
-      return ["home", "settings", "academicyear", "classroom", "subject", "teacher", "student", "schedule", "reports", "ppdb", "logs", "backups", "forum"];
-    } else if (user.role === "guru") {
-      return ["home", "checkin", "attendance", "grades", "reports", "forum"];
-    } else {
-      return ["home", "calendar", "checkin", "grades", "schedule", "forum"];
-    }
-  };
+  // Use centralized ROLE_MENUS — single source of truth for which menus each role can see
+  const menus = (ROLE_MENUS[user.role] || []).filter(menu => canAccess(menu));
 
-  const menus = getMenusForRole().filter(menu => canAccess(menu));
 
   return (
     <>
@@ -138,8 +111,7 @@ export function Sidebar({
       {/* Main Sidebar Container */}
       <aside 
         ref={sidebarRef}
-        role="dialog"
-        aria-modal="true"
+        role="navigation"
         aria-label="Sidebar Navigation"
         className={`bg-slate-900 text-slate-300 shrink-0 flex flex-col justify-between border-r border-slate-800/80 transition-all duration-300 ease-in-out fixed md:sticky top-0 bottom-0 left-0 h-screen z-50 md:z-30
           ${sidebarOpen 
@@ -158,8 +130,7 @@ export function Sidebar({
                 className="w-10 h-10 object-cover rounded-xl border border-slate-700/60 shadow-md" 
                 referrerPolicy="no-referrer"
               />
-              {/* Show text if sidebar is open, or on mobile drawer (which is always open/expanded) */}
-              {(sidebarOpen || window.innerWidth < 768) && (
+              {(sidebarOpen) && (
                 <div className="min-w-0 transition-opacity duration-200">
                   <h2 className="font-extrabold text-white text-xs truncate leading-snug tracking-tight">
                     {settings?.name || "SIAS PORTAL"}
@@ -198,9 +169,8 @@ export function Sidebar({
                   `}
                 >
                   {getNavIcon(menu)}
-                  {/* Label shown if expanded or on mobile drawer */}
-                  {(sidebarOpen || window.innerWidth < 768) && (
-                    <span className="truncate">{getMenuLabel(menu)}</span>
+                  {sidebarOpen && (
+                    <span className="truncate">{getMenuLabel(menu, user.role)}</span>
                   )}
                 </button>
               );
@@ -225,7 +195,7 @@ export function Sidebar({
                   <Camera className="w-3.5 h-3.5 text-white" />
                 </div>
               </div>
-              {(sidebarOpen || window.innerWidth < 768) && (
+              {(sidebarOpen) && (
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-bold text-white truncate group-hover:text-blue-400 transition-colors">
                     {user.name}
@@ -242,7 +212,7 @@ export function Sidebar({
               className="w-full flex items-center gap-3 px-4 py-3 mt-3 rounded-xl text-xs font-bold text-rose-400 hover:bg-rose-500/10 hover:text-rose-300 transition-colors cursor-pointer border border-transparent min-h-[44px]"
             >
               <LogOut className="w-5 h-5 shrink-0" />
-              {(sidebarOpen || window.innerWidth < 768) && <span>Keluar Panel</span>}
+              {sidebarOpen && <span>Keluar Panel</span>}
             </button>
           </div>
         </div>

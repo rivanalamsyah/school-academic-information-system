@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { Teacher, ClassRoom, Subject, AcademicYear, Student, Schedule } from "../../types";
 
@@ -30,6 +30,59 @@ export function CrudFormModal({
   const [teacherForm, setTeacherForm] = useState({ nip: "", name: "", gender: "Laki-laki" as "Laki-laki" | "Perempuan", email: "", phone: "", status: "PNS" as "PNS" | "Honororer" | "Yayasan", birthDate: "", address: "" });
   const [studentForm, setStudentForm] = useState({ nis: "", nisn: "", name: "", gender: "Laki-laki" as "Laki-laki" | "Perempuan", classRoomId: "", birthDate: "", address: "", status: "Aktif" as "Aktif" | "Lulus" | "Pindah" | "Alumni", parentName: "", parentPhone: "" });
   const [scheduleForm, setScheduleForm] = useState({ classRoomId: "", subjectId: "", teacherId: "", day: "Senin" as "Senin" | "Selasa" | "Rabu" | "Kamis" | "Jumat" | "Sabtu", startTime: "07:30", endTime: "09:00" });
+
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Focus trap and escape key handler
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Focus the modal when it opens
+    modalRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+
+      if (e.key === "Tab" && modalRef.current) {
+        const focusableElements = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0] as HTMLElement;
+        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
+  // Prevent background scrolling
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   // Initialize/Reset forms when editingItem or formType changes
   useEffect(() => {
@@ -100,20 +153,57 @@ export function CrudFormModal({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formType === "academicyear") {
+      if (!ayForm.year.trim()) {
+        alert("Tahun ajaran harus diisi (contoh: 2025/2026)");
+        return;
+      }
       const item = editingItem as AcademicYear | null;
       onSubmit({ ...ayForm, active: item ? item.active : false });
     } else if (formType === "classroom") {
+      if (!classForm.name.trim()) {
+        alert("Nama kelas harus diisi");
+        return;
+      }
       onSubmit(classForm);
     } else if (formType === "subject") {
+      if (!subjectForm.code.trim() || !subjectForm.name.trim()) {
+        alert("Kode dan nama mata pelajaran harus diisi");
+        return;
+      }
       onSubmit(subjectForm);
     } else if (formType === "teacher") {
+      if (!teacherForm.nip.trim() || !teacherForm.name.trim()) {
+        alert("NIP dan nama guru harus diisi");
+        return;
+      }
+      if (teacherForm.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(teacherForm.email)) {
+        alert("Format email tidak valid");
+        return;
+      }
       onSubmit(teacherForm);
     } else if (formType === "student") {
+      if (!studentForm.nis.trim() || !studentForm.name.trim()) {
+        alert("NIS dan nama siswa harus diisi");
+        return;
+      }
+      if (!studentForm.classRoomId) {
+        alert("Kelas siswa harus dipilih");
+        return;
+      }
       onSubmit(studentForm);
     } else if (formType === "schedule") {
+      if (!scheduleForm.classRoomId || !scheduleForm.subjectId || !scheduleForm.teacherId) {
+        alert("Kelas, mata pelajaran, dan guru harus dipilih");
+        return;
+      }
+      if (scheduleForm.startTime >= scheduleForm.endTime) {
+        alert("Waktu mulai harus lebih awal dari waktu selesai");
+        return;
+      }
       onSubmit(scheduleForm);
     }
   };
+
 
   const getMenuLabel = (type: string) => {
     switch (type) {
@@ -130,10 +220,12 @@ export function CrudFormModal({
   return (
     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 z-50">
       <motion.div
+        ref={modalRef}
+        tabIndex={-1}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-xl max-w-lg w-full max-h-[85vh] overflow-y-auto border border-slate-200 shadow-xl p-6 sm:p-8 space-y-6 relative"
+        className="bg-white rounded-xl max-w-lg w-full max-h-[85vh] overflow-y-auto border border-slate-200 shadow-xl p-6 sm:p-8 space-y-6 relative focus:outline-none"
         id="crud-dialog-modal"
       >
         <button

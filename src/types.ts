@@ -32,21 +32,22 @@ export interface SchoolSettings {
   googleSpreadsheetId?: string;
   googleSpreadsheetUrl?: string;
   googleSpreadsheetLastSync?: string;
+  city?: string;
 }
 
 export interface AcademicYear {
   id: string;
-  year: string; // e.g. "2025/2026"
+  year: string;
   semester: 'Ganjil' | 'Genap';
   active: boolean;
 }
 
 export interface ClassRoom {
   id: string;
-  name: string; // e.g. "X IPA 1"
+  name: string;
   gradeLevel: 'X' | 'XI' | 'XII';
   major: 'IPA' | 'IPS' | 'Umum' | 'Kejuruan';
-  homeroomTeacherId: string; // Teacher ID
+  homeroomTeacherId: string;
 }
 
 export interface Subject {
@@ -257,7 +258,7 @@ export interface NotificationItem {
   category: "tugas" | "ujian" | "umum";
 }
 
-export type TempAttendanceRecord = Record<string, { status: AttendanceStatus; notes: string }>;
+export type TempAttendanceRecord = Record<string, { status: AttendanceStatus | ""; notes: string }>;
 
 export type TempGradeRecord = Record<string, { assignmentScore: number; utsScore: number; uasScore: number; notes: string }>;
 

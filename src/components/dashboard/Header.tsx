@@ -1,6 +1,7 @@
 import { Menu, Bell, BellRing, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { User, AcademicYear, NotificationItem } from "../../types";
+import { getMenuLabel } from "../../utils/menuLabels";
 
 interface HeaderProps {
   user: User;
@@ -30,29 +31,7 @@ export function Header({
   showToast
 }: HeaderProps) {
 
-  const getMenuLabel = (menu: string) => {
-    switch (menu) {
-      case "home": return user.role === "siswa" ? "Profil Saya" : "Dashboard Utama";
-      case "calendar": return "Kalender Akademik";
-      case "messages": return "Notifikasi Orang Tua";
-      case "checkin": return user.role === "siswa" ? "Absensi GPS" : "Absensi GPS Mandiri";
-      case "settings": return "Identitas Sekolah";
-      case "academicyear": return "Tahun Ajaran";
-      case "classroom": return "Manajemen Kelas";
-      case "subject": return "Mata Pelajaran";
-      case "teacher": return "Data Guru";
-      case "student": return "Data Siswa";
-      case "schedule": return "Jadwal Pelajaran";
-      case "reports": return "Cetak Rapor Siswa";
-      case "ppdb": return "PPDB Admissions";
-      case "logs": return "Audit Logs";
-      case "backups": return "Database Backup";
-      case "forum": return "Forum Diskusi";
-      case "attendance": return "Absensi Kelas";
-      case "grades": return user.role === "siswa" ? "Rapor Nilai" : "Input Nilai";
-      default: return menu;
-    }
-  };
+  // getMenuLabel now imported from utils/menuLabels (DRY)
 
   const activeAY = academicYears.find(ay => ay.active);
 
@@ -68,7 +47,7 @@ export function Header({
         </button>
         <div>
           <h1 className="text-lg font-extrabold text-slate-900 tracking-tight">
-            {getMenuLabel(activeMenu)}
+            {getMenuLabel(activeMenu, user.role)}
           </h1>
           <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">
             Tahun Pelajaran: {activeAY?.year || "-"} • Semester: {activeAY?.semester || "-"}

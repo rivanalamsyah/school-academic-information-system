@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { ShieldCheck, User, Lock, Eye, EyeOff, BookOpen, GraduationCap, School, X } from "lucide-react";
 import { User as UserType } from "../types";
@@ -50,6 +50,7 @@ export default function Login({ onLoginSuccess, showToast, onBackToWebsite }: Lo
       return;
     }
 
+    setLoading(true);
     try {
       const data = await AuthService.login(username, password);
       showToast(`Selamat datang kembali, ${data.user.name}!`, "success");

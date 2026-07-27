@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
@@ -11,19 +12,25 @@ const currentDirname = typeof __dirname !== 'undefined' ? __dirname : path.dirna
 const app = express();
 const PORT = 3000;
 
-// Security headers middleware (manually crafted to avoid unnecessary dependencies)
-app.use((_req, res, next) => {
-  res.setHeader("X-Frame-Options", "DENY");
-  res.setHeader("X-Content-Type-Options", "nosniff");
-  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
-  res.setHeader("X-XSS-Protection", "1; mode=block");
-  // Permissive yet secure CSP for Vite development + Firebase
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://lh3.googleusercontent.com; connect-src 'self' ws: wss: https://*.googleapis.com https://*.firebaseio.com;"
-  );
-  next();
-});
+// ── Rate Limiter (in-memory, per IP) ────────────────────────────────────────
+const loginAttempts = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_MAX = 10;
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = loginAttempts.get(ip);
+  if (!record || now > record.resetAt) {
+    loginAttempts.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  record.count++;
+  return record.count > RATE_LIMIT_MAX;
+}
+
+function resetRateLimit(ip: string): void {
+  loginAttempts.delete(ip);
+}
 
 app.use(express.json({ limit: '2mb' })); // Limit JSON body size to prevent DoS
 app.use(express.urlencoded({ extended: false, limit: '2mb' }));
@@ -73,14 +80,26 @@ app.use('/api', (req, res, next) => {
     return next();
   }
 
-  // Get user role from headers
-  const userRole = req.headers['x-user-role'] as string;
+  // Get user ID from headers to verify the role securely from database
+  const userId = req.headers['x-user-id'] as string;
 
-  if (!userRole) {
-    return res.status(401).json({ error: "Unauthorized: Hak akses peran tidak disediakan di header permintaan (x-user-role)." });
+  if (!userId) {
+    return res.status(401).json({ error: "Unauthorized: ID Pengguna tidak disediakan di header permintaan (x-user-id)." });
   }
 
-  const role = userRole.toLowerCase();
+  const db = readDB();
+  const dbUser = db.users.find((u: any) => u.id === userId);
+  if (!dbUser) {
+    return res.status(401).json({ error: "Unauthorized: Pengguna tidak valid." });
+  }
+
+  if (!dbUser.active) {
+    return res.status(403).json({ error: "Forbidden: Akun Anda dinonaktifkan." });
+  }
+
+  const role = dbUser.role.toLowerCase();
+  const userRole = dbUser.role;
+
 
   // 1. Super Admin only resources
   if (req.path.startsWith('/logs') || req.path.startsWith('/backups')) {
@@ -90,7 +109,15 @@ app.use('/api', (req, res, next) => {
     return next();
   }
 
-  // 2. Admin & Super Admin write/manage operations
+  // 2. Protect /api/users — only super_admin can access user list
+  if (req.path.startsWith('/users')) {
+    if (role !== 'super_admin') {
+      return res.status(403).json({ error: `Forbidden: Peran '${userRole}' tidak memiliki izin untuk mengakses data akun pengguna.` });
+    }
+    return next();
+  }
+
+  // 3. Admin & Super Admin write/manage operations
   const adminWritePaths = [
     '/settings', '/academicyears', '/classrooms', '/subjects', 
     '/teachers', '/students', '/schedules', '/ppdb', 
@@ -625,10 +652,18 @@ function writeDB(data: any) {
 // Log action helper - accepts pre-loaded db to avoid redundant readDB() on each call
 function addLog(username: string, role: string, action: string, req: express.Request, db?: any) {
   const data = db || readDB();
+  
+  // Dynamically resolve username and role from headers to prevent hardcoded "admin" values
+  const headerUsername = req.headers['x-username'] as string;
+  const headerRole = req.headers['x-user-role'] as string;
+  
+  const finalUsername = headerUsername || username || "system";
+  const finalRole = headerRole || role || "system";
+
   const newLog = {
     id: `log_${Date.now()}`,
-    username,
-    role,
+    username: finalUsername,
+    role: finalRole,
     action,
     ipAddress: req.ip || "127.0.0.1",
     userAgent: req.headers['user-agent'] || "Unknown",
@@ -654,13 +689,20 @@ app.get('/api/public/settings', (_req, res) => {
 });
 
 // Update Settings (Admin / Super Admin only)
-app.put('/api/settings', (req, res) => {
+// Accept both PUT and POST for backward compatibility
+function handleSettingsUpdate(req: express.Request, res: express.Response) {
   const db = readDB();
   db.settings = { ...db.settings, ...req.body };
   writeDB(db);
-  addLog(req.body.editorUsername || "admin", req.body.editorRole || "admin", "Memperbarui pengaturan sekolah", req);
+  // Use headers for logging (not req.body which could be spoofed)
+  const logUsername = (req.headers['x-username'] as string) || (req.headers['x-user-id'] as string) || "admin";
+  const logRole = (req.headers['x-user-role'] as string) || "admin";
+  addLog(logUsername, logRole, "Memperbarui pengaturan sekolah", req);
   res.json({ success: true, settings: db.settings });
-});
+}
+app.put('/api/settings', handleSettingsUpdate);
+app.post('/api/settings', handleSettingsUpdate); // alias for client compatibility
+
 
 // Public News
 app.get('/api/public/news', (_req, res) => {
@@ -851,7 +893,11 @@ app.get('/api/academicyears', (_req, res) => {
   res.json(db.academicYears);
 });
 
-app.post('/api/academicyears', (req, res) => {
+app.post('/api/academicyears', (req, res): void => {
+  if (!req.body.year || typeof req.body.year !== 'string' || !req.body.year.trim() || !req.body.semester) {
+    res.status(400).json({ error: "Tahun ajaran dan semester harus diisi." });
+    return;
+  }
   const db = readDB();
   const newAY = {
     id: `ay_${Date.now()}`,
@@ -868,7 +914,11 @@ app.post('/api/academicyears', (req, res) => {
   res.json({ success: true, academicYear: newAY });
 });
 
-app.put('/api/academicyears/:id', (req, res) => {
+app.put('/api/academicyears/:id', (req, res): void => {
+  if (!req.body.year || typeof req.body.year !== 'string' || !req.body.year.trim() || !req.body.semester) {
+    res.status(400).json({ error: "Tahun ajaran dan semester harus diisi." });
+    return;
+  }
   const db = readDB();
   const idx = db.academicYears.findIndex((ay: any) => ay.id === req.params.id);
   if (idx !== -1) {
@@ -879,12 +929,35 @@ app.put('/api/academicyears/:id', (req, res) => {
       });
     }
     writeDB(db);
-    addLog("admin", "admin", `Memperbarui Tahun Ajaran: ${db.academicYears[idx].year}`, req);
+    const logUser = (req.headers['x-username'] as string) || "admin";
+    const logRole = (req.headers['x-user-role'] as string) || "admin";
+    addLog(logUser, logRole, `Memperbarui Tahun Ajaran: ${db.academicYears[idx].year}`, req);
     res.json({ success: true, academicYear: db.academicYears[idx] });
   } else {
     res.status(404).json({ error: "Tahun ajaran tidak ditemukan" });
   }
 });
+
+// FIX: Missing DELETE endpoint for academic years
+app.delete('/api/academicyears/:id', (req, res): void => {
+  const db = readDB();
+  const ayItem = db.academicYears.find((ay: any) => ay.id === req.params.id);
+  if (ayItem) {
+    if (ayItem.active) {
+      res.status(400).json({ error: "Tidak dapat menghapus tahun ajaran yang sedang aktif." });
+      return;
+    }
+    db.academicYears = db.academicYears.filter((ay: any) => ay.id !== req.params.id);
+    writeDB(db);
+    const logUser = (req.headers['x-username'] as string) || "admin";
+    const logRole = (req.headers['x-user-role'] as string) || "admin";
+    addLog(logUser, logRole, `Menghapus Tahun Ajaran: ${ayItem.year} (${ayItem.semester})`, req);
+    res.json({ success: true });
+  } else {
+    res.status(404).json({ error: "Tahun ajaran tidak ditemukan" });
+  }
+});
+
 
 // Classroom CRUD
 app.get('/api/classrooms', (_req, res) => {
@@ -892,7 +965,11 @@ app.get('/api/classrooms', (_req, res) => {
   res.json(db.classRooms);
 });
 
-app.post('/api/classrooms', (req, res) => {
+app.post('/api/classrooms', (req, res): void => {
+  if (!req.body.name || typeof req.body.name !== 'string' || !req.body.name.trim() || !req.body.gradeLevel) {
+    res.status(400).json({ error: "Nama kelas dan tingkatan harus diisi." });
+    return;
+  }
   const db = readDB();
   const newClass = {
     id: `cls_${Date.now()}`,
@@ -904,7 +981,11 @@ app.post('/api/classrooms', (req, res) => {
   res.json({ success: true, classroom: newClass });
 });
 
-app.put('/api/classrooms/:id', (req, res) => {
+app.put('/api/classrooms/:id', (req, res): void => {
+  if (!req.body.name || typeof req.body.name !== 'string' || !req.body.name.trim() || !req.body.gradeLevel) {
+    res.status(400).json({ error: "Nama kelas dan tingkatan harus diisi." });
+    return;
+  }
   const db = readDB();
   const idx = db.classRooms.findIndex((c: any) => c.id === req.params.id);
   if (idx !== -1) {
@@ -936,7 +1017,11 @@ app.get('/api/subjects', (_req, res) => {
   res.json(db.subjects);
 });
 
-app.post('/api/subjects', (req, res) => {
+app.post('/api/subjects', (req, res): void => {
+  if (!req.body.code || typeof req.body.code !== 'string' || !req.body.code.trim() || !req.body.name || typeof req.body.name !== 'string' || !req.body.name.trim()) {
+    res.status(400).json({ error: "Kode dan nama mata pelajaran harus diisi." });
+    return;
+  }
   const db = readDB();
   const newSubj = {
     id: `subj_${Date.now()}`,
@@ -948,7 +1033,11 @@ app.post('/api/subjects', (req, res) => {
   res.json({ success: true, subject: newSubj });
 });
 
-app.put('/api/subjects/:id', (req, res) => {
+app.put('/api/subjects/:id', (req, res): void => {
+  if (!req.body.code || typeof req.body.code !== 'string' || !req.body.code.trim() || !req.body.name || typeof req.body.name !== 'string' || !req.body.name.trim()) {
+    res.status(400).json({ error: "Kode dan nama mata pelajaran harus diisi." });
+    return;
+  }
   const db = readDB();
   const idx = db.subjects.findIndex((s: any) => s.id === req.params.id);
   if (idx !== -1) {
@@ -1152,9 +1241,25 @@ app.post('/api/teachers/bulk', (req, res) => {
   return res.json({ success: true, count: addedTeachers.length });
 });
 
-// Students CRUD
-app.get('/api/students', (_req, res) => {
+// Students CRUD — Filtered by role for data privacy
+app.get('/api/students', (req, res): void => {
   const db = readDB();
+  const userRole = (req.headers['x-user-role'] as string || '').toLowerCase();
+  const userId = req.headers['x-user-id'] as string;
+
+  // Siswa: only return their own data (prevent data leakage)
+  if (userRole === 'siswa') {
+    const user = db.users.find((u: any) => u.id === userId);
+    if (!user || !user.detailsId) {
+      res.json([]);
+      return;
+    }
+    const ownData = db.students.find((s: any) => s.id === user.detailsId);
+    res.json(ownData ? [ownData] : []);
+    return;
+  }
+
+  // Admin, Super Admin, Guru: return all students
   res.json(db.students);
 });
 
@@ -1627,8 +1732,20 @@ app.post('/api/google-sheets/disconnect', (req, res) => {
 
 // Authentication Endpoint (Real full login check)
 app.post('/api/auth/login', (req, res) => {
+  const clientIp = req.ip || req.socket?.remoteAddress || 'unknown';
+
+  // Rate limiting: max 10 attempts per 15 minutes per IP
+  if (isRateLimited(clientIp)) {
+    return res.status(429).json({ error: "Terlalu banyak percobaan login. Silakan coba lagi dalam 15 menit." });
+  }
+
   const db = readDB();
   const { username, password } = req.body;
+
+  // Input validation
+  if (!username || typeof username !== 'string' || !password || typeof password !== 'string') {
+    return res.status(400).json({ error: "Username dan password harus diisi." });
+  }
   
   // Find user by username
   const user = db.users.find((u: any) => u.username === username);
@@ -1641,15 +1758,17 @@ app.post('/api/auth/login', (req, res) => {
   }
 
   // Password verification: Accepts 'password123' or 'admin123' as demo passwords.
-  // In production, passwords should be hashed with bcrypt.
+  // TODO (Production): Hash passwords with bcrypt and verify with bcrypt.compare()
   const isCorrect = (password === 'password123' || password === 'admin123');
   if (!isCorrect) {
     return res.status(401).json({ error: "Username atau password salah." });
   }
 
+  // Reset rate limit on successful login
+  resetRateLimit(clientIp);
   addLog(user.username, user.role, "Login berhasil ke sistem", req);
 
-  // Return success auth package
+  // Return success auth package (never expose passwordHash)
   return res.json({
     success: true,
     user: {
@@ -1664,6 +1783,7 @@ app.post('/api/auth/login', (req, res) => {
     }
   });
 });
+
 
 // Update Profile
 app.put('/api/auth/profile', (req, res) => {

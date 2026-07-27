@@ -45,6 +45,9 @@ export const DashboardService = {
       }
     };
 
+    const isAdminOrSuper = user.role === "admin" || user.role === "super_admin";
+    const isSuper = user.role === "super_admin";
+
     const [
       settings,
       academicYears,
@@ -66,9 +69,12 @@ export const DashboardService = {
       fetchJson<Teacher[]>("/api/teachers", []),
       fetchJson<Student[]>("/api/students", []),
       fetchJson<Schedule[]>("/api/schedules", []),
-      fetchJson<PPDBRegistration[]>("/api/ppdb", []),
-      fetchJson<ActivityLog[]>("/api/logs", []),
-      fetchJson<Backup[]>("/api/backups", []),
+      // Only admin/super_admin needs PPDB data
+      isAdminOrSuper ? fetchJson<PPDBRegistration[]>("/api/ppdb", []) : Promise.resolve([]),
+      // Only super_admin needs logs
+      isSuper ? fetchJson<ActivityLog[]>("/api/logs", []) : Promise.resolve([]),
+      // Only super_admin needs backups
+      isSuper ? fetchJson<Backup[]>("/api/backups", []) : Promise.resolve([]),
       fetchJson<Attendance[]>("/api/attendances", []),
       fetchJson<Grade[]>("/api/grades", []),
     ]);
@@ -99,10 +105,11 @@ export const DashboardService = {
 
   async updateSettings(settings: SchoolSettings, user: User): Promise<void> {
     await httpClient<void>("/api/settings", {
-      method: "POST",
+      method: "PUT",
       body: settings,
     }, user);
   },
+
 
   async crudSubmit(
     formType: string,

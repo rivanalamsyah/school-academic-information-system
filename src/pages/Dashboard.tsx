@@ -21,6 +21,7 @@ import { AdminSettings } from "../components/dashboard/AdminSettings";
 import { TeacherAttendance } from "../components/dashboard/TeacherAttendance";
 import { TeacherGrades } from "../components/dashboard/TeacherGrades";
 import { CrudFormModal } from "../components/dashboard/CrudFormModal";
+import { ConfirmDialog } from "../components/ui/ConfirmDialog";
 
 // Extracted Sub-hubs
 import { DashboardStats } from "../components/DashboardStats";
@@ -64,6 +65,16 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
   const [settingsForm, setSettingsForm] = useState<SchoolSettings | null>(null);
+
+  // PPDB local filter & search states
+  const [ppdbSearch, setPpdbSearch] = useState("");
+  const [ppdbFilterStatus, setPpdbFilterStatus] = useState("all");
+
+  // Logs local search & pagination states
+  const [logsSearch, setLogsSearch] = useState("");
+  const [logsPage, setLogsPage] = useState(1);
+  const logsPerPage = 15;
+
 
   // Consume School Data Global State & Mutations
   const {
@@ -118,7 +129,9 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
     handleActivateAcademicYear,
     handleDeleteItem,
     handleSaveAttendance,
-    handleSaveGrades
+    handleSaveGrades,
+    confirmDialog,
+    setConfirmDialog,
   } = useSchoolData();
 
   // Initialize settings local form state
@@ -142,14 +155,18 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Session persistence & URL Hash Watcher
+  // Session persistence & URL Hash Watcher (Sync hash change to state)
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
-      if (hash && hash !== activeMenu && allowedMenus.includes(hash)) {
+      if (hash && allowedMenus.includes(hash)) {
         setActiveMenu(hash);
-      } else if (hash && !allowedMenus.includes(hash)) {
-        window.location.hash = "home";
+      } else {
+        const defaultMenu = allowedMenus.includes("home") ? "home" : (allowedMenus[0] || "");
+        if (defaultMenu) {
+          setActiveMenu(defaultMenu);
+          window.location.hash = defaultMenu;
+        }
       }
     };
     window.addEventListener("hashchange", handleHashChange);
@@ -157,10 +174,13 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [allowedMenus, activeMenu]);
+  }, [allowedMenus]); // Removed activeMenu from dependencies to avoid loop
 
+  // Sync state change back to URL hash (e.g. on sidebar menu click)
   useEffect(() => {
-    if (activeMenu) window.location.hash = activeMenu;
+    if (activeMenu && window.location.hash.replace("#", "") !== activeMenu) {
+      window.location.hash = activeMenu;
+    }
   }, [activeMenu]);
 
   // Timetable calculations for students
@@ -169,6 +189,46 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
     if (!student) return [];
     return schedules.filter(s => s.classRoomId === student.classRoomId);
   }, [schedules, students, user.detailsId]);
+
+  // Filtered PPDB list with search query and status filter
+  const filteredPPDB = useMemo(() => {
+    return ppdbList.filter(p => {
+      const matchSearch = 
+        p.fullName.toLowerCase().includes(ppdbSearch.toLowerCase()) ||
+        p.registrationNo.toLowerCase().includes(ppdbSearch.toLowerCase()) ||
+        p.prevSchool.toLowerCase().includes(ppdbSearch.toLowerCase());
+      
+      const matchStatus = ppdbFilterStatus === "all" || p.status === ppdbFilterStatus;
+      
+      return matchSearch && matchStatus;
+    });
+  }, [ppdbList, ppdbSearch, ppdbFilterStatus]);
+
+  // Filtered and Paginated Activity Logs
+  const filteredLogsData = useMemo(() => {
+    const searchFiltered = logs.filter(log => {
+      return (
+        log.username.toLowerCase().includes(logsSearch.toLowerCase()) ||
+        log.role.toLowerCase().includes(logsSearch.toLowerCase()) ||
+        log.action.toLowerCase().includes(logsSearch.toLowerCase()) ||
+        log.ipAddress.toLowerCase().includes(logsSearch.toLowerCase())
+      );
+    });
+
+    const totalItems = searchFiltered.length;
+    const totalPages = Math.ceil(totalItems / logsPerPage) || 1;
+    
+    // Slice for current page
+    const startIndex = (logsPage - 1) * logsPerPage;
+    const paginatedItems = searchFiltered.slice(startIndex, startIndex + logsPerPage);
+
+    return {
+      items: paginatedItems,
+      totalItems,
+      totalPages
+    };
+  }, [logs, logsSearch, logsPage]);
+
 
   // PPDB & Backup Operations (Using centralized client helper)
   const handlePpdbStatusChange = async (id: string, status: 'approved' | 'rejected') => {
@@ -191,8 +251,15 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
     }
   };
 
+  const [pendingRestore, setPendingRestore] = useState<{ id: string; name: string } | null>(null);
+
   const handleRestoreBackup = async (id: string, name: string) => {
-    if (!window.confirm(`Yakin ingin memulihkan database ke cadangan ${name}? Semua data saat ini akan ditimpa.`)) return;
+    // Use ConfirmDialog instead of window.confirm
+    setConfirmDialog({ open: true, type: "restore", id, label: name });
+    setPendingRestore({ id, name });
+  };
+
+  const executeRestoreBackup = async (id: string) => {
     try {
       await httpClient(`/api/backups/${id}/restore`, { method: "POST" }, user);
       showToast("Pemulihan data cadangan berhasil disimulasikan!", "success");
@@ -200,6 +267,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
     } catch {
       showToast("Kesalahan server.", "error");
     }
+    setPendingRestore(null);
   };
 
   const handleDeleteBackup = async (id: string) => {
@@ -256,7 +324,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
             <h2>${title}</h2>
             ${printableElement.outerHTML}
             <div style="margin-top: 50px; text-align: right; font-size: 11px;">
-              <p>Jakarta, ${new Date().toLocaleDateString('id-ID')}</p>
+              <p>${settings?.city || settings?.address?.split(',').pop()?.trim() || 'Sekolah'}, ${new Date().toLocaleDateString('id-ID')}</p>
               <br/><br/>
               <p><b>${settings?.principalName}</b></p>
               <p>Kepala Sekolah</p>
@@ -434,11 +502,19 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
             <DashboardHomeSkeleton />
           ) : (
             <AnimatePresence mode="wait">
-              {/* --- ADMIN & SUPER ADMIN TABS --- */}
+              <motion.div
+                key={activeMenu}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="space-y-6 w-full"
+              >
+                {/* --- ADMIN & SUPER ADMIN TABS --- */}
               {user.role !== "siswa" && user.role !== "guru" ? (
                 <>
                   {activeMenu === "home" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="admin-home-view">
+                    <div className="space-y-6" id="admin-home-view">
                       <DashboardStats
                         students={students}
                         teachers={teachers}
@@ -453,7 +529,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                         classRooms={classRooms}
                         attendances={allAttendances}
                       />
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "settings" && settingsForm && (
@@ -488,7 +564,10 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                       teachers={teachers}
                       openAddModal={openAddModal}
                       openEditModal={openEditModal}
-                      handleDeleteItem={handleDeleteItem}
+                      handleDeleteItem={(type, id) => {
+                        const cls = classRooms.find(c => c.id === id);
+                        setConfirmDialog({ open: true, type, id, label: cls?.name });
+                      }}
                       handlePrintReport={handlePrintReport}
                       handleExportExcel={handleExportExcel}
                     />
@@ -499,7 +578,10 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                       subjects={subjects}
                       openAddModal={openAddModal}
                       openEditModal={openEditModal}
-                      handleDeleteItem={handleDeleteItem}
+                      handleDeleteItem={(type, id) => {
+                        const subj = subjects.find(s => s.id === id);
+                        setConfirmDialog({ open: true, type, id, label: subj?.name });
+                      }}
                       handlePrintReport={handlePrintReport}
                       handleExportExcel={handleExportExcel}
                     />
@@ -512,9 +594,12 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                       setSearchTerm={setSearchTerm}
                       openAddModal={openAddModal}
                       openEditModal={openEditModal}
-                      handleDeleteItem={handleDeleteItem}
+                      handleDeleteItem={(type, id) => {
+                        const teacher = teachers.find(t => t.id === id);
+                        setConfirmDialog({ open: true, type, id, label: teacher?.name });
+                      }}
                       handlePrintReport={handlePrintReport}
-                      handleExportExcel={() => {}}
+                      handleExportExcel={() => handleExportExcel("data-guru.xlsx", "teacher-table")}
                       openBulkImport={openBulkImport}
                     />
                   )}
@@ -529,9 +614,12 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                       setSelectedClassId={setSelectedClassId}
                       openAddModal={openAddModal}
                       openEditModal={openEditModal}
-                      handleDeleteItem={handleDeleteItem}
+                      handleDeleteItem={(type, id) => {
+                        const student = students.find(s => s.id === id);
+                        setConfirmDialog({ open: true, type, id, label: student?.name });
+                      }}
                       handlePrintReport={handlePrintReport}
-                      handleExportExcel={() => {}}
+                      handleExportExcel={() => handleExportExcel("data-siswa.xlsx", "student-table")}
                       openBulkImport={openBulkImport}
                     />
                   )}
@@ -563,11 +651,31 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                   )}
 
                   {activeMenu === "ppdb" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="admin-ppdb-view">
-                      <div className="flex justify-between items-center bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+                    <div className="space-y-6" id="admin-ppdb-view">
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
                         <div className="space-y-1">
                           <h4 className="font-extrabold text-slate-900 text-sm tracking-tight">Penerimaan Calon Siswa Baru (PPDB)</h4>
                           <p className="text-slate-400 text-[10px] font-medium font-mono">Verifikasi berkas dan registrasi PPDB</p>
+                        </div>
+                        {/* Search and Filter Inputs */}
+                        <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+                          <input
+                            type="text"
+                            placeholder="Cari nama, No. Reg, sekolah..."
+                            value={ppdbSearch}
+                            onChange={(e) => setPpdbSearch(e.target.value)}
+                            className="px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50 w-full sm:w-60"
+                          />
+                          <select
+                            value={ppdbFilterStatus}
+                            onChange={(e) => setPpdbFilterStatus(e.target.value)}
+                            className="px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50 cursor-pointer"
+                          >
+                            <option value="all">Semua Status</option>
+                            <option value="pending">Tertunda</option>
+                            <option value="approved">Disetujui</option>
+                            <option value="rejected">Ditolak</option>
+                          </select>
                         </div>
                       </div>
                       <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
@@ -584,7 +692,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100 text-slate-600">
-                              {ppdbList.map((p) => (
+                              {filteredPPDB.map((p) => (
                                 <tr key={p.id} className="hover:bg-slate-50/40 transition-colors">
                                   <td className="py-4 px-4 font-mono font-bold text-blue-600">{p.registrationNo}</td>
                                   <td className="py-4 px-4 font-bold text-slate-800">{p.fullName}</td>
@@ -619,24 +727,38 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                                   </td>
                                 </tr>
                               ))}
-                              {ppdbList.length === 0 && (
+                              {filteredPPDB.length === 0 && (
                                 <tr>
-                                  <td colSpan={6} className="py-8 text-center text-slate-400 italic">Belum ada pendaftaran PPDB.</td>
+                                  <td colSpan={6} className="py-8 text-center text-slate-400 italic">Tidak ada data pendaftaran PPDB yang cocok.</td>
                                 </tr>
                               )}
                             </tbody>
+
                           </table>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "logs" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="admin-logs-view">
-                      <div className="flex justify-between items-center bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+                    <div className="space-y-6" id="admin-logs-view">
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
                         <div className="space-y-1">
                           <h4 className="font-extrabold text-slate-900 text-sm tracking-tight">Audit Trail & Log Aktivitas</h4>
                           <p className="text-slate-400 text-[10px] font-medium font-mono">Pemantauan riwayat aksi pengguna secara real-time</p>
+                        </div>
+                        {/* Search logs */}
+                        <div className="w-full sm:w-auto">
+                          <input
+                            type="text"
+                            placeholder="Cari pengguna, aksi, IP..."
+                            value={logsSearch}
+                            onChange={(e) => {
+                              setLogsSearch(e.target.value);
+                              setLogsPage(1); // reset to page 1 on search
+                            }}
+                            className="px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50 w-full sm:w-60"
+                          />
                         </div>
                       </div>
                       <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
@@ -652,7 +774,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100 text-slate-600">
-                              {logs.map((log) => (
+                              {filteredLogsData.items.map((log) => (
                                 <tr key={log.id} className="hover:bg-slate-50/40 transition-colors">
                                   <td className="py-4 px-4 font-bold text-slate-800">{log.username}</td>
                                   <td className="py-4 px-4 uppercase text-[10px] font-bold font-mono text-slate-400">{log.role}</td>
@@ -661,15 +783,43 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                                   <td className="py-4 px-4 text-slate-400 font-mono">{log.timestamp}</td>
                                 </tr>
                               ))}
+                              {filteredLogsData.items.length === 0 && (
+                                <tr>
+                                  <td colSpan={5} className="py-8 text-center text-slate-400 italic">Tidak ada log aktivitas yang cocok.</td>
+                                </tr>
+                              )}
                             </tbody>
                           </table>
                         </div>
+
+                        {/* Pagination controls */}
+                        {filteredLogsData.totalPages > 1 && (
+                          <div className="bg-slate-50 px-4 py-3 flex items-center justify-between border-t border-slate-100 text-xs">
+                            <button
+                              disabled={logsPage === 1}
+                              onClick={() => setLogsPage(prev => Math.max(1, prev - 1))}
+                              className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-50 cursor-pointer"
+                            >
+                              Sebelumnya
+                            </button>
+                            <span className="font-mono text-slate-500 font-bold">
+                              Halaman {logsPage} dari {filteredLogsData.totalPages} ({filteredLogsData.totalItems} log)
+                            </span>
+                            <button
+                              disabled={logsPage === filteredLogsData.totalPages}
+                              onClick={() => setLogsPage(prev => Math.min(filteredLogsData.totalPages, prev + 1))}
+                              className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-50 cursor-pointer"
+                            >
+                              Selanjutnya
+                            </button>
+                          </div>
+                        )}
                       </div>
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "backups" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="admin-backups-view">
+                    <div className="space-y-6" id="admin-backups-view">
                       <div className="flex justify-between items-center bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
                         <div className="space-y-1">
                           <h4 className="font-extrabold text-slate-900 text-sm tracking-tight">Database Backup & Recovery</h4>
@@ -721,14 +871,14 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                           </table>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
                 </>
               ) : user.role === "guru" ? (
                 /* --- GURU TABS --- */
                 <>
                   {activeMenu === "home" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="guru-home-view">
+                    <div className="space-y-6" id="guru-home-view">
                       <div className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div className="space-y-2 z-10">
                           <h3 className="text-lg sm:text-xl font-black tracking-tight">Selamat Datang Kembali, {user.name}</h3>
@@ -786,18 +936,18 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                           </div>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "checkin" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="guru-checkin-view">
+                    <div className="space-y-6" id="guru-checkin-view">
                       <DailyCheckIn 
                         user={user} 
                         students={students} 
                         classRooms={classRooms} 
                         showToast={showToast} 
                       />
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "attendance" && (
@@ -846,7 +996,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                 /* --- SISWA TABS --- */
                 <>
                   {activeMenu === "home" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="siswa-home-view">
+                    <div className="space-y-6" id="siswa-home-view">
                       <div className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div className="space-y-2 z-10">
                           <h3 className="text-lg sm:text-xl font-black tracking-tight">Halo, {user.name}</h3>
@@ -917,11 +1067,11 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                         grades={allGrades}
                         subjects={subjects}
                       />
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "grades" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="student-grades-view">
+                    <div className="space-y-6" id="student-grades-view">
                       <StudentGradesChart
                         studentId={user.detailsId || ""}
                         grades={allGrades}
@@ -937,11 +1087,11 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                         userRole={user.role}
                         attendances={allAttendances}
                       />
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "schedule" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="student-schedule-view">
+                    <div className="space-y-6" id="student-schedule-view">
                       <div className="flex justify-between items-center bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
                         <div className="space-y-1">
                           <h4 className="font-extrabold text-slate-900 text-sm tracking-tight">Jadwal Pelajaran Anda</h4>
@@ -987,47 +1137,48 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                           </tbody>
                         </table>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
 
                   {activeMenu === "checkin" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="student-checkin-view">
+                    <div className="space-y-6" id="student-checkin-view">
                       <DailyCheckIn 
                         user={user} 
                         students={students} 
                         classRooms={classRooms} 
                         showToast={showToast} 
                       />
-                    </motion.div>
+                    </div>
                   )}
                 </>
               )}
 
               {/* --- GLOBAL TABS --- */}
               {activeMenu === "calendar" && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="global-calendar-view">
+                <div className="space-y-6" id="global-calendar-view">
                   <AcademicCalendar />
-                </motion.div>
+                </div>
               )}
 
               {activeMenu === "messages" && user.role !== "siswa" && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="global-messages-view">
+                <div className="space-y-6" id="global-messages-view">
                   <ParentNotifier 
                     students={students} 
                     classRooms={classRooms} 
                     showToast={showToast} 
                   />
-                </motion.div>
+                </div>
               )}
 
               {activeMenu === "forum" && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6" id="global-forum-view">
+                <div className="space-y-6" id="global-forum-view">
                   <DiscussionForum 
                     user={user} 
                     showToast={showToast} 
                   />
-                </motion.div>
+                </div>
               )}
+              </motion.div>
             </AnimatePresence>
           )}
         </main>
@@ -1079,6 +1230,33 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
         userRole={user.role}
         userUsername={user.username}
       />
+
+      {/* --- CONFIRM DIALOG (replaces window.confirm) --- */}
+      <ConfirmDialog
+        isOpen={confirmDialog.open}
+        title={confirmDialog.type === "restore"
+          ? "Konfirmasi Pemulihan Database"
+          : `Hapus Data ${confirmDialog.type ? confirmDialog.type.charAt(0).toUpperCase() + confirmDialog.type.slice(1) : ""}`}
+        message={confirmDialog.type === "restore"
+          ? `Yakin ingin memulihkan database ke cadangan "${confirmDialog.label}"? Semua data yang saat ini aktif akan tertimpa dan tidak dapat dikembalikan.`
+          : `Apakah Anda yakin ingin menghapus "${confirmDialog.label || "data ini"}"? Tindakan ini tidak dapat dibatalkan.`}
+        confirmLabel={confirmDialog.type === "restore" ? "Ya, Pulihkan Sekarang" : "Ya, Hapus Data"}
+        cancelLabel="Batal"
+        variant={confirmDialog.type === "restore" ? "warning" : "danger"}
+        onCancel={() => {
+          setConfirmDialog({ open: false, type: "", id: "", label: undefined });
+          setPendingRestore(null);
+        }}
+        onConfirm={async () => {
+          setConfirmDialog({ open: false, type: "", id: "", label: undefined });
+          if (confirmDialog.type === "restore" && pendingRestore) {
+            await executeRestoreBackup(pendingRestore.id);
+          } else if (confirmDialog.id && confirmDialog.type) {
+            await handleDeleteItem(confirmDialog.type, confirmDialog.id);
+          }
+        }}
+      />
     </div>
+
   );
 }

@@ -1,4 +1,4 @@
-﻿import { motion } from "motion/react";
+import { motion } from "motion/react";
 import { ClassRoom, Student } from "../../types";
 
 interface TeacherAttendanceProps {
@@ -8,8 +8,8 @@ interface TeacherAttendanceProps {
   selectedDate: string;
   setSelectedDate: (date: string) => void;
   classStudents: Student[];
-  tempAttendances: { [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa', notes: string } };
-  setTempAttendances: React.Dispatch<React.SetStateAction<{ [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa', notes: string } }>>;
+  tempAttendances: { [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa' | '', notes: string } };
+  setTempAttendances: React.Dispatch<React.SetStateAction<{ [studentId: string]: { status: 'Hadir' | 'Sakit' | 'Izin' | 'Alpa' | '', notes: string } }>>;
   handleSaveAttendance: () => void;
 }
 
@@ -68,7 +68,7 @@ export function TeacherAttendance({
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-600">
               {classStudents.map((stud) => {
-                const att = tempAttendances[stud.id] || { status: 'Hadir', notes: '' };
+                const att = tempAttendances[stud.id] || { status: '', notes: '' };
                 return (
                   <tr key={stud.id} className="hover:bg-slate-50/30 transition-colors">
                     <td className="py-4 px-4 font-bold text-slate-800">{stud.name}</td>
