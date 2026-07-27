@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Printer, ShieldCheck, ShieldAlert
@@ -127,6 +127,20 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
       setSettingsForm(settings);
     }
   }, [settings]);
+
+  // Responsive sidebar initial toggle on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSidebarOpen(false);
+      } else {
+        setSidebarOpen(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Session persistence & URL Hash Watcher
   useEffect(() => {
@@ -389,6 +403,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
         user={user}
         settings={settings}
         sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
         activeMenu={activeMenu}
         allowedMenus={allowedMenus}
         canAccess={canAccess}

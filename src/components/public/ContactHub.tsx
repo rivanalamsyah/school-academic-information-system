@@ -83,9 +83,9 @@ export default function ContactHub({ settings: _settings, activeSchool, onSubmit
   const faqs = [
     { q: "Kapan pendaftaran PPDB gelombang utama dibuka?", a: "PPDB Gelombang utama dibuka mulai tanggal 1 - 15 Juni 2026. Seluruh pendaftaran dilakukan secara online tanpa dipungut biaya sepeser pun." },
     { q: "Bagaimana cara melakukan legalisir ijazah alumni?", a: "Alumni dapat mengajukan permohonan legalisir dengan mengunggah foto ijazah asli melalui Unit Pelayanan Terpadu di bagian tata usaha, atau mengajukannya secara fisik pada jam pelayanan." },
-    { q: "Apakah sekolah menyediakan fasilitas jemputan bus sekolah?", a: "Saat ini sekolah bekerja sama dengan dinas perhubungan setempat untuk rute bus sekolah gratis khusus halte Kebayoran Baru pada pagi dan sore hari." },
+    { q: "Apakah sekolah menyediakan fasilitas jemputan bus sekolah?", a: "Saat ini sekolah bekerja sama dengan dinas perhubungan setempat untuk rute bus sekolah gratis khusus halte Condongcatur pada pagi dan sore hari." },
     { q: "Apakah ada program beasiswa bagi anak kurang mampu?", a: "Ya, sekolah menyalurkan program PIP (Program Indonesia Pintar) serta beasiswa komite sekolah untuk siswa berprestasi berlatar belakang kurang mampu." },
-    { q: "Bagaimana sistem pengkondisian kelas jika terjadi bencana banjir?", a: "SMAN 1 Nusantara memiliki sistem e-learning hibrida Google Classroom. KBM akan dialihkan ke pembelajaran jarak jauh (PJJ) secara interaktif dari rumah masing-masing." }
+    { q: "Bagaimana sistem pengkondisian kelas jika terjadi bencana banjir?", a: "SMA Global memiliki sistem e-learning hibrida Google Classroom. KBM akan dialihkan ke pembelajaran jarak jauh (PJJ) secara interaktif dari rumah masing-masing." }
   ];
 
   return (
@@ -224,11 +224,11 @@ export default function ContactHub({ settings: _settings, activeSchool, onSubmit
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Lokasi Fisik & Peta Gedung Sekolah</h3>
-            <p className="text-xs text-slate-500 max-w-md mx-auto">Mudah diakses menggunakan TransJakarta rute MRT Blok M maupun bus kota.</p>
+            <p className="text-xs text-slate-500 max-w-md mx-auto">Mudah diakses menggunakan TransYogyakarta rute MRT Blok M maupun bus kota.</p>
           </div>
           <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden p-3 shadow-2xs">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x2e69f14f483bf9e1%3A0x6b8ec4344d9f67a2!2sKebayoran%20Baru%2C%20South%20Jakarta%20City%2C%20Jakarta!5m2!1sid!2sid" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x2e69f14f483bf9e1%3A0x6b8ec4344d9f67a2!2sKebayoran%20Baru%2C%20South%20Yogyakarta%20City%2C%20Yogyakarta!5m2!1sid!2sid" 
               className="w-full h-80 border-0 rounded-xl"
               allowFullScreen={true} 
               loading="lazy" 
@@ -386,7 +386,7 @@ export default function ContactHub({ settings: _settings, activeSchool, onSubmit
               </div>
               <div>
                 <h5 className="font-bold text-slate-800 text-xs sm:text-sm">Instagram Resmi</h5>
-                <p className="text-[10px] text-slate-400">@SMAN1Nusantara</p>
+                <p className="text-[10px] text-slate-400">@smaglobal.id</p>
               </div>
             </div>
             <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-pink-500 transition-colors" />
@@ -403,7 +403,7 @@ export default function ContactHub({ settings: _settings, activeSchool, onSubmit
               </div>
               <div>
                 <h5 className="font-bold text-slate-800 text-xs sm:text-sm">YouTube Channel</h5>
-                <p className="text-[10px] text-slate-400">SMAN 1 Nusantara Official</p>
+                <p className="text-[10px] text-slate-400">SMA Global Official</p>
               </div>
             </div>
             <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-red-500 transition-colors" />

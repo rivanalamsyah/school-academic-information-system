@@ -81,7 +81,7 @@ export default function BulkImportModal({
       filename = "templat_impor_siswa.csv";
     } else {
       headers = "nip,name,gender,email,phone,status,birth_date,address";
-      rows = `19820512,Rudi Hermawan,Laki-laki,rudi@sman1nusantara.sch.id,0811223344,PNS,1982-05-12,Jl. Diponegoro No. 8\n19850918,Dewi Lestari,Perempuan,dewi@sman1nusantara.sch.id,0811556677,Honororer,1985-09-18,Jl. Sudirman No. 12`;
+      rows = `19820512,Rudi Hermawan,Laki-laki,rudi@smaglobal.sch.id,0811223344,PNS,1982-05-12,Jl. Diponegoro No. 8\n19850918,Dewi Lestari,Perempuan,dewi@smaglobal.sch.id,0811556677,Honororer,1985-09-18,Jl. Sudirman No. 12`;
       filename = "templat_impor_guru.csv";
     }
 
@@ -268,7 +268,7 @@ export default function BulkImportModal({
           nip: d.nip,
           name: d.name,
           gender: d.validatedGender,
-          email: d.email || `${d.nip}@sman1nusantara.sch.id`,
+          email: d.email || `${d.nip}@smaglobal.sch.id`,
           phone: d.phone || "",
           status: d.status || "PNS",
           birthDate: d.birthDate,

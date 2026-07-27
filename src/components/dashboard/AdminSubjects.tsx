@@ -25,7 +25,7 @@ export function AdminSubjects({
         <h3 className="font-extrabold text-slate-950 text-sm tracking-tight">Mata Pelajaran & KKM</h3>
         <div className="flex gap-2">
           <button
-            onClick={() => handlePrintReport("Laporan Mata Pelajaran SMAN 1 Nusantara", "subjects-table-el")}
+            onClick={() => handlePrintReport("Laporan Mata Pelajaran SMA Global", "subjects-table-el")}
             className="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 border border-slate-300 rounded-xl text-xs font-bold flex items-center gap-1 cursor-pointer"
           >
             Cetak Laporan

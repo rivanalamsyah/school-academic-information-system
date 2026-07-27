@@ -26,7 +26,7 @@ export default function AboutHub({ settings: _settings, teachers, activeSchool }
   });
 
   const milestones = [
-    { year: "1982", title: "Pendirian Perdana", desc: "Didirikan dengan 3 ruang kelas darurat di Kebayoran Baru, Jakarta Selatan." },
+    { year: "1982", title: "Pendirian Perdana", desc: "Didirikan dengan 3 ruang kelas darurat di Condongcatur, Yogyakarta Selatan." },
     { year: "1995", title: "Akreditasi A & Perluasan", desc: "Memperoleh akreditasi A perdana dan membangun kompleks lab kimia & biologi." },
     { year: "2010", title: "Sekolah Kategori Mandiri", desc: "Ditunjuk kementerian sebagai salah satu rintisan sekolah digital modern mandiri." },
     { year: "2022", title: "Full Kurikulum Merdeka", desc: "Menjadi sekolah pelopor kurikulum Merdeka Belajar dengan platform terintegrasi." },
@@ -52,14 +52,14 @@ export default function AboutHub({ settings: _settings, teachers, activeSchool }
           <span className="bg-blue-50 text-blue-700 border border-blue-100 font-bold px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-widest font-mono">
             Kilas Balik Sejarah
           </span>
-          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Perjalanan Panjang SMAN 1 Nusantara</h3>
+          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Perjalanan Panjang SMA Global</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">Kami terus berkembang, melahirkan puluhan ribu lulusan berprestasi tinggi.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
             <p>
-              SMA Negeri 1 Nusantara didirikan pada tahun 1982 sebagai rintisan sekolah unggulan baru di wilayah Jakarta Selatan. Berbekal komitmen kuat melahirkan pemimpin bangsa, kami mementingkan kedisiplinan mental serta penguasaan literasi dasar yang kuat sejak awal.
+              SMA Global didirikan pada tahun 1982 sebagai rintisan sekolah unggulan baru di wilayah Yogyakarta Selatan. Berbekal komitmen kuat melahirkan pemimpin bangsa, kami mementingkan kedisiplinan mental serta penguasaan literasi dasar yang kuat sejak awal.
             </p>
             <p>
               Melewati era milenium, sekolah kami bertransformasi mengadopsi ruang-ruang praktikum komputer modern, perpustakaan digital, serta jaringan Wi-Fi komprehensif. Hari ini, di bawah Kurikulum Merdeka, sekolah kami menjadi kiblat bagi sekolah-sekolah di nusantara dalam hal penerapan teknologi portal administrasi guru-siswa yang paperless dan akurat.
@@ -371,7 +371,7 @@ export default function AboutHub({ settings: _settings, teachers, activeSchool }
           </span>
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Pathways Menuju Universitas Negeri Terfavorit</h3>
           <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            Guru BK di SMAN 1 Nusantara bertindak sebagai mentor karir personal. Kami melakukan asesmen sidik jari bakat, melacak tren kuota masuk lewat jalur prestasi undangan (SNBP), serta menyelenggarakan uji coba (Tryout) ujian tulis nasional (SNBT) komputerisasi sebanyak 12 kali dalam satu tahun ajaran.
+            Guru BK di SMA Global bertindak sebagai mentor karir personal. Kami melakukan asesmen sidik jari bakat, melacak tren kuota masuk lewat jalur prestasi undangan (SNBP), serta menyelenggarakan uji coba (Tryout) ujian tulis nasional (SNBT) komputerisasi sebanyak 12 kali dalam satu tahun ajaran.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 font-mono text-center pt-2">
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-3">

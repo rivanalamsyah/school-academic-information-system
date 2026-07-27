@@ -45,7 +45,7 @@ export function AdminTeachers({
         </div>
         <div className="flex gap-2 flex-wrap">
           <button
-            onClick={() => handlePrintReport("Laporan Data Guru SMAN 1 Nusantara", "teachers-table-el")}
+            onClick={() => handlePrintReport("Laporan Data Guru SMA Global", "teachers-table-el")}
             className="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 border border-slate-300 rounded-xl text-xs font-bold flex items-center gap-1 cursor-pointer"
           >
             Cetak Laporan

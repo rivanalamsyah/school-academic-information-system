@@ -31,12 +31,12 @@ const NAV_MENUS: NavMenuItem[] = [
 ];
 
 const DEFAULT_SCHOOL: SchoolSettings = {
-  name: "SMA Negeri 1 Nusantara",
+  name: "SMA Global",
   logo: "/logo.png",
   favicon: "/logo.png",
   phone: "(021) 555-0199",
-  email: "info@sman1nusantara.sch.id",
-  address: "Jl. Pendidikan Raya No. 1, Kebayoran Baru, Jakarta Selatan, DKI Jakarta",
+  email: "info@smaglobal.sch.id",
+  address: "Jl. Pendidikan Raya No. 1, Condongcatur, Sleman, Daerah Istimewa Yogyakarta",
   vision:
     "Terwujudnya insan terpelajar yang unggul secara akademis, menguasai kompetensi digital global, berintegritas tinggi, dan kokoh mengamalkan nilai-nilai karakter Pancasila.",
   mission: [
@@ -48,16 +48,16 @@ const DEFAULT_SCHOOL: SchoolSettings = {
   principalName: "Drs. H. Mulyono, M.Pd.",
   principalNip: "19681120 199303 1 005",
   principalGreeting:
-    "Assalamu'alaikum Wr. Wb., Salam Sejahtera bagi kita semua.\n\nPuji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas peluncuran wajah baru portal akademik SMA Negeri 1 Nusantara. Di era revolusi AI saat ini, kami berkomitmen tidak hanya mengejar kepandaian kognitif anak semata, namun secara khusus menumbuhkan integritas karakter mulia.\n\nMari berkolaborasi sinergis melahirkan putra-putri terbaik penerus kejayaan bangsa.",
+    "Assalamu'alaikum Wr. Wb., Salam Sejahtera bagi kita semua.\n\nPuji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas peluncuran wajah baru portal akademik SMA Global. Di era revolusi AI saat ini, kami berkomitmen tidak hanya mengejar kepandaian kognitif anak semata, namun secara khusus menumbuhkan integritas karakter mulia.\n\nMari berkolaborasi sinergis melahirkan putra-putri terbaik penerus kejayaan bangsa.",
   principalImage: "/principal.jpg",
   facebook: "",
   twitter: "",
   instagram: "",
   youtube: "",
-  seoTitle: "SMA Negeri 1 Nusantara – Portal Akademik Resmi",
+  seoTitle: "SMA Global – Portal Akademik Resmi",
   seoDescription:
-    "Portal resmi SMA Negeri 1 Nusantara Jakarta. Sistem Informasi Akademik Sekolah (SIAS) untuk manajemen akademik, absensi, nilai, jadwal, dan PPDB.",
-  seoKeywords: "SIAS, SMAN 1 Nusantara, portal akademik, PPDB, Jakarta",
+    "Portal resmi SMA Global Yogyakarta. Sistem Informasi Akademik Sekolah (SIAS) untuk manajemen akademik, absensi, nilai, jadwal, dan PPDB.",
+  seoKeywords: "SIAS, SMA Global, portal akademik, PPDB, Yogyakarta",
 };
 
 // ── Props ────────────────────────────────────────────────────────────────────
@@ -510,7 +510,7 @@ export default function PublicWebsite({ onGoToLogin, showToast }: PublicWebsiteP
             &copy; {new Date().getFullYear()} {activeSchool.name}. Hak Cipta Dilindungi
             Undang-Undang.
           </p>
-          <p>Dikelola Mandiri oleh Komite Digital SMAN 1 Nusantara</p>
+          <p>Dikelola Mandiri oleh Komite Digital SMA Global</p>
         </div>
       </footer>
     </div>

@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { User, Student, ClassRoom, CheckIn } from "../types";
 
-// Fixed coordinates of SMA Negeri 1 Nusantara
+// Fixed coordinates of SMA Global
 const SCHOOL_LAT = -6.229728;
 const SCHOOL_LON = 106.829555;
 
@@ -31,7 +31,7 @@ export function DailyCheckIn({ user, students, classRooms, showToast }: DailyChe
   const [distance, setDistance] = useState<number>(0);
   const [locationPreset, setLocationPreset] = useState<"school" | "home" | "cafe">("school");
   const [isLocating, setIsLocating] = useState(false);
-  const [locationName, setLocationName] = useState<string>("Area SMAN 1 Nusantara (Lobi Utama)");
+  const [locationName, setLocationName] = useState<string>("Area SMA Global (Lobi Utama)");
 
   // Data States
   const [checkInLogs, setCheckInLogs] = useState<CheckIn[]>([]);
@@ -95,13 +95,13 @@ export function DailyCheckIn({ user, students, classRooms, showToast }: DailyChe
     let lat = SCHOOL_LAT;
     let lon = SCHOOL_LON;
     let dist = 0;
-    let locName = "Area SMAN 1 Nusantara (Lobi Utama)";
+    let locName = "Area SMA Global (Lobi Utama)";
 
     if (locationPreset === "school") {
       lat = SCHOOL_LAT;
       lon = SCHOOL_LON;
       dist = 0;
-      locName = "Area SMAN 1 Nusantara (Lobi Utama)";
+      locName = "Area SMA Global (Lobi Utama)";
     } else if (locationPreset === "home") {
       // ~1.2 km away
       lat = SCHOOL_LAT + 0.008;

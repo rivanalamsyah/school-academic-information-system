@@ -3,7 +3,7 @@
  */
 export async function syncDatabaseToGoogleSheets(db: any, accessToken: string): Promise<{ spreadsheetId: string, url: string }> {
   let spreadsheetId = db.settings?.googleSpreadsheetId;
-  const spreadsheetTitle = `${db.settings?.name || 'Sistem Informasi Akademik'} - SMAN 1 Nusantara`;
+  const spreadsheetTitle = `${db.settings?.name || 'Sistem Informasi Akademik'} - SMA Global`;
 
   // 1. If spreadsheetId doesn't exist, create a new Google Spreadsheet
   if (!spreadsheetId) {
@@ -115,10 +115,10 @@ export async function syncDatabaseToGoogleSheets(db: any, accessToken: string): 
   const dataPayloads: any[] = [];
 
   // Sheet 1: Ringkasan (Dashboard)
-  const lastSyncTime = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" }) + " WIB";
+  const lastSyncTime = new Date().toLocaleString("id-ID", { timeZone: "Asia/Yogyakarta" }) + " WIB";
   const summaryRows = [
     ["Metrik Informasi Akademik", "Nilai Terdata / Deskripsi"],
-    ["Nama Sekolah", db.settings?.name || "SMAN 1 Nusantara"],
+    ["Nama Sekolah", db.settings?.name || "SMA Global"],
     ["Kepala Sekolah", db.settings?.principalName || "-"],
     ["NIP Kepala Sekolah", db.settings?.principalNip || "-"],
     ["Telepon Sekolah", db.settings?.phone || "-"],

@@ -32,7 +32,7 @@ export default function CampusLifeHub({ gallery, activeSchool: _activeSchool }: 
           <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
             <h4 className="text-base font-extrabold text-slate-900">Ruang Kelas Pintar Ber-AC & Smartboard</h4>
             <p>
-              Setiap ruang kelas di SMAN 1 Nusantara telah dilengkapi pendingin udara (AC) ganda, proyektor LCD beresolusi tajam, serta papan tulis digital interaktif (Smartboard). Guru dapat memproyeksikan video interaktif, materi presentasi 3D, serta kuis live dalam satu sentuhan pen tablet.
+              Setiap ruang kelas di SMA Global telah dilengkapi pendingin udara (AC) ganda, proyektor LCD beresolusi tajam, serta papan tulis digital interaktif (Smartboard). Guru dapat memproyeksikan video interaktif, materi presentasi 3D, serta kuis live dalam satu sentuhan pen tablet.
             </p>
             <p>
               Selain itu, kami memiliki Laboratorium Komputer Multimedia modern dengan 40 unit PC berspesifikasi tinggi, terintegrasi audio digital terpusat untuk simulasi percakapan bahasa asing serta pelatihan logika pemrograman.
@@ -93,7 +93,7 @@ export default function CampusLifeHub({ gallery, activeSchool: _activeSchool }: 
             </span>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Kompleks Olahraga & Studio Seni Kreatif</h3>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Tubuh yang sehat melahirkan daya pikir yang tajam. SMAN 1 Nusantara memfasilitasi sarana olah fisik premium yang mencakup lapangan futsal outdoor beralaskan rumput sintetis, lapangan basket standar turnamen regional, lompat jauh, serta lintasan lari (running track).
+              Tubuh yang sehat melahirkan daya pikir yang tajam. SMA Global memfasilitasi sarana olah fisik premium yang mencakup lapangan futsal outdoor beralaskan rumput sintetis, lapangan basket standar turnamen regional, lompat jauh, serta lintasan lari (running track).
             </p>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
               Untuk pengembangan minat seni tari dan musik, kami menyediakan studio kedap suara yang dilengkapi drum elektrik, piano, gitar listrik, bass, keyboard, serta amplifier bermutu tinggi untuk latihan grup band / paduan suara sekolah.
@@ -170,7 +170,7 @@ export default function CampusLifeHub({ gallery, activeSchool: _activeSchool }: 
             </span>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Kegiatan Kepemimpinan OSIS & MPK</h3>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Organisasi Siswa Intra Sekolah (OSIS) dan Majelis Perwakilan Kelas (MPK) di SMAN 1 Nusantara didesain sebagai miniatur pemerintahan demokratis. Siswa melakukan kampanye pemilihan ketua OSIS berbasis e-voting, menyusun proposal anggaran dana kegiatan, mengoordinasi kepanitiaan pentas seni (pensi), serta belajar memimpin rapat evaluasi krisis.
+              Organisasi Siswa Intra Sekolah (OSIS) dan Majelis Perwakilan Kelas (MPK) di SMA Global didesain sebagai miniatur pemerintahan demokratis. Siswa melakukan kampanye pemilihan ketua OSIS berbasis e-voting, menyusun proposal anggaran dana kegiatan, mengoordinasi kepanitiaan pentas seni (pensi), serta belajar memimpin rapat evaluasi krisis.
             </p>
             <div className="flex gap-4 font-mono">
               <div className="bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-2xs">
@@ -297,7 +297,7 @@ export default function CampusLifeHub({ gallery, activeSchool: _activeSchool }: 
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 space-y-3">
             <span className="bg-blue-600 text-white font-mono font-bold text-[9px] uppercase px-2 py-0.5 rounded-md inline-block">EVENT 01</span>
-            <h4 className="font-bold text-sm text-blue-400">Nusantara Art & Culture Festival</h4>
+            <h4 className="font-bold text-sm text-blue-400">Global Art & Culture Festival</h4>
             <p className="text-slate-300 text-xs leading-relaxed">
               Pentas seni megah tahunan di mana tiap kelas X-XII membangun anjungan kebudayaan (booth), menampilkan drama kolosal daerah, meracik makanan tradisional nusantara, serta menggalang dana charity sosial kemanusiaan.
             </p>

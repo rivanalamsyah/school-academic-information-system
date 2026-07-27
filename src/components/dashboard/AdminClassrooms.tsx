@@ -27,7 +27,7 @@ export function AdminClassrooms({
         <h3 className="font-extrabold text-slate-950 text-sm tracking-tight">Daftar Kelas Terdaftar</h3>
         <div className="flex gap-2">
           <button
-            onClick={() => handlePrintReport("Laporan Data Kelas SMAN 1 Nusantara", "classrooms-table-el")}
+            onClick={() => handlePrintReport("Laporan Data Kelas SMA Global", "classrooms-table-el")}
             className="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 border border-slate-300 rounded-xl text-xs font-bold flex items-center gap-1 cursor-pointer"
           >
             Cetak Laporan

@@ -140,35 +140,36 @@ if (!fs.existsSync(dbDir)) {
 // Default initial data seeder helper
 function generateSeederData() {
   const settings = {
-    name: "SMA Negeri 1 Nusantara",
-    logo: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=120&auto=format&fit=crop",
-    favicon: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=32&auto=format&fit=crop",
-    phone: "(021) 555-0199",
-    email: "info@sman1nusantara.sch.id",
-    address: "Jl. Pendidikan No. 45, Kebayoran Baru, Jakarta Selatan, DKI Jakarta",
-    vision: "Mewujudkan insan akademis yang unggul dalam IPTEK, kokoh dalam IMTAK, berkarakter luhur, dan berwawasan lingkungan global.",
+    name: "SMA Global",
+    logo: "/logo.png",
+    favicon: "/logo.png",
+    phone: "(0274) 567890",
+    email: "info@smaglobal.sch.id",
+    address: "Jl. Pendidikan Nusantara No. 88, Condongcatur, Depok, Sleman, Daerah Istimewa Yogyakarta, 55281",
+    vision: "Menjadi sekolah unggul yang menghasilkan lulusan berkarakter, berprestasi, berwawasan global, dan menguasai teknologi.",
     mission: [
-      "Menyelenggarakan pembelajaran berkualitas berbasis digital dan kebhinekaan.",
-      "Menumbuhkembangkan kebiasaan ibadah, akhlak mulia, dan integritas tinggi.",
-      "Memfasilitasi pengembangan minat, bakat, serta kreativitas siswa melalui ekstrakurikuler unggulan.",
-      "Menerapkan tata kelola sekolah yang transparan, akuntabel, dan ramah lingkungan."
+      "Menyelenggarakan pendidikan berkualitas.",
+      "Mengembangkan karakter peserta didik.",
+      "Memanfaatkan teknologi dalam pembelajaran.",
+      "Mendorong prestasi akademik dan non-akademik.",
+      "Menumbuhkan budaya disiplin, kreatif, dan inovatif."
     ],
-    principalName: "Dr. H. Ahmad Wijaya, M.Pd.",
-    principalNip: "19750812 200112 1 002",
-    principalGreeting: "Assalamualaikum Wr. Wb. Selamat datang di portal resmi SMA Negeri 1 Nusantara. Sebagai sekolah rujukan nasional, kami berkomitmen untuk melahirkan generasi cerdas, mandiri, dan berkarakter Pancasila. Melalui integrasi teknologi informasi dalam tata kelola akademik, kami berharap sistem ini dapat menjembatani komunikasi yang erat antara sekolah, guru, siswa, dan orang tua demi kesuksesan bersama.",
-    principalImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
-    facebook: "https://facebook.com/sman1nusantara",
-    twitter: "https://twitter.com/sman1nusantara",
-    instagram: "https://instagram.com/sman1nusantara",
-    youtube: "https://youtube.com/sman1nusantaratv",
-    seoTitle: "SMA Negeri 1 Nusantara - Cerdas, Mandiri, Berkarakter",
-    seoDescription: "Portal resmi SMA Negeri 1 Nusantara Jakarta. Menyediakan informasi sekolah, pendaftaran siswa baru (PPDB), berita, galeri, dan fasilitas sekolah.",
-    seoKeywords: "SMA Negeri 1 Nusantara, sekolah terbaik Jakarta, PPDB SMA, portal akademik sekolah"
+    principalName: "Drs. Ahmad Fauzi, M.Pd.",
+    principalNip: "19720412 199803 1 003",
+    principalGreeting: "Assalamualaikum Wr. Wb. Selamat datang di portal resmi SMA Global. Sebagai salah satu institusi pendidikan modern di Sleman, Daerah Istimewa Yogyakarta, kami berkomitmen untuk mendidik calon pemimpin bangsa yang unggul, berkarakter mulia, menguasai teknologi, dan siap bersaing di tingkat global. Dengan dukungan sistem akademik portal terintegrasi (SIAS), kami menjembatani proses pembelajaran, administrasi, dan koordinasi secara cepat, transparan, dan akuntabel.",
+    principalImage: "/principal.jpg",
+    facebook: "SMA Global Indonesia",
+    twitter: "SMA Global Official",
+    instagram: "@smaglobal.id",
+    youtube: "SMA Global Official",
+    seoTitle: "SMA Global - Unggul, Berkarakter, Berwawasan Global",
+    seoDescription: "Portal resmi SMA Global Sleman Yogyakarta. Sistem Informasi Akademik Sekolah (SIAS) terpadu untuk siswa, guru, dan orang tua.",
+    seoKeywords: "SMA Global, sekolah Yogyakarta, PPDB Sleman, portal akademik SMA"
   };
 
   const academicYears = [
-    { id: "ay1", year: "2025/2026", semester: "Ganjil", active: true },
-    { id: "ay2", year: "2025/2026", semester: "Genap", active: false }
+    { id: "ay1", year: "2026/2027", semester: "Ganjil", active: true },
+    { id: "ay2", year: "2026/2027", semester: "Genap", active: false }
   ];
 
   const subjects = [
@@ -186,18 +187,18 @@ function generateSeederData() {
 
   // 12 Teachers
   const teachers = [
-    { id: "t1", nip: "19800101 200501 1 003", name: "Dra. Siti Rahmah, M.Si.", gender: "Perempuan", email: "siti.rahmah@sman1nusantara.sch.id", phone: "08123456701", status: "PNS", birthDate: "1980-01-01", address: "Kebayoran Lama, Jakarta Selatan", userId: "u_t1" },
-    { id: "t2", nip: "19850415 201001 2 005", name: "Budi Santoso, S.Pd.", gender: "Laki-laki", email: "budi.santoso@sman1nusantara.sch.id", phone: "08123456702", status: "PNS", birthDate: "1985-04-15", address: "Cilandak, Jakarta Selatan", userId: "u_t2" },
-    { id: "t3", nip: "19881120 201503 1 008", name: "Dewi Lestari, M.Pd.", gender: "Perempuan", email: "dewi.lestari@sman1nusantara.sch.id", phone: "08123456703", status: "PNS", birthDate: "1988-11-20", address: "Pasar Minggu, Jakarta Selatan", userId: "u_t3" },
-    { id: "t4", nip: "19910905 201904 2 012", name: "Rian Hidayat, S.Pd.", gender: "Laki-laki", email: "rian.hidayat@sman1nusantara.sch.id", phone: "08123456704", status: "Yayasan", birthDate: "1991-09-05", address: "Jagakarsa, Jakarta Selatan", userId: "u_t4" },
-    { id: "t5", nip: "19780312 200312 1 001", name: "Drs. Heri Irawan", gender: "Laki-laki", email: "heri.irawan@sman1nusantara.sch.id", phone: "08123456705", status: "PNS", birthDate: "1978-03-12", address: "Pondok Indah, Jakarta Selatan", userId: "u_t5" },
-    { id: "t6", nip: "19931218 202201 2 015", name: "Anisa Fitriani, M.Pd.", gender: "Perempuan", email: "anisa.fitriani@sman1nusantara.sch.id", phone: "08123456706", status: "Honororer", birthDate: "1993-12-18", address: "Tebet, Jakarta Selatan", userId: "u_t6" },
-    { id: "t7", nip: "19820525 200801 1 004", name: "Agus Salim, M.Pd.", gender: "Laki-laki", email: "agus.salim@sman1nusantara.sch.id", phone: "08123456707", status: "PNS", birthDate: "1982-05-25", address: "Mampang Prapatan, Jakarta Selatan", userId: "u_t7" },
-    { id: "t8", nip: "19860710 201103 2 007", name: "Rina Wijayanti, S.Pd.", gender: "Perempuan", email: "rina.wijayanti@sman1nusantara.sch.id", phone: "08123456708", status: "PNS", birthDate: "1986-07-10", address: "Kuningan, Jakarta Selatan", userId: "u_t8" },
-    { id: "t9", nip: "19901002 201804 1 010", name: "Fajar Nugroho, S.Si.", gender: "Laki-laki", email: "fajar.nugroho@sman1nusantara.sch.id", phone: "08123456709", status: "Yayasan", birthDate: "1990-10-02", address: "Setiabudi, Jakarta Selatan", userId: "u_t9" },
-    { id: "t10", nip: "19940608 202301 2 019", name: "Sari Kusuma, S.Pd.", gender: "Perempuan", email: "sari.kusuma@sman1nusantara.sch.id", phone: "08123456710", status: "Honororer", birthDate: "1994-06-08", address: "Palmerah, Jakarta Barat", userId: "u_t10" },
-    { id: "t11", nip: "19790830 200501 1 002", name: "Irwan Susanto, M.T.", gender: "Laki-laki", email: "irwan.susanto@sman1nusantara.sch.id", phone: "08123456711", status: "PNS", birthDate: "1979-08-30", address: "Tanah Abang, Jakarta Pusat", userId: "u_t11" },
-    { id: "t12", nip: "19870211 201204 2 009", name: "Mega Utami, S.Pd.", gender: "Perempuan", email: "mega.utami@sman1nusantara.sch.id", phone: "08123456712", status: "PNS", birthDate: "1987-02-11", address: "Gambir, Jakarta Pusat", userId: "u_t12" }
+    { id: "t1", nip: "19800101 200501 1 003", name: "Dra. Siti Rahmah, M.Si.", gender: "Perempuan", email: "siti.rahmah@smaglobal.sch.id", phone: "08123456701", status: "PNS", birthDate: "1980-01-01", address: "Kebayoran Lama, Yogyakarta Selatan", userId: "u_t1" },
+    { id: "t2", nip: "19850415 201001 2 005", name: "Budi Santoso, S.Pd.", gender: "Laki-laki", email: "budi.santoso@smaglobal.sch.id", phone: "08123456702", status: "PNS", birthDate: "1985-04-15", address: "Cilandak, Yogyakarta Selatan", userId: "u_t2" },
+    { id: "t3", nip: "19881120 201503 1 008", name: "Dewi Lestari, M.Pd.", gender: "Perempuan", email: "dewi.lestari@smaglobal.sch.id", phone: "08123456703", status: "PNS", birthDate: "1988-11-20", address: "Pasar Minggu, Yogyakarta Selatan", userId: "u_t3" },
+    { id: "t4", nip: "19910905 201904 2 012", name: "Rian Hidayat, S.Pd.", gender: "Laki-laki", email: "rian.hidayat@smaglobal.sch.id", phone: "08123456704", status: "Yayasan", birthDate: "1991-09-05", address: "Jagakarsa, Yogyakarta Selatan", userId: "u_t4" },
+    { id: "t5", nip: "19780312 200312 1 001", name: "Drs. Heri Irawan", gender: "Laki-laki", email: "heri.irawan@smaglobal.sch.id", phone: "08123456705", status: "PNS", birthDate: "1978-03-12", address: "Pondok Indah, Yogyakarta Selatan", userId: "u_t5" },
+    { id: "t6", nip: "19931218 202201 2 015", name: "Anisa Fitriani, M.Pd.", gender: "Perempuan", email: "anisa.fitriani@smaglobal.sch.id", phone: "08123456706", status: "Honororer", birthDate: "1993-12-18", address: "Tebet, Yogyakarta Selatan", userId: "u_t6" },
+    { id: "t7", nip: "19820525 200801 1 004", name: "Agus Salim, M.Pd.", gender: "Laki-laki", email: "agus.salim@smaglobal.sch.id", phone: "08123456707", status: "PNS", birthDate: "1982-05-25", address: "Mampang Prapatan, Yogyakarta Selatan", userId: "u_t7" },
+    { id: "t8", nip: "19860710 201103 2 007", name: "Rina Wijayanti, S.Pd.", gender: "Perempuan", email: "rina.wijayanti@smaglobal.sch.id", phone: "08123456708", status: "PNS", birthDate: "1986-07-10", address: "Kuningan, Yogyakarta Selatan", userId: "u_t8" },
+    { id: "t9", nip: "19901002 201804 1 010", name: "Fajar Nugroho, S.Si.", gender: "Laki-laki", email: "fajar.nugroho@smaglobal.sch.id", phone: "08123456709", status: "Yayasan", birthDate: "1990-10-02", address: "Setiabudi, Yogyakarta Selatan", userId: "u_t9" },
+    { id: "t10", nip: "19940608 202301 2 019", name: "Sari Kusuma, S.Pd.", gender: "Perempuan", email: "sari.kusuma@smaglobal.sch.id", phone: "08123456710", status: "Honororer", birthDate: "1994-06-08", address: "Palmerah, Yogyakarta Barat", userId: "u_t10" },
+    { id: "t11", nip: "19790830 200501 1 002", name: "Irwan Susanto, M.T.", gender: "Laki-laki", email: "irwan.susanto@smaglobal.sch.id", phone: "08123456711", status: "PNS", birthDate: "1979-08-30", address: "Tanah Abang, Yogyakarta Pusat", userId: "u_t11" },
+    { id: "t12", nip: "19870211 201204 2 009", name: "Mega Utami, S.Pd.", gender: "Perempuan", email: "mega.utami@smaglobal.sch.id", phone: "08123456712", status: "PNS", birthDate: "1987-02-11", address: "Gambir, Yogyakarta Pusat", userId: "u_t12" }
   ];
 
   // Classrooms
@@ -232,7 +233,7 @@ function generateSeederData() {
       gender,
       classRoomId: classId,
       birthDate: `200${8 + (i % 3)}-0${(i % 9) + 1}-${10 + (i % 15)}`,
-      address: `Jl. Nusantara Raya No. ${i * 4}, Jakarta`,
+      address: `Jl. Global Raya No. ${i * 4}, Yogyakarta`,
       status: "Aktif",
       parentName: `${lastNames[29 - i]} ${i % 2 === 0 ? "S.H." : "M.B.A."}`,
       parentPhone: `085678901${String(10 + i)}`,
@@ -242,8 +243,8 @@ function generateSeederData() {
 
   // Generate accounts for Users (Super Admin, Admins, Teachers, Students)
   const users: any[] = [
-    { id: "u_super", username: "superadmin", name: "Super Administrator", role: "super_admin", email: "superadmin@sman1nusantara.sch.id", avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150&auto=format&fit=crop", active: true },
-    { id: "u_admin", username: "adminsekolah", name: "Admin SMAN 1 Nusantara", role: "admin", email: "admin@sman1nusantara.sch.id", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop", active: true }
+    { id: "u_super", username: "superadmin", name: "Super Administrator", role: "super_admin", email: "superadmin@smaglobal.sch.id", avatar: "/default-avatar.png", active: true },
+    { id: "u_admin", username: "adminsekolah", name: "Admin SMA Global", role: "admin", email: "admin@smaglobal.sch.id", avatar: "/default-avatar.png", active: true }
   ];
 
   // Add teachers to user accounts
@@ -255,8 +256,8 @@ function generateSeederData() {
       role: "guru",
       email: t.email,
       avatar: t.gender === "Laki-laki" 
-        ? "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-        : "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+        ? "/default-avatar.png"
+        : "/default-avatar.png",
       active: true,
       detailsId: t.id
     });
@@ -269,10 +270,10 @@ function generateSeederData() {
       username: s.nis, // NIS as username
       name: s.name,
       role: "siswa",
-      email: `${s.nis}@student.sman1nusantara.sch.id`,
+      email: `${s.nis}@student.smaglobal.sch.id`,
       avatar: s.gender === "Laki-laki"
-        ? "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop"
-        : "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+        ? "/default-avatar.png"
+        : "/default-avatar.png",
       active: true,
       detailsId: s.id
     });
@@ -396,8 +397,8 @@ function generateSeederData() {
   const announcements = [
     {
       id: "ann1",
-      title: "Ujian Tengah Semester (UTS) Ganjil T.A 2025/2026",
-      content: "Diberitahukan kepada seluruh siswa/siswi SMAN 1 Nusantara bahwa Pelaksanaan UTS Ganjil akan diselenggarakan mulai tanggal 22 September 2025 s.d 29 September 2025. Jadwal ujian lengkap dapat diunduh di papan dokumen sekolah. Pastikan kartu ujian telah dicetak dan tertib administrasi keuangan.",
+      title: "Ujian Tengah Semester (UTS) Ganjil T.A 2026/2027",
+      content: "Diberitahukan kepada seluruh siswa/siswi SMA Global bahwa Pelaksanaan UTS Ganjil akan diselenggarakan mulai tanggal 22 September 2025 s.d 29 September 2025. Jadwal ujian lengkap dapat diunduh di papan dokumen sekolah. Pastikan kartu ujian telah dicetak dan tertib administrasi keuangan.",
       type: "important",
       date: "2026-07-15",
       author: "Humas Sekolah",
@@ -415,7 +416,7 @@ function generateSeederData() {
     {
       id: "ann3",
       title: "Lomba Bulan Bahasa & Seni Kreatif 2026",
-      content: "Menyambut Bulan Bahasa, OSIS SMA Negeri 1 Nusantara mengadakan kompetisi seni antar kelas, meliputi: Cipta & Baca Puisi, Musikalisasi Puisi, Debat Bahasa Indonesia, dan Stand Up Comedy. Pendaftaran ditutup pada 10 Oktober 2026. Hubungi panitia OSIS untuk info pendaftaran.",
+      content: "Menyambut Bulan Bahasa, OSIS SMA Global mengadakan kompetisi seni antar kelas, meliputi: Cipta & Baca Puisi, Musikalisasi Puisi, Debat Bahasa Indonesia, dan Stand Up Comedy. Pendaftaran ditutup pada 10 Oktober 2026. Hubungi panitia OSIS untuk info pendaftaran.",
       type: "warning",
       date: "2026-07-18",
       author: "Pembina OSIS",
@@ -427,46 +428,46 @@ function generateSeederData() {
   const news = [
     {
       id: "news1",
-      title: "Siswa SMAN 1 Nusantara Sabet Emas Olimpiade Sains Nasional 2025",
-      summary: "Kabar membanggakan datang dari bidang Fisika dan Astronomi. Dua siswa SMAN 1 Nusantara berhasil menyabet medali emas di ajang OSN tingkat nasional.",
-      content: "Prestasi gemilang kembali ditorehkan oleh siswa-siswi terbaik SMA Negeri 1 Nusantara di tingkat nasional. Dalam ajang Olimpiade Sains Nasional (OSN) 2025 yang diselenggarakan di Bandung, kontingen sekolah berhasil menyumbangkan 2 Medali Emas untuk kategori Fisika dan Astronomi.\n\nSiswa tersebut adalah Muhammad Rian (Kelas XII MIPA 1) di cabang Fisika dan Citra Lestari (Kelas XI MIPA 1) di cabang Astronomi. Kepala Sekolah Dr. H. Ahmad Wijaya menyatakan kebanggaannya, 'Ini adalah bukti kerja keras siswa, dedikasi guru pembina, serta dukungan penuh dari seluruh wali murid. Semoga pencapaian ini memotivasi adik kelas untuk terus berprestasi.'",
+      title: "Siswa SMA Global Sabet Emas Olimpiade Sains Nasional 2025",
+      summary: "Kabar membanggakan datang dari bidang Fisika dan Astronomi. Dua siswa SMA Global berhasil menyabet medali emas di ajang OSN tingkat nasional.",
+      content: "Prestasi gemilang kembali ditorehkan oleh siswa-siswi terbaik SMA Global di tingkat nasional. Dalam ajang Olimpiade Sains Nasional (OSN) 2025 yang diselenggarakan di Bandung, kontingen sekolah berhasil menyumbangkan 2 Medali Emas untuk kategori Fisika dan Astronomi.\n\nSiswa tersebut adalah Muhammad Rian (Kelas XII MIPA 1) di cabang Fisika dan Citra Lestari (Kelas XI MIPA 1) di cabang Astronomi. Kepala Sekolah Drs. Ahmad Fauzi, M.Pd. menyatakan kebanggaannya, 'Ini adalah bukti kerja keras siswa, dedikasi guru pembina, serta dukungan penuh dari seluruh wali murid. Semoga pencapaian ini memotivasi adik kelas untuk terus berprestasi.'",
       category: "Prestasi",
       date: "2026-07-14",
-      author: "Humas SMAN 1",
-      image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=800&auto=format&fit=crop",
+      author: "Humas SMA Global",
+      image: "/school.jpg",
       slug: "siswa-sman1-sabet-emas-osn-2025"
     },
     {
       id: "news2",
       title: "Peluncuran Laboratorium Bahasa dan Multimedia Digital Baru",
       summary: "Sekolah meresmikan Laboratorium Bahasa modern yang dilengkapi sistem interaktif berbasis AI dan headphone berteknologi noise-canceling untuk meningkatkan kompetensi bahasa asing.",
-      content: "Guna meningkatkan kualitas Kegiatan Belajar Mengajar (KBM) terutama di bidang kompetensi bahasa internasional, SMA Negeri 1 Nusantara secara resmi meluncurkan fasilitas Laboratorium Bahasa & Multimedia Digital teranyar.\n\nFasilitas ini menampung 40 unit komputer berspesifikasi tinggi, dilengkapi dengan headset noise-canceling, dan sistem kontrol multimedia terpusat yang dipegang oleh guru. Melalui fasilitas baru ini, diharapkan siswa dapat berlatih percakapan, mendengarkan, serta presentasi interaktif secara maksimal, mendukung target sekolah sebagai salah satu institusi berwawasan global.",
+      content: "Guna meningkatkan kualitas Kegiatan Belajar Mengajar (KBM) terutama di bidang kompetensi bahasa internasional, SMA Global secara resmi meluncurkan fasilitas Laboratorium Bahasa & Multimedia Digital teranyar.\n\nFasilitas ini menampung 40 unit komputer berspesifikasi tinggi, dilengkapi dengan headset noise-canceling, dan sistem kontrol multimedia terpusat yang dipegang oleh guru. Melalui fasilitas baru ini, diharapkan siswa dapat berlatih percakapan, mendengarkan, serta presentasi interaktif secara maksimal, mendukung target sekolah sebagai salah satu institusi berwawasan global.",
       category: "Fasilitas",
       date: "2026-07-16",
       author: "Sarpras Sekolah",
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
+      image: "/facilities.jpg",
       slug: "peluncuran-lab-bahasa-multimedia-digital"
     },
     {
       id: "news3",
       title: "Penerimaan Peserta Didik Baru (PPDB) Jalur Zonasi Dimulai",
-      summary: "PPDB SMA Negeri 1 Nusantara tahun pelajaran 2025/2026 resmi dibuka untuk jalur zonasi, afirmasi, dan prestasi. Simak tata cara dan kuotanya di sini.",
-      content: "Penerimaan Peserta Didik Baru (PPDB) SMA Negeri 1 Nusantara tahun pelajaran 2025/2026 telah dibuka. Proses seleksi tahun ini menggunakan skema kuota Zonasi (50%), Afirmasi (15%), Perpindahan Tugas Orang Tua (5%), dan Jalur Prestasi Akademik/Non-Akademik (30%).\n\nPendaftaran dilakukan secara daring melalui website resmi kami. Sekolah juga menyediakan pos pelayanan bantuan (helpdesk) di aula bagi calon wali murid yang mengalami kendala administrasi pendaftaran online. Proses verifikasi dokumen akan berlangsung ketat untuk memastikan keadilan bagi semua pihak.",
+      summary: "PPDB SMA Global tahun pelajaran 2026/2027 resmi dibuka untuk jalur zonasi, afirmasi, dan prestasi. Simak tata cara dan kuotanya di sini.",
+      content: "Penerimaan Peserta Didik Baru (PPDB) SMA Global tahun pelajaran 2026/2027 telah dibuka. Proses seleksi tahun ini menggunakan skema kuota Zonasi (50%), Afirmasi (15%), Perpindahan Tugas Orang Tua (5%), dan Jalur Prestasi Akademik/Non-Akademik (30%).\n\nPendaftaran dilakukan secara daring melalui website resmi kami. Sekolah juga menyediakan pos pelayanan bantuan (helpdesk) di aula bagi calon wali murid yang mengalami kendala administrasi pendaftaran online. Proses verifikasi dokumen akan berlangsung ketat untuk memastikan keadilan bagi semua pihak.",
       category: "PPDB",
       date: "2026-07-18",
       author: "Panitia PPDB",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+      image: "/school.jpg",
       slug: "ppdb-jalur-zonasi-dimulai"
     }
   ];
 
   // Gallery
   const gallery = [
-    { id: "g1", title: "Upacara Bendera Peringatan Hari Pendidikan Nasional", description: "Seluruh jajaran guru dan siswa khidmat mengikuti jalannya upacara Hardiknas di lapangan utama.", category: "KBM", image: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=600&auto=format&fit=crop", date: "2026-05-02" },
-    { id: "g2", title: "Latihan Rutin Tim Basket Sekolah", description: "Ekstrakurikuler basket putra mempersiapkan fisik untuk turnamen DBL Jakarta Barat.", category: "Ekstrakurikuler", image: "https://images.unsplash.com/photo-1519766304817-4f37bda74a27?q=80&w=600&auto=format&fit=crop", date: "2026-07-10" },
-    { id: "g3", title: "Ruang Perpustakaan Taman Bacaan", description: "Fasilitas perpustakaan yang tenang, nyaman, dan ramah anak dilengkapi ribuan katalog buku cetak & digital.", category: "Fasilitas", image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600&auto=format&fit=crop", date: "2026-06-15" },
-    { id: "g4", title: "Penyerahan Trophy Juara 1 Paduan Suara", description: "Tim Paduan Suara SMAN 1 Nusantara merayakan kemenangan kompetisi antar pelajar provinsi.", category: "Prestasi", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop", date: "2026-07-05" },
-    { id: "g5", title: "Praktikum Kimia Organik Siswa Kelas XI", description: "Siswa mengamati reaksi pengendapan zat warna di Laboratorium Kimia didampingi guru.", category: "KBM", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop", date: "2026-07-12" }
+    { id: "g1", title: "Upacara Bendera Peringatan Hari Pendidikan Nasional", description: "Seluruh jajaran guru dan siswa khidmat mengikuti jalannya upacara Hardiknas di lapangan utama.", category: "KBM", image: "/school.jpg", date: "2026-05-02" },
+    { id: "g2", title: "Latihan Rutin Tim Basket Sekolah", description: "Ekstrakurikuler basket putra mempersiapkan fisik untuk turnamen DBL Jakarta Barat.", category: "Ekstrakurikuler", image: "/school.jpg", date: "2026-07-10" },
+    { id: "g3", title: "Ruang Perpustakaan Taman Bacaan", description: "Fasilitas perpustakaan yang tenang, nyaman, dan ramah anak dilengkapi ribuan katalog buku cetak & digital.", category: "Fasilitas", image: "/facilities.jpg", date: "2026-06-15" },
+    { id: "g4", title: "Penyerahan Trophy Juara 1 Paduan Suara", description: "Tim Paduan Suara SMA Global merayakan kemenangan kompetisi antar pelajar provinsi.", category: "Prestasi", image: "/school.jpg", date: "2026-07-05" },
+    { id: "g5", title: "Praktikum Kimia Organik Siswa Kelas XI", description: "Siswa mengamati reaksi pengendapan zat warna di Laboratorium Kimia didampingi guru.", category: "KBM", image: "/school.jpg", date: "2026-07-12" }
   ];
 
   // Documents
@@ -484,9 +485,9 @@ function generateSeederData() {
 
   // PPDB Admissions
   const ppdbRegistrations = [
-    { id: "p1", registrationNo: "PPDB2026001", fullName: "Zahra Amalia", gender: "Perempuan", birthPlace: "Jakarta", birthDate: "2010-05-12", address: "Jl. Tebet Barat No. 12, Jakarta Selatan", prevSchool: "SMP Negeri 115 Jakarta", parentName: "Hendra Amalia", parentPhone: "08139876543", email: "zahra.amalia@gmail.com", status: "pending", date: "2026-07-18" },
-    { id: "p2", registrationNo: "PPDB2026002", fullName: "Rafi Kurniawan", gender: "Laki-laki", birthPlace: "Bandung", birthDate: "2010-09-22", address: "Jl. Pancoran Barat No. 3, Jakarta Selatan", prevSchool: "SMP Negeri 73 Jakarta", parentName: "Kurniawan", parentPhone: "08129876544", email: "rafi.kurniawan@gmail.com", status: "approved", date: "2026-07-17" },
-    { id: "p3", registrationNo: "PPDB2026003", fullName: "Farhan Mahendra", gender: "Laki-laki", birthPlace: "Depok", birthDate: "2010-02-05", address: "Jl. Jagakarsa No. 44, Jakarta Selatan", prevSchool: "SMP Swasta Al-Azhar 2", parentName: "Bambang Mahendra", parentPhone: "08159876545", email: "farhan.mahe@gmail.com", status: "rejected", date: "2026-07-16" }
+    { id: "p1", registrationNo: "PPDB2026001", fullName: "Zahra Amalia", gender: "Perempuan", birthPlace: "Jakarta", birthDate: "2010-05-12", address: "Jl. Tebet Barat No. 12, Yogyakarta Selatan", prevSchool: "SMP Negeri 115 Jakarta", parentName: "Hendra Amalia", parentPhone: "08139876543", email: "zahra.amalia@gmail.com", status: "pending", date: "2026-07-18" },
+    { id: "p2", registrationNo: "PPDB2026002", fullName: "Rafi Kurniawan", gender: "Laki-laki", birthPlace: "Bandung", birthDate: "2010-09-22", address: "Jl. Pancoran Barat No. 3, Yogyakarta Selatan", prevSchool: "SMP Negeri 73 Jakarta", parentName: "Kurniawan", parentPhone: "08129876544", email: "rafi.kurniawan@gmail.com", status: "approved", date: "2026-07-17" },
+    { id: "p3", registrationNo: "PPDB2026003", fullName: "Farhan Mahendra", gender: "Laki-laki", birthPlace: "Depok", birthDate: "2010-02-05", address: "Jl. Jagakarsa No. 44, Yogyakarta Selatan", prevSchool: "SMP Swasta Al-Azhar 2", parentName: "Bambang Mahendra", parentPhone: "08159876545", email: "farhan.mahe@gmail.com", status: "rejected", date: "2026-07-16" }
   ];
 
   // Activity logs
@@ -512,7 +513,7 @@ function generateSeederData() {
         id: "u_s1",
         name: "Andi Wibowo",
         role: "siswa",
-        avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop"
+        avatar: "/default-avatar.png"
       },
       category: "Matematika",
       resources: [
@@ -527,7 +528,7 @@ function generateSeederData() {
             id: "u_t2",
             name: "Budi Santoso, S.Pd.",
             role: "guru",
-            avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
+            avatar: "/default-avatar.png"
           },
           createdAt: "2026-07-20T10:15:00.000Z"
         }
@@ -542,7 +543,7 @@ function generateSeederData() {
         id: "u_t8",
         name: "Rina Wijayanti, S.Pd.",
         role: "guru",
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+        avatar: "/default-avatar.png"
       },
       category: "Bahasa Inggris",
       resources: [
@@ -557,7 +558,7 @@ function generateSeederData() {
             id: "u_s3",
             name: "Citra Sari",
             role: "siswa",
-            avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop"
+            avatar: "/default-avatar.png"
           },
           createdAt: "2026-07-21T02:00:00.000Z"
         }
@@ -998,8 +999,8 @@ app.post('/api/teachers', (req, res) => {
     role: "guru" as const,
     email: req.body.email,
     avatar: req.body.gender === "Laki-laki" 
-      ? "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-      : "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+      ? "/default-avatar.png"
+      : "/default-avatar.png",
     active: true,
     detailsId: teacherId
   };
@@ -1081,10 +1082,10 @@ app.post('/api/students/bulk', (req, res) => {
       username: stud.nis || `s_${Date.now()}_${index}`,
       name: stud.name || "Siswa Baru",
       role: "siswa" as const,
-      email: `${stud.nis || userId}@student.sman1nusantara.sch.id`,
+      email: `${stud.nis || userId}@student.smaglobal.sch.id`,
       avatar: stud.gender === "Laki-laki"
-        ? "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop"
-        : "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+        ? "/default-avatar.png"
+        : "/default-avatar.png",
       active: true,
       detailsId: studentId
     };
@@ -1132,10 +1133,10 @@ app.post('/api/teachers/bulk', (req, res) => {
       username: teach.nip ? teach.nip.split(' ')[0] : `g_${Date.now()}_${index}`,
       name: teach.name || "Guru Baru",
       role: "guru" as const,
-      email: teach.email || `${teacherId}@sman1nusantara.sch.id`,
+      email: teach.email || `${teacherId}@smaglobal.sch.id`,
       avatar: teach.gender === "Laki-laki"
-        ? "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-        : "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+        ? "/default-avatar.png"
+        : "/default-avatar.png",
       active: true,
       detailsId: teacherId
     };
@@ -1174,10 +1175,10 @@ app.post('/api/students', (req, res) => {
     username: req.body.nis,
     name: req.body.name,
     role: "siswa" as const,
-    email: `${req.body.nis}@student.sman1nusantara.sch.id`,
+    email: `${req.body.nis}@student.smaglobal.sch.id`,
     avatar: req.body.gender === "Laki-laki"
-      ? "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop"
-      : "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+      ? "/default-avatar.png"
+      : "/default-avatar.png",
     active: true,
     detailsId: studentId
   };
@@ -1232,7 +1233,7 @@ app.post('/api/users', (req, res) => {
   const newUser = {
     id: `u_${Date.now()}`,
     ...req.body,
-    avatar: req.body.avatar || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150&auto=format&fit=crop",
+    avatar: req.body.avatar || "/default-avatar.png",
     active: true
   };
   db.users.push(newUser);

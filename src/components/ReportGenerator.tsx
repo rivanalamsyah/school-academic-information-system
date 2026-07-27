@@ -267,12 +267,12 @@ export function ReportGenerator({
       // Kop Surat
       doc.setFont("Helvetica", "bold");
       doc.setFontSize(14);
-      const schoolName = settings?.name || "SMAN 1 NUSANTARA";
+      const schoolName = settings?.name || "SMA GLOBAL";
       doc.text(schoolName.toUpperCase(), 105, 18, { align: "center" });
 
       doc.setFont("Helvetica", "normal");
       doc.setFontSize(9);
-      doc.text(`Alamat: ${settings?.address || 'Jl. Raya Pendidikan No. 10 Jakarta'}`, 105, 23, { align: "center" });
+      doc.text(`Alamat: ${settings?.address || 'Jl. Raya Pendidikan No. 10 Yogyakarta'}`, 105, 23, { align: "center" });
       doc.text(`Telepon: ${settings?.phone || '(021) 555-0199'} | Email: ${settings?.email || 'info@sekolah.sch.id'}`, 105, 27, { align: "center" });
 
       doc.setLineWidth(0.6);
@@ -427,7 +427,7 @@ export function ReportGenerator({
         
         const dataRows: (string | number)[][] = [
           ["REKAPITULASI BULANAN PRESENSI KEHADIRAN SISWA"],
-          ["Sekolah: SMAN 1 Nusantara"],
+          ["Sekolah: SMA Global"],
           [`Kelas: ${classNameLabel} | Periode: ${monthLabel} ${exportSelectedYear}`],
           [],
           headers,
@@ -845,8 +845,8 @@ export function ReportGenerator({
           <div class="kop-surat">
             <img class="kop-logo" src="${settings?.logo || '/logo.png'}" />
             <div class="kop-text">
-              <h1>${settings?.name || 'SMAN 1 NUSANTARA'}</h1>
-              <p>Alamat: ${settings?.address || 'Jl. Raya Pendidikan No. 10 Jakarta'}</p>
+              <h1>${settings?.name || 'SMA GLOBAL'}</h1>
+              <p>Alamat: ${settings?.address || 'Jl. Raya Pendidikan No. 10 Yogyakarta'}</p>
               <p>Telepon: ${settings?.phone || '(021) 555-0199'} | Email: ${settings?.email || 'info@sekolah.sch.id'}</p>
               <p>NPSN: 20103040 | Terakreditasi BAN-S/M Peringkat A (Sangat Baik)</p>
             </div>
@@ -1005,7 +1005,7 @@ export function ReportGenerator({
             </div>
 
             <div class="signature-box">
-              <span class="signature-title">Jakarta, ${formattedDate}</span>
+              <span class="signature-title">Yogyakarta, ${formattedDate}</span>
               <span class="signature-title" style="margin-top:-10px;">Kepala Sekolah</span>
               <div style="height: 45px;"></div>
               <div>
@@ -1016,7 +1016,7 @@ export function ReportGenerator({
           </div>
 
           <div class="footer-info">
-            Dicetak secara digital melalui SIAKAD ${settings?.name || 'SMAN 1 NUSANTARA'} - ${new Date().toLocaleString('id-ID')}
+            Dicetak secara digital melalui SIAKAD ${settings?.name || 'SMA GLOBAL'} - ${new Date().toLocaleString('id-ID')}
           </div>
 
           <script>
@@ -1043,8 +1043,8 @@ export function ReportGenerator({
       
       const dataRows = [
         ["LAPORAN HASIL BELAJAR SISWA (RAPOR AKADEMIK)"],
-        [settings?.name?.toUpperCase() || "SMAN 1 NUSANTARA"],
-        [`Alamat: ${settings?.address || "Jl. Raya Nusantara No. 45"}`],
+        [settings?.name?.toUpperCase() || "SMA GLOBAL"],
+        [`Alamat: ${settings?.address || "Jl. Pendidikan Nusantara No. 45"}`],
         [],
         ["IDENTITAS PESERTA DIDIK", ""],
         ["Nama Siswa", currentStudent.name],
@@ -1125,12 +1125,12 @@ export function ReportGenerator({
       // --- 1. KOP SURAT SEKOLAH ---
       doc.setFont("Helvetica", "bold");
       doc.setFontSize(14);
-      const schoolName = settings?.name || "SMAN 1 NUSANTARA";
+      const schoolName = settings?.name || "SMA GLOBAL";
       doc.text(schoolName.toUpperCase(), 105, 18, { align: "center" });
 
       doc.setFont("Helvetica", "normal");
       doc.setFontSize(9);
-      const address = `Alamat: ${settings?.address || 'Jl. Raya Pendidikan No. 10 Jakarta'}`;
+      const address = `Alamat: ${settings?.address || 'Jl. Raya Pendidikan No. 10 Yogyakarta'}`;
       doc.text(address, 105, 23, { align: "center" });
 
       const contacts = `Telepon: ${settings?.phone || '(021) 555-0199'} | Email: ${settings?.email || 'info@sekolah.sch.id'}`;
@@ -1288,7 +1288,7 @@ export function ReportGenerator({
         month: 'long',
         day: 'numeric'
       });
-      doc.text(`Jakarta, ${formattedDate}`, 145, sigY);
+      doc.text(`Yogyakarta, ${formattedDate}`, 145, sigY);
       doc.text("Kepala Sekolah,", 145, sigY + 4);
       doc.setFont("Helvetica", "bold");
       doc.text(settings?.principalName || "Dr. H. Ahmad Wijaya, M.Pd.", 145, sigY + 22);
@@ -1621,8 +1621,8 @@ export function ReportGenerator({
                   alt="School Logo"
                 />
                 <div className="min-w-0 flex-1 text-center">
-                  <h3 className="text-base md:text-lg font-black text-slate-900 uppercase tracking-tight leading-snug">{settings?.name || 'SMAN 1 NUSANTARA'}</h3>
-                  <p className="text-[10px] md:text-xs text-slate-500 font-medium mt-1">Alamat: {settings?.address || 'Jl. Raya Pendidikan No. 10 Jakarta'}</p>
+                  <h3 className="text-base md:text-lg font-black text-slate-900 uppercase tracking-tight leading-snug">{settings?.name || 'SMA GLOBAL'}</h3>
+                  <p className="text-[10px] md:text-xs text-slate-500 font-medium mt-1">Alamat: {settings?.address || 'Jl. Raya Pendidikan No. 10 Yogyakarta'}</p>
                   <p className="text-[10px] text-slate-400 font-semibold font-mono mt-0.5">Telp: {settings?.phone || '(021) 555-0199'} | Email: {settings?.email || 'info@sekolah.sch.id'}</p>
                 </div>
               </div>

@@ -25,7 +25,7 @@ export function AdminAcademicYears({
         <h3 className="font-extrabold text-slate-950 text-sm tracking-tight">Tahun Ajaran & Semester</h3>
         <div className="flex gap-2">
           <button
-            onClick={() => handlePrintReport("Laporan Tahun Ajaran SMAN 1 Nusantara", "academicyears-table-el")}
+            onClick={() => handlePrintReport("Laporan Tahun Ajaran SMA Global", "academicyears-table-el")}
             className="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 border border-slate-300 rounded-xl text-xs font-bold flex items-center gap-1 cursor-pointer"
           >
             Cetak Laporan

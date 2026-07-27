@@ -23,7 +23,7 @@ const DEFAULT_EVENTS: CalendarEvent[] = [
     description: "Evaluasi penilaian hasil belajar tengah semester ganjil untuk seluruh siswa.",
     date: "2026-10-12",
     category: "ujian",
-    location: "Ruang Kelas SMAN 1 Nusantara",
+    location: "Ruang Kelas SMA Global",
     startTime: "07:30",
     endTime: "13:00"
   },
@@ -33,7 +33,7 @@ const DEFAULT_EVENTS: CalendarEvent[] = [
     description: "Evaluasi besar penilaian akhir semester ganjil tahun ajaran.",
     date: "2026-12-07",
     category: "ujian",
-    location: "Gedung Utama SMAN 1",
+    location: "Gedung Utama SMA Global",
     startTime: "07:30",
     endTime: "13:30"
   },
@@ -540,7 +540,7 @@ export function AcademicCalendar() {
                   <label className="text-[10px] font-bold uppercase text-slate-400 font-mono">Lokasi Kegiatan (Opsional)</label>
                   <input
                     type="text"
-                    placeholder="Contoh: Aula Ki Hajar Dewantara SMAN 1"
+                    placeholder="Contoh: Aula Ki Hajar Dewantara SMA Global"
                     value={newLocation}
                     onChange={(e) => setNewLocation(e.target.value)}
                     className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white"

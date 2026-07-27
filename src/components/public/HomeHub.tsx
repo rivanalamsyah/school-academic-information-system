@@ -37,7 +37,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
               Unggul Akademik, Kokoh Karakter Pancasila
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-              Selamat datang di SMA Negeri 1 Nusantara. Kami menumbuhkan kecerdasan intelektual, keterampilan global, dan moralitas luhur untuk mencetak pemimpin masa depan bangsa.
+              Selamat datang di SMA Global. Kami menumbuhkan kecerdasan intelektual, keterampilan global, dan moralitas luhur untuk mencetak pemimpin masa depan bangsa.
             </p>
             <div className="flex gap-4 flex-wrap pt-2">
               <button
@@ -106,7 +106,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
           </div>
           <div className="pt-2">
             <h4 className="font-extrabold text-slate-900 text-base leading-tight">{activeSchool.principalName}</h4>
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-wider font-mono">Kepala SMAN 1 Nusantara</p>
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-wider font-mono">Kepala SMA Global</p>
             <p className="text-[10px] text-slate-400 font-mono mt-0.5">NIP: {activeSchool.principalNip}</p>
           </div>
         </div>
@@ -349,7 +349,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
           <span className="bg-blue-50 text-blue-700 border border-blue-100 font-bold px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-widest font-mono">
             Ulasan Komunitas
           </span>
-          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Kisah Sukses Keluarga SMAN 1 Nusantara</h3>
+          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Kisah Sukses Keluarga SMA Global</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">Dengarkan penuturan jujur dari alumni yang kini berkuliah di luar negeri serta para orang tua murid.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -362,7 +362,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
               <Star className="w-4 h-4 fill-amber-500" />
             </div>
             <p className="text-slate-600 text-xs leading-relaxed italic">
-              "Kurikulum personalisasi yang dijalankan SMAN 1 benar-benar luar biasa. Anak saya bebas mendalami pemintal robotika dan sekarang berhasil lolos beasiswa penuh di Universitas Nanyang Singapura (NTU)."
+              "Kurikulum personalisasi yang dijalankan SMA Global benar-benar luar biasa. Anak saya bebas mendalami pemintal robotika dan sekarang berhasil lolos beasiswa penuh di Universitas Nanyang Singapura (NTU)."
             </p>
             <div className="flex items-center gap-3 pt-2">
               <div className="h-9 w-9 bg-slate-100 rounded-full overflow-hidden shrink-0">
@@ -383,7 +383,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
               <Star className="w-4 h-4 fill-amber-500" />
             </div>
             <p className="text-slate-600 text-xs leading-relaxed italic">
-              "Kombinasi pelajaran yang disiplin serta dukungan BK karir yang detail membantu saya menavigasi ujian masuk kedokteran Universitas Indonesia secara gemilang. Terima kasih dewan guru SMAN 1."
+              "Kombinasi pelajaran yang disiplin serta dukungan BK karir yang detail membantu saya menavigasi ujian masuk kedokteran Universitas Indonesia secara gemilang. Terima kasih dewan guru SMA Global."
             </p>
             <div className="flex items-center gap-3 pt-2">
               <div className="h-9 w-9 bg-slate-100 rounded-full overflow-hidden shrink-0">
@@ -391,7 +391,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
               </div>
               <div>
                 <h5 className="text-xs font-bold text-slate-900">dr. Amanda Kirana</h5>
-                <p className="text-[10px] text-slate-400 font-medium">Alumni SMAN 1 (Kedokteran UI)</p>
+                <p className="text-[10px] text-slate-400 font-medium">Alumni SMA Global (Kedokteran UI)</p>
               </div>
             </div>
           </div>
@@ -428,7 +428,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
             </span>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Lingkungan Kampus Ramah Lingkungan & Terproteksi</h3>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Kami percaya lingkungan belajar yang sehat akan melipatgandakan daya serap informasi siswa. SMAN 1 Nusantara berkomitmen menjaga keseimbangan ekologis melalui area resapan hijau rindang, penghematan listrik lampu LED otomatis, serta proteksi keamanan berlapis 24 jam dengan 120 titik kamera CCTV terintegrasi.
+              Kami percaya lingkungan belajar yang sehat akan melipatgandakan daya serap informasi siswa. SMA Global berkomitmen menjaga keseimbangan ekologis melalui area resapan hijau rindang, penghematan listrik lampu LED otomatis, serta proteksi keamanan berlapis 24 jam dengan 120 titik kamera CCTV terintegrasi.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 pt-2">
               <div className="flex gap-2.5 items-start">
@@ -463,7 +463,7 @@ export default function HomeHub({ settings: _settings, news, activeSchool, setAc
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent)] pointer-events-none" />
           <h3 className="text-2xl sm:text-3xl font-black tracking-tight">Siap Memulai Perjalanan Emas Anda?</h3>
           <p className="text-slate-100 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
-            Bergabunglah bersama SMA Negeri 1 Nusantara. Kuota penerimaan terbatas melalui seleksi administrasi ketat. Jangan lewatkan pendaftaran gelombang utama PPDB.
+            Bergabunglah bersama SMA Global. Kuota penerimaan terbatas melalui seleksi administrasi ketat. Jangan lewatkan pendaftaran gelombang utama PPDB.
           </p>
           <div className="flex justify-center gap-4 flex-wrap pt-2 relative z-10">
             <button

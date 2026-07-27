@@ -27,19 +27,19 @@ const TEMPLATES = [
     id: "absensi",
     name: "Notifikasi Laporan Absensi Harian",
     subject: "Pemberitahuan Kehadiran Siswa",
-    body: "Yth. Bapak/Ibu {nama_ortu}, orang tua dari {nama_siswa} ({kelas}). Kami menginformasikan bahwa putra/putri Anda hari ini dinyatakan {status_kehadiran} pada jam sekolah. Mohon hubungi wali kelas jika ada kekeliruan. Salam, SMAN 1 Nusantara."
+    body: "Yth. Bapak/Ibu {nama_ortu}, orang tua dari {nama_siswa} ({kelas}). Kami menginformasikan bahwa putra/putri Anda hari ini dinyatakan {status_kehadiran} pada jam sekolah. Mohon hubungi wali kelas jika ada kekeliruan. Salam, SMA Global."
   },
   {
     id: "nilai",
     name: "Pemberitahuan Prestasi Nilai Rapor",
     subject: "Laporan Hasil Penilaian Siswa",
-    body: "Yth. Bapak/Ibu {nama_ortu}, wali murid dari {nama_siswa} ({kelas}). Kami bangga mengumumkan pencapaian nilai akhir tugas {nama_siswa} bernilai {nilai} untuk semester ganjil. Terus dukung putra/putri Anda! Salam hangat, SMAN 1 Nusantara."
+    body: "Yth. Bapak/Ibu {nama_ortu}, wali murid dari {nama_siswa} ({kelas}). Kami bangga mengumumkan pencapaian nilai akhir tugas {nama_siswa} bernilai {nilai} untuk semester ganjil. Terus dukung putra/putri Anda! Salam hangat, SMA Global."
   },
   {
     id: "pengumuman",
     name: "Pengumuman Umum Kegiatan Sekolah",
     subject: "Pemberitahuan Kegiatan Akademik",
-    body: "Yth. Bapak/Ibu {nama_ortu}, selaku orang tua dari {nama_siswa} ({kelas}). Kami mengundang kehadiran Bapak/Ibu dalam acara koordinasi semester SMAN 1 Nusantara pada hari Sabtu mendatang. Salam hormat, Kepala Sekolah SMAN 1."
+    body: "Yth. Bapak/Ibu {nama_ortu}, selaku orang tua dari {nama_siswa} ({kelas}). Kami mengundang kehadiran Bapak/Ibu dalam acara koordinasi semester SMA Global pada hari Sabtu mendatang. Salam hormat, Kepala Sekolah SMA Global."
   }
 ];
 
@@ -81,7 +81,7 @@ export function ParentNotifier({ students, classRooms, showToast }: ParentNotifi
           parentName: "Sutrisno Siregar",
           parentPhone: "081234567890",
           messageType: "Notifikasi Laporan Absensi Harian",
-          content: "Yth. Bapak/Ibu Sutrisno Siregar, orang tua dari Aditya Siregar (X MIPA 1). Kami menginformasikan bahwa putra/putri Anda hari ini dinyatakan Sakit pada jam sekolah. Salam, SMAN 1 Nusantara.",
+          content: "Yth. Bapak/Ibu Sutrisno Siregar, orang tua dari Aditya Siregar (X MIPA 1). Kami menginformasikan bahwa putra/putri Anda hari ini dinyatakan Sakit pada jam sekolah. Salam, SMA Global.",
           timestamp: new Date(Date.now() - 3600000 * 2).toLocaleString("id-ID"),
           status: "Terkirim",
           syncedToSheets: true
@@ -92,7 +92,7 @@ export function ParentNotifier({ students, classRooms, showToast }: ParentNotifi
           parentName: "Bambang Lestari",
           parentPhone: "082198765432",
           messageType: "Pemberitahuan Prestasi Nilai Rapor",
-          content: "Yth. Bapak/Ibu Bambang Lestari, wali murid dari Citra Lestari (X MIPA 1). Kami bangga mengumumkan pencapaian nilai akhir tugas Citra Lestari bernilai 92 untuk semester ganjil. Salam hangat, SMAN 1 Nusantara.",
+          content: "Yth. Bapak/Ibu Bambang Lestari, wali murid dari Citra Lestari (X MIPA 1). Kami bangga mengumumkan pencapaian nilai akhir tugas Citra Lestari bernilai 92 untuk semester ganjil. Salam hangat, SMA Global.",
           timestamp: new Date(Date.now() - 3600000 * 24).toLocaleString("id-ID"),
           status: "Terkirim",
           syncedToSheets: true
