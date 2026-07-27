@@ -22,6 +22,7 @@ import { TeacherAttendance } from "../components/dashboard/TeacherAttendance";
 import { TeacherGrades } from "../components/dashboard/TeacherGrades";
 import { CrudFormModal } from "../components/dashboard/CrudFormModal";
 import { ConfirmDialog } from "../components/ui/ConfirmDialog";
+import { RouteGuard } from "../core/routing/RouteGuard";
 
 // Extracted Sub-hubs
 import { DashboardStats } from "../components/DashboardStats";
@@ -510,7 +511,15 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                 transition={{ duration: 0.2, ease: "easeInOut" }}
                 className="space-y-6 w-full"
               >
-                {/* --- ADMIN & SUPER ADMIN TABS --- */}
+                <RouteGuard
+                  user={user}
+                  activeMenu={activeMenu}
+                  fallbackGoHome={() => {
+                    setActiveMenu("home");
+                    window.location.hash = "home";
+                  }}
+                >
+                  {/* --- ADMIN & SUPER ADMIN TABS --- */}
               {user.role !== "siswa" && user.role !== "guru" ? (
                 <>
                   {activeMenu === "home" && (
@@ -1178,6 +1187,7 @@ export default function Dashboard({ user, onLogout, showToast, onUpdateUser }: D
                   />
                 </div>
               )}
+                </RouteGuard>
               </motion.div>
             </AnimatePresence>
           )}
