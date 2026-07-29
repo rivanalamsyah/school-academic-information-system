@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sias-portal-cache-v1';
+const CACHE_NAME = 'sias-portal-cache-v3';
 const OFFLINE_URL = '/';
 
 // Core assets to pre-cache immediately
@@ -47,21 +47,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Handle API Requests: Network Only or Network First (do not cache sensitive database APIs)
-  if (url.pathname.startsWith('/api/')) {
+  // Ensure API requests are always fetched from network and not cached
+  if (url.pathname.startsWith('/api/') || url.pathname.includes('/.netlify/functions/')) {
     event.respondWith(
       fetch(request).catch(() => {
-        // Return custom offline JSON if API fails offline
         return new Response(
-          JSON.stringify({ 
-            error: 'Koneksi offline', 
-            message: 'Anda sedang berada dalam mode offline. Sebagian data real-time mungkin tidak tersedia.',
-            offline: true 
-          }), 
-          { 
-            headers: { 'Content-Type': 'application/json' },
-            status: 503
-          }
+          JSON.stringify({
+            success: false,
+            message: 'Anda sedang offline. Layanan API tidak tersedia.'
+          }),
+          { headers: { 'Content-Type': 'application/json' }, status: 503 }
         );
       })
     );
@@ -69,7 +64,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Handle HTML document requests (Navigation) - Network first, fallback to cached '/'
-  if (request.mode === 'navigate' || request.headers.get('accept').includes('text/html')) {
+  if (request.mode === 'navigate' || (request.headers.get('accept') && request.headers.get('accept').includes('text/html'))) {
     event.respondWith(
       fetch(request).catch(() => {
         return caches.match(OFFLINE_URL) || caches.match('/index.html');
@@ -84,7 +79,7 @@ self.addEventListener('fetch', (event) => {
       if (cachedResponse) {
         // Fetch background update to keep cache fresh
         fetch(request).then((networkResponse) => {
-          if (networkResponse.status === 200) {
+          if (networkResponse && networkResponse.status === 200) {
             caches.open(CACHE_NAME).then((cache) => cache.put(request, networkResponse));
           }
         }).catch(() => {/* Ignore background sync failures */});
@@ -106,7 +101,7 @@ self.addEventListener('fetch', (event) => {
         return networkResponse;
       }).catch(() => {
         // Static asset fails offline: return placeholder for images, or let it fail
-        if (request.headers.get('accept').includes('image')) {
+        if (request.headers.get('accept') && request.headers.get('accept').includes('image')) {
           return new Response(
             `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" style="background:#f1f5f9">
               <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#94a3b8">Offline</text>

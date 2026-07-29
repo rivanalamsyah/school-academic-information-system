@@ -62,21 +62,21 @@ export const DashboardService = {
       allAttendances,
       allGrades,
     ] = await Promise.all([
-      fetchJson<SchoolSettings | null>("/api/public/settings", null),
-      fetchJson<AcademicYear[]>("/api/academicyears", []),
-      fetchJson<ClassRoom[]>("/api/classrooms", []),
-      fetchJson<Subject[]>("/api/subjects", []),
-      fetchJson<Teacher[]>("/api/teachers", []),
-      fetchJson<Student[]>("/api/students", []),
-      fetchJson<Schedule[]>("/api/schedules", []),
+      fetchJson<SchoolSettings | null>("/public/settings", null),
+      fetchJson<AcademicYear[]>("/academicyears", []),
+      fetchJson<ClassRoom[]>("/classrooms", []),
+      fetchJson<Subject[]>("/subjects", []),
+      fetchJson<Teacher[]>("/teachers", []),
+      fetchJson<Student[]>("/students", []),
+      fetchJson<Schedule[]>("/schedules", []),
       // Only admin/super_admin needs PPDB data
-      isAdminOrSuper ? fetchJson<PPDBRegistration[]>("/api/ppdb", []) : Promise.resolve([]),
+      isAdminOrSuper ? fetchJson<PPDBRegistration[]>("/ppdb", []) : Promise.resolve([]),
       // Only super_admin needs logs
-      isSuper ? fetchJson<ActivityLog[]>("/api/logs", []) : Promise.resolve([]),
+      isSuper ? fetchJson<ActivityLog[]>("/logs", []) : Promise.resolve([]),
       // Only super_admin needs backups
-      isSuper ? fetchJson<Backup[]>("/api/backups", []) : Promise.resolve([]),
-      fetchJson<Attendance[]>("/api/attendances", []),
-      fetchJson<Grade[]>("/api/grades", []),
+      isSuper ? fetchJson<Backup[]>("/backups", []) : Promise.resolve([]),
+      fetchJson<Attendance[]>("/attendances", []),
+      fetchJson<Grade[]>("/grades", []),
     ]);
 
     return {
@@ -96,15 +96,15 @@ export const DashboardService = {
   },
 
   async syncGoogleSheets(user: User): Promise<void> {
-    await httpClient<void>("/api/settings/googlesheets/sync", { method: "POST" }, user);
+    await httpClient<void>("/settings/googlesheets/sync", { method: "POST" }, user);
   },
 
   async disconnectGoogleSheets(user: User): Promise<void> {
-    await httpClient<void>("/api/settings/googlesheets/disconnect", { method: "POST" }, user);
+    await httpClient<void>("/settings/googlesheets/disconnect", { method: "POST" }, user);
   },
 
   async updateSettings(settings: SchoolSettings, user: User): Promise<void> {
-    await httpClient<void>("/api/settings", {
+    await httpClient<void>("/settings", {
       method: "PUT",
       body: settings,
     }, user);
@@ -117,7 +117,7 @@ export const DashboardService = {
     editingItemId: string | null,
     user: User
   ): Promise<void> {
-    const url = editingItemId ? `/api/${formType}s/${editingItemId}` : `/api/${formType}s`;
+    const url = editingItemId ? `/${formType}s/${editingItemId}` : `/${formType}s`;
     const method = editingItemId ? "PUT" : "POST";
     await httpClient<void>(url, {
       method,
@@ -126,14 +126,14 @@ export const DashboardService = {
   },
 
   async activateAcademicYear(id: string, active: boolean, user: User): Promise<void> {
-    await httpClient<void>(`/api/academicyears/${id}`, {
+    await httpClient<void>(`/academicyears/${id}`, {
       method: "PUT",
       body: { active },
     }, user);
   },
 
   async deleteItem(type: string, id: string, user: User): Promise<void> {
-    await httpClient<void>(`/api/${type}s/${id}`, {
+    await httpClient<void>(`/${type}s/${id}`, {
       method: "DELETE",
     }, user);
   },
@@ -145,7 +145,7 @@ export const DashboardService = {
     teacherName: string,
     user: User
   ): Promise<void> {
-    await httpClient<void>("/api/attendances/bulk", {
+    await httpClient<void>("/attendances/bulk", {
       method: "POST",
       body: { classRoomId, date, records, teacherName },
     }, user);
@@ -164,7 +164,7 @@ export const DashboardService = {
     }>,
     user: User
   ): Promise<void> {
-    await httpClient<void>("/api/grades/bulk", {
+    await httpClient<void>("/grades/bulk", {
       method: "POST",
       body: { classRoomId, subjectId, academicYearId, records },
     }, user);

@@ -3,7 +3,7 @@ import { httpClient } from "../core/api/client";
 
 export const AuthService = {
   async login(username: string, password: string): Promise<{ success: boolean; user: User }> {
-    return httpClient<{ success: boolean; user: User }>("/api/auth/login", {
+    return httpClient<{ success: boolean; user: User }>("/auth/login", {
       method: "POST",
       body: { username, password },
     });
@@ -15,7 +15,7 @@ export const AuthService = {
     user: User
   ): Promise<{ success: boolean; user: User }> {
     return httpClient<{ success: boolean; user: User }>(
-      "/api/auth/profile",
+      "/auth/profile",
       {
         method: "PUT",
         body: { userId, ...payload },

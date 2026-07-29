@@ -1,25 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
-// Resolve path relative to repository root when Netlify builds the function bundle.
-const DB_PATH = path.resolve(__dirname, '../../../src/db/data.json');
+const DB_PATH = path.join(__dirname, '..', '..', 'src', 'db', 'data.json');
 
-function readDB() {
+let cached = null;
+let lastMtime = 0;
+
+function loadDB() {
   try {
-    const raw = fs.readFileSync(DB_PATH, 'utf8');
-    return JSON.parse(raw);
+    const stat = fs.statSync(DB_PATH);
+    const mtime = stat.mtimeMs;
+    if (cached && lastMtime === mtime) {
+      return cached;
+    }
   } catch (err) {
-    console.error('Failed to read DB file at', DB_PATH, err);
-    // Return minimal structure to avoid crashes in functions
-    return {
-      settings: {},
-      news: [],
-      gallery: [],
-      documents: [],
-      teachers: [],
-      users: [],
-    };
+    // ignore
   }
+  const raw = fs.readFileSync(DB_PATH, 'utf-8');
+  cached = JSON.parse(raw);
+  try {
+    lastMtime = fs.statSync(DB_PATH).mtimeMs;
+  } catch (e) {
+    lastMtime = Date.now();
+  }
+  return cached;
 }
 
-module.exports = { readDB };
+module.exports = {
+  getDB: loadDB,
+};

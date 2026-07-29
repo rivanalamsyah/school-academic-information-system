@@ -1,0 +1,43 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Netlify Functions directory (default is netlify/functions)
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/auth/login"
+  to = "/.netlify/functions/auth-login"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/public/settings"
+  to = "/.netlify/functions/public-settings"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/public/news"
+  to = "/.netlify/functions/public-news"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/public/gallery"
+  to = "/.netlify/functions/public-gallery"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/public/documents"
+  to = "/.netlify/functions/public-documents"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/teachers"
+  to = "/.netlify/functions/teachers"
+  status = 200
+  force = true
