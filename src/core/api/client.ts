@@ -1,6 +1,15 @@
 /**
  * Centralized HTTP Client.
- * Manages request headers, auth injection, retries, and error handling.
+ * Reads VITE_API_URL at build-time to resolve full API base URL.
+ *
+ * Behavior:
+ * - If import.meta.env.VITE_API_URL is set, it will be used as the base for relative paths.
+ * - In development (MODE === 'development'), if VITE_API_URL is not present, client falls back to http://localhost:3000/api
+ *   so local dev with `npm run dev` (server.ts running on 3000) continues to work.
+ * - In production if VITE_API_URL is NOT set, the client will use same-origin relative paths (so /api/* will work when
+ *   the backend is proxied on the same domain via Netlify Functions + redirects).
+ *
+ * The rest of the original behavior (auth header injection, retry, JSON handling) is preserved.
  */
 
 import { User } from "../../types";
@@ -23,19 +32,51 @@ export class APIError extends Error {
   }
 }
 
-/**
- * Get authentication headers based on user session
- */
 export function getAuthHeaders(user?: User | null): Record<string, string> {
   const headers: Record<string, string> = {};
   if (user) {
     if (user.role) headers["x-user-role"] = user.role;
     if (user.id) headers["x-user-id"] = user.id;
     if (user.username) headers["x-username"] = user.username;
-    // For general compatibility:
     headers["x-user-username"] = user.username;
   }
   return headers;
+}
+
+const VITE_API_URL = (import.meta as any).env?.VITE_API_URL as string | undefined;
+const MODE = (import.meta as any).env?.MODE as string | undefined || "development";
+
+// Determine base URL
+let BASE_URL: string | undefined = undefined;
+if (VITE_API_URL && typeof VITE_API_URL === "string" && VITE_API_URL.trim() !== "") {
+  BASE_URL = VITE_API_URL.replace(/\/$/, ""); // remove trailing slash
+} else if (MODE === "development") {
+  // Local dev fallback to integrated server (server.ts listens on port 3000 and exposes /api/*)
+  BASE_URL = "http://localhost:3000/api";
+} else {
+  // Production and VITE_API_URL not provided: use same-origin relative paths (so '/api/...' remains on same host)
+  BASE_URL = "";
+}
+
+/**
+ * Build final absolute URL for a request.
+ * - If url already has a full scheme (http/https), use it unchanged.
+ * - Otherwise, combine BASE_URL and url ensuring single slash.
+ */
+function buildUrl(url: string): string {
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+  // ensure url starts with a single slash
+  const relative = url.startsWith("/") ? url : `/${url}`;
+  if (BASE_URL === undefined) {
+    return relative;
+  }
+  if (BASE_URL === "") {
+    // same-origin
+    return relative;
+  }
+  return `${BASE_URL}${relative}`;
 }
 
 /**
@@ -67,9 +108,11 @@ export async function httpClient<T>(
     body = JSON.stringify(body);
   }
 
+  const finalUrl = buildUrl(url);
+
   const executeCall = async (attempt: number): Promise<T> => {
     try {
-      const response = await fetch(url, {
+      const response = await fetch(finalUrl, {
         ...fetchOptions,
         headers: finalHeaders,
         body: body as BodyInit | null | undefined,
@@ -85,20 +128,17 @@ export async function httpClient<T>(
 
         let bodyJson: Record<string, unknown> | null = null;
         try {
-          bodyJson = await response.json() as Record<string, unknown>;
+          bodyJson = (await response.json()) as Record<string, unknown>;
         } catch {
           bodyJson = { error: response.statusText };
         }
 
-        const errMsg = bodyJson && typeof bodyJson === "object" && "error" in bodyJson && typeof bodyJson.error === "string"
-          ? bodyJson.error
-          : `HTTP ${response.status}: ${response.statusText}`;
+        const errMsg =
+          bodyJson && typeof bodyJson === "object" && "error" in bodyJson && typeof (bodyJson as any).error === "string"
+            ? (bodyJson as any).error
+            : `HTTP ${response.status}: ${response.statusText}`;
 
-        throw new APIError(
-          errMsg,
-          response.status,
-          bodyJson
-        );
+        throw new APIError(errMsg, response.status, bodyJson);
       }
 
       // Return parsed JSON
@@ -107,7 +147,7 @@ export async function httpClient<T>(
       if (err instanceof APIError) {
         throw err;
       }
-      
+
       // Handle network errors and retry
       if (attempt < retry) {
         console.warn(`[HTTP Client] Network error occurred. Retrying... (Attempt ${attempt + 1}/${retry + 1})`, err);
