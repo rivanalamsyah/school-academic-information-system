@@ -1,4 +1,4 @@
-const { getDB } = require('./utils/db');
+import { getDB } from './utils/db.js';
 
 function jsonResponse(success, dataOrMessage, status = 200) {
   if (success) {
@@ -15,7 +15,7 @@ function jsonResponse(success, dataOrMessage, status = 200) {
   };
 }
 
-exports.handler = async (event) => {
+export async function handler(event) {
   try {
     if (event.httpMethod !== 'POST') {
       return jsonResponse(false, 'Method Not Allowed', 405);
@@ -56,4 +56,4 @@ exports.handler = async (event) => {
     console.error('auth-login error', err && err.message);
     return jsonResponse(false, 'Terjadi kesalahan pada server.', 500);
   }
-};
+}
