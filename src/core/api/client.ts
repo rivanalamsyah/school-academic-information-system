@@ -6,9 +6,8 @@
  * - If import.meta.env.VITE_API_URL is set, it will be used as the base for relative paths.
  * - In development (MODE === 'development'), if VITE_API_URL is not present, client falls back to http://localhost:3000/api
  *   so local dev with `npm run dev` (server.ts running on 3000) continues to work.
- * - In production if VITE_API_URL is NOT set, the client WILL ERROR loudly when attempting to call relative API
- *   paths. This prevents silently falling back to same-origin /api which hides misconfiguration. Set VITE_API_URL
- *   in your Netlify Environment variables to the full base URL of your backend (e.g. https://api.example.com/api).
+ * - In production if VITE_API_URL is NOT set, the client will use same-origin relative paths (so /api/* will work when
+ *   the backend is proxied on the same domain via Netlify Functions + redirects).
  *
  * Additional behavior:
  * - Avoids duplicate /api prefix when combining base URL and relative paths (e.g. base endsWith('/api') and
@@ -57,9 +56,8 @@ if (VITE_API_URL && typeof VITE_API_URL === "string" && VITE_API_URL.trim() !== 
   // Local dev fallback to integrated server (server.ts listens on port 3000 and exposes /api/*)
   BASE_URL = "http://localhost:3000/api";
 } else {
-  // Production and VITE_API_URL not provided: do NOT silently default to same-origin '/api'.
-  // Set BASE_URL = undefined and surface a clear error when attempting to call relative API paths.
-  BASE_URL = undefined;
+  // Production and VITE_API_URL not provided: use same-origin relative paths (so '/api/...' remains on same host)
+  BASE_URL = "";
 }
 
 /**
@@ -73,22 +71,11 @@ function buildUrl(url: string): string {
   }
   // ensure url starts with a single slash
   const relative = url.startsWith("/") ? url : `/${url}`;
-
-  // If BASE_URL is undefined, we're in production with no VITE_API_URL configured.
   if (BASE_URL === undefined) {
-    // Surface a clear runtime error (instead of silently using same-origin /api).
-    const msg = '[HTTP Client] VITE_API_URL is not set in production. Please set the environment variable VITE_API_URL to your backend API base URL (e.g. "https://api.example.com/api").';
-    // Log to console for easier debugging in browser
-    if (MODE !== 'development') {
-      console.error(msg);
-      throw new Error(msg);
-    }
-    // In development fallback case shouldn't reach here because BASE_URL will be set above, but keep safe fallback
     return relative;
   }
-
   if (BASE_URL === "") {
-    // Should not happen with the new logic, but preserve behavior: same-origin
+    // same-origin
     return relative;
   }
 
