@@ -1,4 +1,4 @@
-const { getDB } = require('./utils/db');
+import { getDB } from './utils/db.js';
 
 function jsonResponse(success, dataOrMessage, status = 200) {
   if (success) {
@@ -15,7 +15,7 @@ function jsonResponse(success, dataOrMessage, status = 200) {
   };
 }
 
-exports.handler = async () => {
+export async function handler() {
   try {
     const db = getDB();
     return jsonResponse(true, db.settings || {});
@@ -23,4 +23,4 @@ exports.handler = async () => {
     console.error('public-settings error', err && err.message);
     return jsonResponse(false, 'Terjadi kesalahan pada server.', 500);
   }
-};
+}
